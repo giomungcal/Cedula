@@ -33,7 +33,7 @@ html
    color: darkturquoise;
    background-color: white;
    height: 45px;
-   width: 52rem;
+   width: 107%;
    border-radius: 5px;
 }
 
@@ -70,9 +70,8 @@ html
 
 .menu>ul>li
 {
-    padding-left: 741px;
+    padding-left: 87.41%;
 }
-
 
 .menu .btn
 {
