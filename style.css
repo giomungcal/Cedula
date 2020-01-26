@@ -97,11 +97,11 @@ html
     display: flex;
 }
 
-.text
+.main-text
 {
     flex: 1;
     color: #1f4498;
-    padding-top: 2rem;
+    padding-top: 1rem;
     padding-left: 57%;
 }
 
