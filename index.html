@@ -15,13 +15,13 @@
         <div class="main">
             <div class="container">
                 <div class="navbar">
-                    
                         <div class="logo-pic"><img src="img/Clogo.png" height="25px" width="25px"></div>
                         <div class="logo"><a href="#"><i>manila</i>&nbsp;<b>cedula</b></a></div>
-                    
                     <div class="menu">
                         <ul>
-                            <li><a class="btn" href=""><b>How&nbsp;to&nbsp;Use</b></a></li>
+                            <li id="btn1"><a class="btn" href=""><b>How&nbsp;to&nbsp;Use</b></a></li>
+                            <li><a class="btn" href=""><b>Procedure</b></a></li>
+                            <li><a class="btn" href=""><b>About</b></a></li>
                         </ul>
                     </div>
                 </div>
@@ -36,19 +36,23 @@
                     </div>
                     <br><br>
                     <div class="dropdown">
-                        <select class="classtypes"> 
-                            <option value="Class1">Class 1</option>
-                            <option value="Class2">Class 2</option>
-                            <option value="Class3">Class 3</option>
-                        </select>
+                        <form action="#">
+                            <select class="classtypes" name="classtypes">
+                                <option value="select">Select:</option>
+                                <option value="classa">Class A</option>
+                                <option value="classab">Class AB</option>
+                                <option value="classc">Class C</option>
+                            </select>
+                            <br><br>
+                            <input type="submit" value="Proceed" class="proceedbtn">
+                        </form>
                     </div>
-                    <br><br>
-                    <a onclick='alert("We are improving the system to serve you better.");' href="" class="btn-rounded">Proceed</a>
                 </div>
             </div>
         </div>
-        <script src="script.js">
-            <!-- JavaScript is here -->
+        <script src="#">
+            // <!-- tinanggal ko muna hehe -->
+            // <!-- JavaScript is here -->
         </script>
     </body>
 </html>

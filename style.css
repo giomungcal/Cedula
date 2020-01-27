@@ -4,15 +4,21 @@
     padding: 0;
 }
 
+header, section, footer, aside, nav, main, article, figure {
+    display: block;
+}
+
 html
 {
-    background-color: white;
+    background-color: #1f4498;
     color: white;
     font-family: 'Muli';
     font-weight: 300;
     font-size: 20px;
     text-rendering: optimizeLegibility;
 }
+
+/* HOME PAGE */
 
 .main
 {
@@ -33,17 +39,18 @@ html
    color: darkturquoise;
    background-color: white;
    height: 45px;
-   width: 107%;
+   width: 100%;
    border-radius: 5px;
 }
 
 .logo
 {
     padding-top: 10px;
+    padding-right: 100px;
 }
+
 .logo > a
 {
-
     padding: 10px;
     flex: 2;
     text-decoration: none;
@@ -68,15 +75,20 @@ html
     list-style: none;
 }
 
-.menu>ul>li
+#btn1
 {
-    padding-left: 87.41%;
+    padding-left: 250px;
 }
+
+/* .menu>ul>li>a
+{
+    text-align: end;
+} */
 
 .menu .btn
 {
     background-color: transparent;
-    padding: 10px;
+    padding: 10px 35px;
     color: #1f4498;
     text-decoration: none;
     transition: 0.5s;
@@ -104,22 +116,141 @@ html
     padding-left: 57%;
 }
 
-.btn-rounded
-{
-    text-decoration: none;
-    background-color: #ec2a2b;
-    padding: 0.5rem;
-    font-family: 'Roboto';
-    color: snow;
-    border-radius: 2px;
-}
-
 .classtypes
 {
-    display: block;
     width: 10rem;
     padding: 15px;
     background-color: whitesmoke;
     font-size: 15px;
+    font-family: 'Muli';
+}
+
+.proceedbtn{
+    font-size: 15px;
+    text-decoration: none;
+    background-color: #ec2a2b;
+    padding: 15px;
+    font-family: 'Roboto';
+    color: snow;
+    border: none;
+    border-radius: 3px;
+    transition: .4s;
+    cursor: pointer;
+}
+
+.proceedbtn:hover{
+    background-color: #be2b2b;
+}
+
+/* END OF HOME PAGE */
+
+/* CLASS 1 FORM PAGE */
+
+.mainclass1{
+    width: 100%;
+    height: 100vh;
+    background-color: #1f4498;
+}
+
+.maincontent_form{
+    padding: 0 6rem 4rem;
+}
+
+.formfield{
+    padding: 2.5rem 3rem;
+    height: 380px;
+    color: #1f4498;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.formstyle{
+    text-align: left;
+    font-size: 15px;
+    font-family: "Roboto";
+}
+
+input[type=text], input[type=date]{
+    width: 40%;
+    padding: 8px 15px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+label{
+    padding-right: 3rem;
+    font-family: "Montserrat";
+}
+
+label[for="birthday"]{
+    padding-right: 48px;
+}
+
+label[for="birthplace"]{
+    padding-right: 43px;
+}
+
+label[for="gender"]{
+    padding-right: 2rem;
+    padding-left: 100px;
+}
+
+label[for="gender1"]{
+    padding-right: 0;
+    padding-left: 0px;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-family: "Montserrat";
+    opacity: 75%;
+    font-size: 12px;
+}
+
+.submitform{
+    font-size: 15px;
+    text-decoration: none;
+    background-color: #ec2a2b;
+    padding: 10px 35px;
+    font-family: 'Muli';
+    color: snow;
+    border: none;
+    border-radius: 2px;
+    transition: .4s;
+    cursor: pointer;
+}
+
+.submitform:hover{
+    background-color: #be2b2b;
+}
+
+#birthday{
+    width: 20%;
+}
+
+#fname, #lname{
+    width: 35%;
+}
+
+#minitial{
+    width: 10%;
+}
+
+#address, #birthplace{
+    width: 81%;
+}
+
+.civilstatus
+{
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 20%;
+    padding: 8px;
+    background-color: whitesmoke;
+    font-size: 13px;
     font-family: 'Muli';
 }
