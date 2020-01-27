@@ -12,7 +12,7 @@
     </head>
 
     <body>
-        <div class="mainclass1">
+        <div class="mainclassab">
             <div class="container">
                 <div class="navbar">
                     <div class="logo-pic"><img src="img/Clogo.png" height="25px" width="25px"></div>
@@ -27,9 +27,9 @@
             </div>
             </div>
             <div class="maincontent_form">
-                <h1>Class A Form:</h1>
-                <h2><i>(Unemployed)</i></h2><br>
-                <div class="formfield">
+                <h1>Class AB Form:</h1>
+                <h2><i>(Employed & Business Owners)</i></h2><br>
+                <div class="formfield_ab">
                     <h2><i>Please fill in your information:</i></h2>
                     <br>
                     <form action="#" class="formstyle">
@@ -40,7 +40,9 @@
                         <label for="address">Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                         <input type="text" id="address" name="address" required>
                         <label for="birthday">Date of Birth</label>
-                        <input type="date" id="birthday" name="birthday" required><br>
+                        <input type="date" id="birthday" name="birthday" required>
+                        <label for="citizenship">Citizenship</label>
+                        <input type="text" id="citizenship" name="citizenship" required><br>
                         <label for="birthplace">Place of Birth</label>
                         <input type="text" id="birthplace" name="birthplace" required>
                         <label for="civilstatus">Civil Status</label>
@@ -56,8 +58,36 @@
                         <input type="radio" name="gender" value="male"> 
                             <label for="gender1">Male&nbsp;&nbsp;&nbsp;</label>
                         <input type="radio" name="gender" value="female"> 
-                            <label for="gender1">Female</label><br><br><br>
-                        <div style="text-align: center;"><input type="submit" class="submitform" value="SUBMIT FORM"></div>
+                            <label for="gender1">Female</label><br>
+                        <label for="profession">Profession/Occupation Business</label>
+                        <input type="text" id="profession" name="profession" required>
+                        <label for="taxaccnum">Taxpayer's Account Number</label>
+                        <input type="text" id="taxaccnum" name="taxaccnum" required><br>
+                        <label for="acrnum">ACR Number <i>(if Alien)</i></label>
+                        <input type="text" id="acrnum" name="acrnum" required><br>
+                        <label for="height">Height</label>
+                        <input type="text" id="height" name="height" required placeholder="in centimeter">
+                        <label for="weight">Weight</i></label>
+                        <input type="text" id="weight" name="weight" required placeholder="in kilograms">
+                       
+                        <br><br><br><hr>
+
+                        <p>
+                            ADDITIONAL RESIDENCE TAX on the following items owned or earned
+                            in the Philippines.<br><i>(Tax not exceeding P5,000.00)</i>
+                        </p>
+                        <label for="incomerp"><b>1.</b>&nbsp;Income from Real Property.</label><br>
+                        <input type="text" id="incomerp" name="incomerp" required placeholder="(P1.00 for every P1,000.00)"><br>
+                        <label for="grossrec"><b>2.</b>&nbsp;Gross Receipts or Earnings derived from business during the preceding year.</label>
+                        <input type="text" id="grossrec" name="grossrec" required placeholder="(P1.00 for every P1,000.00)"><br>
+                        <label for="salgrossrec"><b>3.</b>&nbsp;Salaries or Gross Receipts or Earnings derived from exercise of profession or pursuit of any occupation.</label>
+                        <input type="text" id="salgrossrec" name="salgrossrec" required placeholder="(P1.00 for every P1,000.00)"><br>
+
+                        <br><br><br>
+                        <div style="text-align: center;">
+                            <input type="submit" class="submitform" value="SUBMIT FORM">
+                        </div>
+                        
                     </form>
                 </div>
             </div>

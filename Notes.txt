@@ -1,0 +1,29 @@
+
+Attribute	Description
+checked	Specifies that an input field should be pre-selected when the page loads (for 	type="checkbox" or type="radio")
+disabled	Specifies that an input field should be disabled
+max	Specifies the maximum value for an input field
+maxlength	Specifies the maximum number of character for an input field
+min	Specifies the minimum value for an input field
+pattern	Specifies a regular expression to check the input value against
+readonly	Specifies that an input field is read only (cannot be changed)
+required	Specifies that an input field is required (must be filled out)
+size	Specifies the width (in characters) of an input field
+step	Specifies the legal number intervals for an input field
+value	Specifies the default value for an input field
+
+::-webkit-datetime-edit
+::-webkit-datetime-edit-fields-wrapper
+::-webkit-datetime-edit-text
+::-webkit-datetime-edit-month-field
+::-webkit-datetime-edit-day-field
+::-webkit-datetime-edit-year-field
+::-webkit-inner-spin-button
+::-webkit-calendar-picker-indicator
+
+<select id="selectbox" name="" onchange="javascript:location.href = this.value;">
+    <option value="https://www.yahoo.com/" selected>Option1</option>
+    <option value="https://www.google.co.in/">Option2</option>
+    <option value="https://www.gmail.com/">Option3</option>
+
+</select>
