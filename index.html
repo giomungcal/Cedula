@@ -36,9 +36,9 @@
                     </div>
                     <br><br>
                     <div class="dropdown">
-                        <form action="">
-                            <select class="classtypes" name="classtypes">
-                                <option value="select">Select:</option>
+                        <form id="chooseclasstype" method="POST">
+                            <select id="classtypelist" class="classtypes" name="classtypes" onchange="selectClassType()">
+                                <option value="select">Please select a class.</option>
                                 <option value="classa">Class A</option>
                                 <option value="classab">Class AB</option>
                                 <option value="classc">Class C</option>
@@ -50,9 +50,6 @@
                 </div>
             </div>
         </div>
-        <script src="#">
-            // <!-- tinanggal ko muna hehe -->
-            // <!-- JavaScript is here -->
-        </script>
+        <script src="script.js"></script>
     </body>
 </html>
