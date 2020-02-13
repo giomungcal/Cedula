@@ -1,3 +1,0 @@
-<?php
-   // just chillin
-?>
