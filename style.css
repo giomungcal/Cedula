@@ -256,8 +256,8 @@ label[for="gender1"]{
     font-family: 'Muli';
 }
 
-/* CLASS AB Addtl Information */
-/* 
+/* \CLASS AB Addtl Information */
+
 .mainclassab{
     width: 100%;
     height: 100vh;
@@ -315,10 +315,11 @@ label[for="weight"]{
 
 label[for="height"]{
     padding-right: 4.5rem;
+<<<<<<< HEAD:style.css
 }
 
 /* CLASS C Addtl Information */
-/* 
+
 .mainclassc{
     width: 100%;
     height: 100vh;
@@ -369,7 +370,7 @@ label[for="grossearn"]{
 }
 
 /* Admin Login */
-/* 
+
 .main_login{
     width: 100%;
     height: 100vh;
@@ -421,6 +422,6 @@ label[for="grossearn"]{
 }
 
 .submitlogin:hover{
-    /* color: #1f4498; */
-    /* background-color: #567fdd; */ */ */
-} */
+    color: #1f4498;
+    background-color: #567fdd;
+} 
