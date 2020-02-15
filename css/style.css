@@ -351,76 +351,16 @@ label[for="height"]{
 label[for="placeofreg"]{
     padding-right: 55px;
 }
-
 label[for="natureofbusiness"]{
     padding-right: 60px;
 }
-
 label[for="nbsptin"]{
     padding-right: 136px;
 }
-
 label[for="grossearn"]{
     padding-right: 74px;
 }
 
 #placeofreg, #natureofbusiness, #nbsptin{
     width: 50%;
-}
-
-/* Admin Login */
-
-.main_login{
-    width: 100%;
-    height: 100vh;
-    background-color: #1f4498;
-}
-
-#username, #password{
-    width: 65%;
-    padding: 13px 17px;
-    margin: 1rem 1rem 0rem 4rem;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-#username{
-    margin-top: 3rem;
-}
-
-#password{
-    margin-bottom: 1rem;
-}
-
-.logincontainer{
-    padding: 4rem 18rem;
-}
-
-.loginform{
-    background-color: white;
-    border-radius: 10px;
-}
-
-.submitlogin{
-    width: 65%;
-    font-size: 15px;
-    text-decoration: none;
-    background-color: #1f4498;
-    padding: 10px 15px;
-    font-family: 'Montserrat';
-    color: rgb(255, 255, 255);
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    transition: .4s;
-    cursor: pointer;
-    margin-bottom: 3rem;
-    margin-right: 12px;
-}
-
-.submitlogin:hover{
-    /* color: #1f4498; */
-    background-color: #567fdd;
 }
