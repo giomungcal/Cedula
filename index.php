@@ -1,3 +1,10 @@
+<?php
+    include('login.php');
+
+    if (isset($_SESSION['login_user']))
+        header('location: home.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -16,13 +23,15 @@
                 <div class="logo-pic" style="text-align: center;"><img src="img/Clogo.png" height="60px" width="60px"></div>
                 <!-- <h2 style="text-align: center;">Administrator Login</h2><br> --><br><br>
                 <div class="loginform">
-                    <form id="login">
+                    <form id="login" action="" method="post">
                         <input type="text" id="username" name="username" required placeholder="Username"><br>
-                        <input type="password" id="password" name="password" required placeholder="Password">
-                        <div style="text-align: center;"><input type="submit" class="submitlogin" value="Login"></div>
+                        <input type="password" id="password" name="password" required placeholder="Password"><br>
+                        <div style="text-align: center;"><input type="submit" id="submit" name ="submit" class="submitlogin" value="Login"></div>
                     </form>
                 </div>
+                <span><?php echo $error; ?></span> 
             </div>
-        </div>        
+        </div>     
+  
     </body>
 </html>

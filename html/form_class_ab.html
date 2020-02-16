@@ -1,3 +1,10 @@
+<?php
+    include ('session.php');
+
+    if(!isset($_SESSION['login_user']))
+        header("location: index.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -16,7 +23,7 @@
             <div class="container">
                 <div class="navbar">
                     <div class="logo-pic"><img src="img/Clogo.png" height="25px" width="25px"></div>
-                    <div class="logo"><a href="index.html"><i>manila</i>&nbsp;<b>cedula</b></a></div>
+                    <div class="logo"><a href="index.php"><i>manila</i>&nbsp;<b>cedula</b></a></div>
                 <div class="menu">
                     <ul>
                         <li id="btn1"><a class="btn" href=""><b>How&nbsp;to&nbsp;Use</b></a></li>
