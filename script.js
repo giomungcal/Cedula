@@ -7,7 +7,7 @@ function selectClassType()
     else if (selectedClassType == "classab")
         nextPage = "form_class_ab.php";
     else if (selectedClassType == "classc")
-        nextPage = "form_class_c.html";
+        nextPage = "form_class_c.php";
     else if (selectedClassType == "select")
         nextPage = "#";
 
