@@ -26,7 +26,9 @@
                 <div class="menu">
                     <ul>
                         <li id="btn1"><a class="btn" href=""><b>How&nbsp;to&nbsp;Use</b></a></li>
-                        <!-- <li><a class="btn" href=""><b>Procedure</b></a></li> --> <!-- Thinking this might just be similar to "How to Use" (?) -H -->
+                        <!-- <li><a class="btn" href=""><b>Procedure</b></a></li> -->
+                        <!-- I just set this as comment in order to include "Settings" option. I know this ("Procedure" option) is important.
+                        Maybe you could place all five options without affecting the overall design of the panel. -H -->
                         <li><a class="btn" href=""><b>About</b></a></li>
                         <li><a class="btn" href=""><b>Settings</b></a></li> <!-- Change password feature. Yay or  nay? -H-->
                         <li><a class="btn" href="logout.php"><b>Logout (<?php echo $login_session; ?>)</b></a></li>
@@ -45,7 +47,7 @@
                 <div class="formfield_a">
                     <h2><i>Please fill in your information:</i></h2>
                     <br>
-                    <form action="classainsert.php" method="post" class="formstyle">
+                    <form action="testreport.php" method="post" class="formstyle">
                         <label for="fname">Full Name&nbsp;&nbsp;</label>
                         <input type="text" id="fname" name="fname" required placeholder="First Name">
                         <input type="text" id="minitial" name="minitial" placeholder="M.I.">

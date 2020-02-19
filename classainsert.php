@@ -24,7 +24,9 @@
     $sql = "INSERT INTO classa (firstName, middle, lastName, homeAddress, dateOfBirth, placeOfBirth, civilStatus, gender) VALUES ('$firstName', '$middle', '$lastName', '$homeAddress', '$dateOfBirth', '$placeOfBirth', '$civilStatus', '$gender')";
 
     if (mysqli_query($con, $sql))
+    {
         echo 'Data inserted successfully.';
+    }
     else
         echo 'Data not inserted successfully.';
 ?>

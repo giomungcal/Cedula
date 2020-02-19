@@ -33,8 +33,8 @@
     $sql = "INSERT INTO classab (firstName, middle, lastName, homeAddress, dateOfBirth, citizenship, placeOfBirth, civilStatus,
     gender, profession, taxAccountNo, ACRNo, heightCentimeters, weightKilograms, realPropertyIncome, grossReceiptsFromBusiness,
     salariesFromProfession) VALUES ('$firstName', '$middle', '$lastName', '$homeAddress', '$dateOfBirth', '$citizenship',
-    '$placeOfBirth', '$civilStatus', '$gender', '$profession', '$taxAccountNo', '$acrNo', '$height', '$weight', '$incomeFromRealProp', '$grossReceiptsFromBix',
-    '$salariesFromProfession')";
+    '$placeOfBirth', '$civilStatus', '$gender', '$profession', '$taxAccountNo', '$acrNo', '$height', '$weight', '$incomeFromRealProp',
+    '$grossReceiptsFromBix', '$salariesFromProfession')";
 
     if (mysqli_query($con, $sql))
         echo 'Data inserted successfully.';

@@ -425,3 +425,22 @@ label[for="grossearn"]{
     color: #1f4498;
     background-color: #567fdd;
 } 
+
+.report_classa{
+    padding: 2.5rem 3rem;
+    height: 380px;
+    color: #1f4498;
+    border-radius: 10px;
+    border: steelblue;
+    background-color: white;
+}
+
+.content_report{
+    padding: 0 6rem 4rem;
+}
+
+.mainreport{
+    width: 100%;
+    height: 100vh;
+    background-color: #1f4498;
+}
