@@ -22,19 +22,19 @@
     $civilStatus = $_POST['civilstatus'];
     $gender = $_POST['gender'];
     $profession = $_POST['profession'];
-    $taxaccnum = $_POST['taxaccnum'];
-    $acrnum = $_POST['acrnum'];
+    $taxAccountNo = $_POST['taxaccnum'];
+    $acrNo = $_POST['acrnum'];
     $height = $_POST['height'];
     $weight = $_POST['weight'];
-    $incomerp = $_POST['incomerp'];
-    $grossrec = $_POST['grossrec'];
-    $salgrossrec = $_POST['salgrossrec'];
+    $incomeFromRealProp = $_POST['incomerp'];
+    $grossReceiptsFromBix = $_POST['grossrec'];
+    $salariesFromProfession = $_POST['salgrossrec'];
 
     $sql = "INSERT INTO classab (firstName, middle, lastName, homeAddress, dateOfBirth, citizenship, placeOfBirth, civilStatus,
     gender, profession, taxAccountNo, ACRNo, heightCentimeters, weightKilograms, realPropertyIncome, grossReceiptsFromBusiness,
     salariesFromProfession) VALUES ('$firstName', '$middle', '$lastName', '$homeAddress', '$dateOfBirth', '$citizenship',
-    '$placeOfBirth', '$civilStatus', '$gender', '$profession', '$taxaccnum', '$acrnum', '$height', '$weight', '$incomerp', '$grossrec',
-    '$salgrossrec')";
+    '$placeOfBirth', '$civilStatus', '$gender', '$profession', '$taxAccountNo', '$acrNo', '$height', '$weight', '$incomeFromRealProp', '$grossReceiptsFromBix',
+    '$salariesFromProfession')";
 
     if (mysqli_query($con, $sql))
         echo 'Data inserted successfully.';

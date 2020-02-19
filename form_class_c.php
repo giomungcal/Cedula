@@ -45,7 +45,7 @@
                 <h2><i>(Corporation)</i></h2><br>
                 <div class="formfield_c">
                     <h2><i>Please fill in your information:</i></h2><br>
-                    <form action="#" class="formstyle">
+                    <form action="classcinsert.php" class="formstyle" method="POST">
                         <label for="fname">President/ Authorized Representative&nbsp;&nbsp;</label><br>
                         <input type="text" id="fname" name="fname" required placeholder="First Name">
                         <input type="text" id="minitial" name="minitial" required placeholder="M.I.">
