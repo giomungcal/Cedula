@@ -27,7 +27,7 @@
                     <div class="menu">
                         <ul>
                             <li id="btn1"><a class="btn" href=""><b>How&nbsp;to&nbsp;Use</b></a></li>
-                            <!-- <li><a class="btn" href=""><b>Procedure</b></a></li> --> <!-- Thinking this might just be similar to "How to Use" (?) -H -->
+                            <!-- <li><a class="btn" href=""><b>Procedure</b></a></li> -->
                             <li><a class="btn" href=""><b>About</b></a></li>
                             <li><a class="btn" href=""><b>Settings</b></a></li> <!-- Change password feature. Yay or  nay? -H-->
                             <li><a class="btn" href="logout.php"><b>Logout (<?php echo $login_session; ?>)</b></a></li>

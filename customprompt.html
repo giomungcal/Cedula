@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Prompt</title>
+    <style type="text/css">
+        body{
+            font-family:"Arial";
+        }
+        .dialog{
+            position: absolute;
+            left: 50%;
+            top: -30%;
+            transform: translateX(-50%) translateY(-50%);
+            width: 400px;
+            background: #fff;
+            padding: 10px;
+            border: 2px solid #ddd;
+            box-shadow: 1px 1px 5px 1px #ccc;
+            border-radius: 10px;
+            opacity: 0;
+            transition: all 0.3s linear 0s;
+            z-index: 2;
+        }
+        .dlg-header{
+            padding: 10px;
+            line-height: 30px;
+            background: #575757;
+            color: #f6f7f8;
+        }
+        .dlg-body{
+            padding: 10px;
+            line-height: 30px;
+        }
+        .dlg-input-el{
+            border: none;
+            outline: none;
+            border: 1px solid #ddd;
+            width: 375px;
+            height: 30px;
+            font-size: 20px;
+        }
+        .dlg-input-el:focus{
+            box-shadow: inset 0 0 10px 3px #f6f6f6;
+        }
+        .dlg-footer{
+            text-align: center;
+            background: #f5f5f2;
+            padding: 3px 0;
+        }
+        a{
+            display:inline-block;
+            width: 100px;
+            padding: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background: #eee;
+            cursor: pointer;
+            vertical-align:middle;
+            box-shadow: 2px 2px 4px 0px #ccc;
+        }
+        a:active{
+            box-shadow: inset 2px 2px 4px 0px #ccc;
+            color: #666;
+        }
+        .freeze-layer{
+            position: fixed;
+            top: 0;
+            left:0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0,0,0,0.1);
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="freezeLayer" class="freeze-layer" style="display:none;"></div>
+    <button onclick="validateNumber(prompt('Enter any number'));">Default Prompt</button>
+    <button onclick="CustomPrompt.show('Enter any number', validateNumber);">Custom Prompt</button>
+    <div id="result"></div>
+    <div id="dialogCont">
+        <div class="dlg-header">
+            <span id="dlgHeader">Custom Prompt</span>
+        </div>
+        <div class="dlg-body">
+            <div id="dlgMessage">Enter your password.</div>
+            <input id="dialogInputEl" type="text" class="dlg-input-el"/>
+        </div>
+        <div class="dlg-footer">
+            <a onclick="">Submit</a>
+            <a onclick="">Cancel</a>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function validateNumber(number) {
+            var msg = '';
+            if(number!=null){
+                if(isNaN(number)){
+                    msg = 'The input is not a valid number.';
+                }
+                else {
+                    msg=(number%2==0) ? "Even" : "Odd";
+                }
+            }
+            else{
+                msg="You cancelled the action.";
+            }
+            document.getElementById('result').textContent = msg;
+        }
+
+        var CustomPrompt = new function(){
+            this.dialogInputEl = document.getElementById('dialogInputEl');
+
+            this.show = function(msg, callback){
+                var dlg = document.getElementById('dialogCont');
+                dlg.style.top = '30%';
+                dlg.style.opacity = 1;
+                var dlgMessage = dlg.querySelector('d#lgMessage');
+                dlgMessage.textContent = msg;
+                dialogInputEl.focus();
+                this.callback = callback();
+            };
+        }
+
+    </script>
+</body>
+</html>
