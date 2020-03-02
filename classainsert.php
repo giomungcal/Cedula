@@ -25,7 +25,7 @@
 
     if (mysqli_query($con, $sql))
     {
-        echo 'Data inserted successfully.';
+        echo 'Data inserted successfully';
     }
     else
         echo 'Data not inserted successfully.';

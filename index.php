@@ -30,6 +30,7 @@
                     </form>
                 </div>
                 <span><?php echo $error; ?></span> 
+                <p id="res"></p>
             </div>
         </div>     
   
