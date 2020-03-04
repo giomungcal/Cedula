@@ -56,6 +56,12 @@ html
     text-decoration: none;
 }
 
+.logo > a:focus
+{
+    background-color:transparent;  
+    color: #1f4498;
+}
+
 .logo-pic
 {
     padding: 10px;
@@ -65,7 +71,7 @@ html
 {
     flex: 1;
     color: white;
-    font-size: 12px;
+    font-size: 13px;
     padding-top: 13px;
 }
 
@@ -77,7 +83,7 @@ html
 
 #btn1
 {
-    padding-left: 250px;
+    padding-left: 330px;
 }
 
 /* .menu>ul>li>a
@@ -88,7 +94,7 @@ html
 .menu .btn
 {
     background-color: transparent;
-    padding: 10px 35px;
+    padding: 9px 35px 13px;
     color: #1f4498;
     text-decoration: none;
     transition: 0.5s;
@@ -389,10 +395,12 @@ label[for="grossearn"]{
 
 #username{
     margin-top: 3rem;
+    margin-left: 107px;
 }
 
 #password{
     margin-bottom: 1rem;
+    margin-left: 107px;
 }
 
 .logincontainer{
@@ -443,4 +451,52 @@ label[for="grossearn"]{
     width: 100%;
     height: 100vh;
     background-color: #1f4498;
+}
+
+
+/* CLASS A FORM REPORT */
+
+.menu_report_a{
+    padding: 2.5rem 3rem;
+    height: 290px;
+    color: #1f4498;
+    border-radius: 10px;
+    border: steelblue;
+    background-color: white;
+}
+
+.printbtn
+{
+    background-color: #be2b2b;
+    padding: 9px 35px 13px;
+    color: white;
+    text-decoration: none;
+    transition: 0.5s;
+    border-radius: 2px;
+}
+
+.printbtn:hover
+{
+    background-color: #bb1414;
+    color: white;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+.editbtn
+{
+    background-color: #1f4498;
+    padding: 9px 35px 13px;
+    color: white;
+    text-decoration: none;
+    transition: 0.5s;
+    border-radius: 2px;
+}
+
+.editbtn:hover
+{
+    background-color: #375292;
+    color: white;
+    text-decoration: none;
+    border-radius: 2px;
 }
