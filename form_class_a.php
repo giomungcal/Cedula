@@ -60,7 +60,7 @@
                         <input type="text" id="birthplace" name="birthplace" required><br/>
                         <label for="civilstatus">Civil Status</label>
                         <select id="civilstatus" class="civilstatus" name="civilstatus"> 
-                            <option value="select">Select</option>
+                            <option>Select</option>
                             <option value="Single">Single</option>
                             <option value="Married">Married</option>
                             <option value="Divorced">Divorced</option>

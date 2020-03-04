@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -44,24 +45,37 @@
 
     if(!isset($_SESSION['login_user']))
         header("location: index.php");
+=======
+<html>
+<head>
+    <title>Manila City Hall: Cedula</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat|Muli|Roboto&display=swap');
+    </style>
+</head>
+<body>
+    <div class="mainreport">
+        <div class="content_report">
+            <div class="report_classa">
+            <br/><br/><br/>
+            <p align="center">
+                <?php
+                    include ('session.php');
+>>>>>>> 1e3806daeea85acff0a5431ee6fe6ba63cb2818c
 
-    $con = mysqli_connect('127.0.0.1','root','');
+                    if(!isset($_SESSION['login_user']))
+                        header("location: index.php");
 
-    if(!$con)
-        echo 'Not connected to server.';
+                    $con = mysqli_connect('127.0.0.1','root','');
 
-    if (!mysqli_select_db($con,'cedula'))
-        echo 'Database not selected.';
+                    if(!$con)
+                        echo 'Not connected to server.';
 
-    $firstName = $_POST['fname'];
-    $middle = $_POST['minitial'];
-    $lastName = $_POST['lname'];
-    $homeAddress = $_POST['address'];
-    $dateOfBirth = $_POST['birthday'];
-    $placeOfBirth = $_POST['birthplace'];
-    $civilStatus = $_POST['civilstatus'];
-    $gender = $_POST['gender'];
+                    if (!mysqli_select_db($con,'cedula'))
+                        echo 'Database not selected.';
 
+<<<<<<< HEAD
         echo "<h1>Queue Number: </h1>";
         echo "<br><strong>Full Name: </strong>" . $firstName . " " . $middle . " " . $lastName;
         echo "<br/>";
@@ -85,4 +99,43 @@
             </div>
         </div>
     </body>
+=======
+                    $firstName = $_POST['fname'];
+                    $middle = $_POST['minitial'];
+                    $lastName = $_POST['lname'];
+                    $homeAddress = $_POST['address'];
+                    $dateOfBirth = $_POST['birthday'];
+                    $placeOfBirth = $_POST['birthplace'];
+                    $civilStatus = $_POST['civilstatus'];
+                    $gender = $_POST['gender'];
+
+                    echo $firstName . " " . $middle . " " . $lastName;
+                    echo "<br/>";
+                    echo $homeAddress;
+                    echo "<br/>";
+                    echo $dateOfBirth;
+                    echo "<br/>";
+                    echo $placeOfBirth;
+                    echo "<br/>";
+                    echo $civilStatus;
+                    echo "<br/>";
+                    echo $gender;
+                ?>
+                </p>
+                <p id="hidden"></p>
+            </div>
+        </div>
+    </div>
+    <br/><br/><br/>
+    <p align="center">
+    <form action="classainsert.php" method="post"
+    <input type="submit" value="Submit">
+    <!--
+    <button style="cursor: pointer" onclick="classainsert.php" align="center">Confirm and Print</button>
+    -->
+    <button onclick="storedata()">Edit</button>
+    </p>
+    <script src="script.js"></script>
+</body>
+>>>>>>> 1e3806daeea85acff0a5431ee6fe6ba63cb2818c
 </html>
