@@ -9,7 +9,7 @@ function selectClassType()
     else if (selectedClassType == "classc")
         nextPage = "form_class_c.php";
     else if (selectedClassType == "select")
-        nextPage = "#";
+        nextPage = "";
 
     document.querySelector("#chooseclasstype").setAttribute("action", nextPage);
 }

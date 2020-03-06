@@ -1,0 +1,14 @@
+*GENERATE QUEUEING NUMBER
+*GENERATE/PRINT PDF
+*TYPE PASSWORD BEFORE LOGGING OUT
+*ADMIN LOGIN
+*password case insensitive
+*"Select" option accepted
+*code optimization
+*Class AB acr no.
+*See comments I made
+*Class AB
+----------------------------
+| PHP  |                   |
+---------------------------
+*If tax exceeds 5000 enable/disable

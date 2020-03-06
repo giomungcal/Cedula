@@ -45,7 +45,7 @@
                 <h2><i>(Corporation)</i></h2><br>
                 <div class="formfield_c">
                     <h2><i>Please fill in your information:</i></h2><br>
-                    <form action="classcinsert.php" class="formstyle" method="POST">
+                    <form onsubmit="return confirm('Are you sure you want to submit?\nYour data will now be uploaded to the database.')" action="report_class_c.php" method="post" class="formstyle">
                         <label for="fname">President/ Authorized Representative&nbsp;&nbsp;</label><br>
                         <input type="text" id="fname" name="fname" required placeholder="First Name">
                         <input type="text" id="minitial" name="minitial" required placeholder="M.I.">
@@ -70,6 +70,7 @@
                         <br><br><br>
                         <div style="text-align: center;">
                             <input type="submit" class="submitform" value="SUBMIT FORM">
+                            <p align=center>NOTE: Please double check your input data before submitting.<br/></p>
                         </div>
                         
                     </form>

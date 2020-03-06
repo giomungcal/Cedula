@@ -46,7 +46,7 @@
                 <div class="formfield_ab">
                     <h2><i>Please fill in your information:</i></h2>
                     <br>
-                    <form action="classabinsert.php" method="post" class="formstyle">
+                    <form onsubmit="return confirm('Are you sure you want to submit?\nYour data will now be uploaded to the database.')" action="report_class_ab.php" method="post" class="formstyle">
                         <label for="fname">Full Name&nbsp;&nbsp;</label>
                         <input type="text" id="fname" name="fname" required placeholder="First Name">
                         <input type="text" id="minitial" name="minitial" required placeholder="M.I.">
@@ -83,7 +83,7 @@
                         <input type="text" id="taxaccnum" name="taxaccnum" required><br>
                         <label for="acrnum">ACR Number <i>(if Alien)</i></label>
                         <input type="text" id="acrnum" name="acrnum"><br>
-                        <!-- Temporarily disabled and removed the required attribute for acrnum. Assuming for now that all Class AB applicants are Filipinos. -->
+                        <!-- Temporarily removed the required attribute for acrnum. Assuming for now that all Class AB applicants are Filipinos. -->
                         <label for="height">Height</label>
                         <input type="text" id="height" name="height" required placeholder="in centimeter">
                         <label for="weight">Weight</i></label>
@@ -109,6 +109,7 @@
                         <br><br><br>
                         <div style="text-align: center;">
                             <input type="submit" class="submitform" value="SUBMIT FORM">
+                            <p align=center>NOTE: Please double check your input data before submitting.<br/></p>
                         </div>
                     </form>
                 </div>

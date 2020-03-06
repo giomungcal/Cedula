@@ -34,8 +34,6 @@
                         <li><a class="btn" href="logout.php"><b>Logout</b></a></li>
                         <!--
                         <li id="btn1"><a class="btn" href=""><b>How&nbsp;to&nbsp;Use</b></a></li>
-                        <li><a class="btn" href=""><b>Procedure</b></a></li>
-                        <li><a class="btn" href=""><b>About</b></a></li>
                         -->
                     </ul>
                 </div>
@@ -47,8 +45,7 @@
                 <div class="formfield_a">
                     <h2><i>Please fill in your information:</i></h2>
                     <br>
-                    <!-- action="testreport1.php" method="post" -->
-                    <form onsubmit="confirm('Are you sure you want to submit? Your data will be stored to the database.')" action="testreport1.php" method="post" class="formstyle">
+                    <form onsubmit="return confirm('Are you sure you want to submit?\nYour data will now be uploaded to the database.')" action="report_class_a.php" method="post" class="formstyle">
                         <label for="fname">Full Name&nbsp;&nbsp;</label>
                         <input type="text" id="fname" name="fname" required placeholder="First Name">
                         <input type="text" id="minitial" name="minitial" placeholder="M.I.">
@@ -60,7 +57,7 @@
                         <label for="birthplace">Place of Birth</label>
                         <input type="text" id="birthplace" name="birthplace" required><br/>
                         <label for="civilstatus">Civil Status</label>
-                        <select id="civilstatus" class="civilstatus" name="civilstatus"> 
+                        <select id="civilstatus" class="civilstatus" name="civilstatus">
                             <option>Select</option>
                             <option value="Single">Single</option>
                             <option value="Married">Married</option>
@@ -73,11 +70,15 @@
                             <label for="gender1">Male&nbsp;&nbsp;&nbsp;</label>
                         <input type="radio" name="gender" value="Female"> 
                             <label for="gender1">Female</label><br><br><br>
-                        <div style="text-align: center;"><input type="submit" class="submitform" value="SUBMIT FORM"></div>
+                        <div style="text-align: center;">
+                        <input type="submit" class="submitform" value="SUBMIT FORM">
+                        <br/>
+                        <p align=center>NOTE: Please double check your input data before submitting.<br/></p>
+                        
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
-        <script src="script.js"></script>
     </body>
 </html>
