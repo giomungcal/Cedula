@@ -26,13 +26,12 @@
                     <form id="login" action="" method="post">
                         <input type="text" id="username" name="username" required placeholder="Username"><br>
                         <input type="password" id="password" name="password" required placeholder="Password"><br>
-                        <div style="text-align: center;"><input type="submit" id="submit" name ="submit" class="submitlogin" value="Login"></div>
+                        <div style="text-align: center;"><input type="submit" id="submit" name ="submit" class="submitlogin" value="Log In"></div>
                     </form>
                 </div>
-                <span><?php echo $error; ?></span> 
+                <span align="center"><?php echo $error; ?></span> 
                 <p id="res"></p>
             </div>
-        </div>     
-  
+        </div>
     </body>
 </html>
