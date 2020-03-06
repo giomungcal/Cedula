@@ -45,11 +45,7 @@
                         <h1>Class A: Form Summary</h1>
                         <!-- <h2><i>(Unemployed)</i></h2><br> -->
                         <br>
-                        <div class="menu_report_a">
-                            <div class="mainreport">
-                                <div class="content_report">
-                                    <div class="report_classa">
-                                    <br/><br/><br/>
+                                    <div class="menu_report_a">
                                     <p align="center">
                                     <?php
                                         $con = mysqli_connect('127.0.0.1','root','');
@@ -69,29 +65,35 @@
                                         $civilStatus = $_POST['civilstatus'];
                                         $gender = $_POST['gender'];
 
-                                        echo "<h1>Queue Number: </h1>";
-                                        echo "<br><strong>Full Name: </strong>" . $firstName . " " . $middle . " " . $lastName;
-                                        echo "<br/>";
-                                        echo "<strong>Home Address: </strong>" . $homeAddress;
-                                        echo "<br/>";
-                                        echo "<strong>Date of Birth: </strong>" . $dateOfBirth;
-                                        echo "<br/>";
-                                        echo "<strong>Place of Birth: </strong>" . $placeOfBirth;
-                                        echo "<br/>";
-                                        echo "<strong>Civil Status: </strong>" . $civilStatus;
-                                        echo "<br/>";
-                                        echo "<strong>Gender: </strong>" . $gender;
+                                        $sql = "INSERT INTO classa (firstName, middle, lastName, homeAddress, dateOfBirth, placeOfBirth,
+                                        civilStatus, gender) VALUES ('$firstName', '$middle', '$lastName', '$homeAddress', '$dateOfBirth',
+                                        '$placeOfBirth', '$civilStatus', '$gender')";
+
+                                        if (mysqli_query($con, $sql))
+                                        {
+                                            echo "<h1>Queue Number: </h1>";
+                                            echo "<br><strong>Full Name: </strong>" . $firstName . " " . $middle . " " . $lastName;
+                                            echo "<br/>";
+                                            echo "<strong>Home Address: </strong>" . $homeAddress;
+                                            echo "<br/>";
+                                            echo "<strong>Date of Birth: </strong>" . $dateOfBirth;
+                                            echo "<br/>";
+                                            echo "<strong>Place of Birth: </strong>" . $placeOfBirth;
+                                            echo "<br/>";
+                                            echo "<strong>Civil Status: </strong>" . $civilStatus;
+                                            echo "<br/>";
+                                            echo "<strong>Gender: </strong>" . $gender;
+                                        }
+                                        else
+                                            echo "Your data was unsuccessfully uploaded to the database.";
+
                                     ?>
                                     </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br><br>
-                        <p align="center">
+                            <p align="center">
                             <br><a class="editbtn" style="cursor: pointer" href="form_class_a.php" align="center">Confirm</a>
                             <a class="printbtn" target="blank" style="cursor: pointer" onclick="window.print();" align="center">Print</a>
                         </p>
+                        </div><br> 
                     </div>
                 </div>
             </div>

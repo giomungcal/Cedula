@@ -48,7 +48,7 @@
                     <h2><i>Please fill in your information:</i></h2>
                     <br>
                     <!-- action="testreport1.php" method="post" -->
-                    <form action="testreport1.php" onsubmit="confirm('Are you sure?');" method="post" class="formstyle">
+                    <form onsubmit="confirm('Are you sure you want to submit? Your data will be stored to the database.')" action="testreport1.php" method="post" class="formstyle">
                         <label for="fname">Full Name&nbsp;&nbsp;</label>
                         <input type="text" id="fname" name="fname" required placeholder="First Name">
                         <input type="text" id="minitial" name="minitial" placeholder="M.I.">
