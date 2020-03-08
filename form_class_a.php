@@ -1,8 +1,12 @@
 <?php
-    include ('session.php');
+    include 'session.php';
+
+    $_SESSION['currentPage'] = 'form_class_a';
 
     if(!isset($_SESSION['login_user']))
         header("location: index.php");
+    if($_SESSION['login_user'] == 'admin')
+        header("location: admin_class_a.php");
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +26,7 @@
             <div class="container">
                 <div class="navbar">
                     <div class="logo-pic"><img src="img/Clogo.png" height="25px" width="25px"></div>
-                    <div class="logo"><a href="index.php"><i>manila</i>&nbsp;<b>cedula</b></a></div>
+                    <div class="logo"><a href="home.php"><i>manila</i>&nbsp;<b>cedula</b></a></div>
                 <div class="menu">
                     <ul>
                         <li id="btn1"><a class="btn" href=""><b>How&nbsp;to&nbsp;Use</b></a></li>
@@ -58,7 +62,7 @@
                         <input type="text" id="birthplace" name="birthplace" required><br/>
                         <label for="civilstatus">Civil Status</label>
                         <select id="civilstatus" class="civilstatus" name="civilstatus">
-                            <option>Select</option>
+                            <option selected disabled>Select</option>
                             <option value="Single">Single</option>
                             <option value="Married">Married</option>
                             <option value="Divorced">Divorced</option>

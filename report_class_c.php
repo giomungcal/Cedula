@@ -1,10 +1,11 @@
 <?php
-    include ('session.php');
+    include 'session.php';
 
     if(!isset($_SESSION['login_user']))
         header("location: index.php");
+    if($_SESSION['login_user'] == "admin")
+        header("location: admin_class_a.php");
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +24,7 @@
             <div class="container">
                 <div class="navbar">
                     <div class="logo-pic"><img src="img/Clogo.png" height="25px" width="25px"></div>
-                        <div class="logo"><a href="index.php"><i>manila</i>&nbsp;<b>cedula</b></a></div>
+                        <div class="logo"><a href="home.php"><i>manila</i>&nbsp;<b>cedula</b></a></div>
                             <div class="menu">
                             <ul>
                                 <li id="btn1"><a class="btn" href="#"><b>How&nbsp;to&nbsp;Use</b></a></li>
@@ -49,13 +50,19 @@
                                     <div class="menu_report_a">
                                     <p align="center">
                                     <?php
-                                        $con = mysqli_connect('127.0.0.1','root','');
-
-                                        if(!$con)
-                                            echo 'Not connected to server.';
-                                        if (!mysqli_select_db($con,'cedula'))
-                                            echo 'Database not selected.';
-
+                                        if (!isset($_POST['fname']))
+                                        {
+                                            if ($_SESSION['currentPage'] == 'home')
+                                                header("location: home.php");
+                                            else if ($_SESSION['currentPage'] == 'form_class_a')
+                                                header("location: form_class_a.php");
+                                            else if ($_SESSION['currentPage'] == 'form_class_ab')
+                                                header("location: form_class_ab.php");
+                                            else if ($_SESSION['currentPage'] == 'form_class_c')
+                                                header("location: form_class_c.php");
+                                        }
+                                        else
+                                        {
                                             $firstName = $_POST['fname'];
                                             $middle = $_POST['minitial'];
                                             $lastName = $_POST['lname'];
@@ -69,6 +76,13 @@
                                             $grossEarningsFromBix = $_POST['grossearn'];
                                             date_default_timezone_set("Asia/Brunei");
                                             $dateAndTime = date("Y-m-d H:i:s");
+                                            
+                                            $con = mysqli_connect('127.0.0.1','root','');
+
+                                            if(!$con)
+                                                echo 'Not connected to server.';
+                                            if (!mysqli_select_db($con,'cedula'))
+                                                echo 'Database not selected.';
 
                                             $sql = "INSERT INTO classc (firstName, middle, lastName, corporation, addressOfCorporation, dateOfRegistration, placeOfRegistration,
                                             natureOfBusiness, nbspTIN, assessedRealProperty, grossEarnings, dateAndTimeProcessed) VALUES ('$firstName', '$middle', '$lastName', '$corporation',
@@ -98,6 +112,7 @@
                                             echo "<strong>Date and time processed: </strong>" . $dateAndTime;                                        }
                                         else
                                             echo "Your data was unsuccessfully uploaded to the database. Please reach out our staff regarding this matter.";
+                                        }
                                     ?>
                                     </p>
                             <p align="center">

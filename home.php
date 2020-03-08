@@ -1,8 +1,11 @@
 <?php
-    include ('session.php');
+    include 'session.php';
+    $_SESSION['currentPage'] = 'home';
 
     if(!isset($_SESSION['login_user']))
         header("location: index.php");
+    if($_SESSION['login_user'] == 'admin')
+        header("location: admin_class_a.php");
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +20,6 @@
             @import url('https://fonts.googleapis.com/css?family=Montserrat|Muli|Roboto&display=swap');
         </style>
     </head>
-
     <body>
         <div class="main">
             <div class="container">
@@ -38,16 +40,16 @@
             <div class="main-content">
                 <div class="main-text">
                     <h1>Manila City Hall</h1>
-                    <h2>community tax certificate</h2>
+                    <h2>Community Tax Certificate</h2>
                     <br>
                     <div class="description">
                         Choose your class type on the dropdown below.
                     </div>
                     <br><br>
                     <div class="dropdown">
-                        <form id="chooseclasstype" method="POST">
+                        <form id="chooseclasstype" action="" method="POST">
                             <select id="classtypelist" class="classtypes" name="classtypes" onchange="selectClassType()">
-                                <option value="select">Please select a class.</option>
+                                <option selected disabled>Please select a class.</option>
                                 <option value="classa">Class A</option>
                                 <option value="classab">Class AB</option>
                                 <option value="classc">Class C</option>

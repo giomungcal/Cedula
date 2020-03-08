@@ -1,3 +1,4 @@
-*lakihan yung white box sa report_class_ab
+*lakihan yung white box sa report_class_ab, class_c
+*adjust size ng white boxes para hindi masagwa tingnan
 *modify distance ng note sa submit button
 *ilagay sa baba ng login yung "Invalid username or password". right now nagpepersist ung statement na un kapag nagtype ulit. baka pwedeng mag-appear lang un for 2 seconds. or baka pwedeng alert box na lang instead na ganun

@@ -1,0 +1,106 @@
+<?php
+    include 'session.php';
+
+    if(!isset($_SESSION['login_user']))
+        header("location: index.php");
+    if($_SESSION['login_user'] == "user")
+        header("location: home.php");
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meat name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Manila City Hall: Cedula</title>
+        <link rel="stylesheet" href="style.css" />
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Montserrat|Muli|Roboto&display=swap');
+        </style>
+    </head>
+    <body>
+        <div class="mainclassa">
+            <div class="container">
+                <div class="navbar">
+                    <div class="logo-pic"><img src="img/Clogo.png" height="25px" width="25px"></div>
+                    <div class="logo"><a href="admin_classa.php"><i>manila</i>&nbsp;<b>cedula</b>&nbsp;administrator</a></div>
+                <div class="menu">
+                    <ul class="navbar_ul">
+                        <!-- <li id="btn1"><a class="btn" href=""><b>How&nbsp;to&nbsp;Use</b></a></li> -->
+                        <!-- <li><a class="btn" href=""><b>Procedure</b></a></li> -->
+                        <!-- I just set this as comment in order to include "Settings" option. I know this ("Procedure" option) is important.
+                        Maybe you could place all five options without affecting the overall design of the panel. -H -->
+                        <!-- <li><a class="btn" href=""><b>About</b></a></li> -->
+                        <!-- <li><a class="btn" href=""><b>Settings</b></a></li> Change password feature. Yay or  nay? -H -->
+                        <li><a  class="btn" href="logout.php"><b>Logout</b></a></li>
+                        <!--
+                        <li id="btn1"><a class="btn" href=""><b>How&nbsp;to&nbsp;Use</b></a></li>
+                        <li><a class="btn" href=""><b>Procedure</b></a></li>
+                        <li><a class="btn" href=""><b>About</b></a></li>
+                        -->
+                    </ul>
+                </div>
+            </div>
+            </div>
+            <div class="maincontent_form">
+                <h1>Class A: Unemployed </h1>
+                <label for="birthday"><b>Date:</b></label>
+                <!-- Eto yung pagshow ng entries depende sa date? -->
+                <input type="date" id="birthday" name="birthday" required><br/><br>
+                <div class="table_container">
+                    <div class="table_classa">
+                        <table style="width: 100%;">
+                            <thead>
+                              <tr>
+                                <th><a href="">Date</a></th>
+                                <th>Time</th>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <td>Link</td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>June 02, 2020</td>
+                                <td>9:02 AM</td>
+                                <td>Giovanni Rovelli</td>
+                                <td>Germany</td>
+                                <th><a href="">Open</a></th>
+                              </tr>
+                              <tr>
+                                <td>June 02, 2020</td>
+                                <td>9:02 AM</td>
+                                <td>Giovanni Rovelli</td>
+                                <td>Germany</td>
+                                <th><a href="">Open</a></th>
+                              </tr>
+                              <tr>
+                                <td>June 02, 2020</td>
+                                <td>9:02 AM</td>
+                                <td>Giovanni Rovelli</td>
+                                <td>Germany</td>
+                                <th><a href="">Open</a></th>
+                              </tr>
+                              <tr>
+                                <td>June 02, 2020</td>
+                                <td>9:02 AM</td>
+                                <td>Giovanni Rovelli</td>
+                                <td>Germany</td>
+                                <th><a href="">Open</a></th>
+                              </tr>
+                              <tr>
+                                <td>June 02, 2020</td>
+                                <td>9:02 AM</td>
+                                <td>Giovanni Rovelli</td>
+                                <td>Germany</td>
+                                <th><a href="">Open</a></th>
+                              </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,8 +1,13 @@
 <?php
-    include('login.php');
+    include 'login.php';
 
     if (isset($_SESSION['login_user']))
-        header('location: home.php');
+    {
+        if ($_SESSION['login_user'] == "user")
+            header("location: home.php");
+        else if ($_SESSION['login_user'] == "admin")
+            header("location: admin_class_a.php");
+    }
 ?>
 
 <!DOCTYPE html>

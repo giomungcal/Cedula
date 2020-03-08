@@ -4,10 +4,6 @@
 
     if (isset($_POST['submit']))
     {
-        if (empty($_POST['username']) || empty($_POST['password']))
-            $error = "Invalid username or password.";
-        else
-        {
             $username = $_POST['username'];
             $password = $_POST['password'];
 
@@ -23,12 +19,14 @@
             if($stmt->fetch())
             {
                 $_SESSION['login_user'] = $username;
-                header("location: home.php");
+                    if ($username=="user")
+                        header("location: home.php");
+                    else if ($username=="admin")
+                        header("location: admin_class_a.php");
             }
             else
-                $error = 'Invalid username or password.';
-            
+                $error = 'The username or password you entered is invalid.';
+
             mysqli_close($conn);
-        }
     }
 ?>
