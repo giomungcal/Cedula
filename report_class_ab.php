@@ -48,13 +48,6 @@
                                     <div class="menu_report_a">
                                     <p align="center">
                                     <?php
-                                        $con = mysqli_connect('127.0.0.1','root','');
-
-                                        if(!$con)
-                                            echo 'Not connected to server.';
-                                        if (!mysqli_select_db($con,'cedula'))
-                                            echo 'Database not selected.';
-
                                         $firstName = $_POST['fname'];
                                         $middle = $_POST['minitial'];
                                         $lastName = $_POST['lname'];
