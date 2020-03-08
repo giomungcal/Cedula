@@ -72,17 +72,17 @@
                                         $incomeFromRealProp = $_POST['incomerp'];
                                         $grossReceiptsFromBix = $_POST['grossrec'];
                                         $salariesFromProfession = $_POST['salgrossrec'];
-                                    
+                                        date_default_timezone_set("Asia/Brunei");
+                                        $dateAndTime = date("Y-m-d H:i:s");
+
                                         $sql = "INSERT INTO classab (firstName, middle, lastName, homeAddress, dateOfBirth, citizenship, placeOfBirth, civilStatus,
                                         gender, profession, taxAccountNo, ACRNo, heightCentimeters, weightKilograms, realPropertyIncome, grossReceiptsFromBusiness,
-                                        salariesFromProfession) VALUES ('$firstName', '$middle', '$lastName', '$homeAddress', '$dateOfBirth', '$citizenship',
+                                        salariesFromProfession, dateAndTimeProcessed) VALUES ('$firstName', '$middle', '$lastName', '$homeAddress', '$dateOfBirth', '$citizenship',
                                         '$placeOfBirth', '$civilStatus', '$gender', '$profession', '$taxAccountNo', '$acrNo', '$height', '$weight', '$incomeFromRealProp',
-                                        '$grossReceiptsFromBix', '$salariesFromProfession')";
+                                        '$grossReceiptsFromBix', '$salariesFromProfession', '$dateAndTime')";
 
                                         if (mysqli_query($con, $sql))
                                         {
-                                            $grossReceiptsFromBix = $_POST['grossrec'];
-                                            $salariesFromProfession = $_POST['salgrossrec'];
                                             echo "<h1>Queue Number: </h1>";
                                             echo "<br><strong>Full Name: </strong>" . $firstName . " " . $middle . " " . $lastName;
                                             echo "<br/>";
@@ -113,6 +113,8 @@
                                             echo "<strong>Gross Receipts or Earnings derived from business during the preceding year: </strong>" . " PHP " . $grossReceiptsFromBix;
                                             echo "<br/>";
                                             echo "<strong>Salaries/Gross Receipts/Earnings derived from exercise of profession/pursuit of any occupation: </strong>" . " PHP " . $salariesFromProfession;
+                                            echo "<br/>";
+                                            echo "<strong>Date and time processed: </strong>" . $dateAndTime;
                                         }
                                         else
                                             echo "Your data was unsuccessfully uploaded to the database. Please reach out our staff regarding this matter.";

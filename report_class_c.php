@@ -65,12 +65,13 @@
                                             $natureOfBusiness = $_POST['natureofbusiness'];
                                             $nbspTIN = $_POST['nbsptin'];
                                             $assessedValueOfProp = $_POST['assessedval'];
-                                            $grossEarningsFromBix = $_POST['grossearn'];                                        
-                                        
+                                            $grossEarningsFromBix = $_POST['grossearn'];
+                                            date_default_timezone_set("Asia/Brunei");
+                                            $dateAndTime = date("Y-m-d H:i:s");
+
                                             $sql = "INSERT INTO classc (firstName, middle, lastName, corporation, addressOfCorporation, dateOfRegistration, placeOfRegistration,
-                                            natureOfBusiness, nbspTIN, assessedRealProperty, grossEarnings) VALUES ('$firstName', '$middle', '$lastName', '$corporation',
-                                            '$homeAddress', '$dateOfBirth', '$placeOfRegistration', '$natureOfBusiness', '$nbspTIN', '$assessedValueOfProp', '$grossEarningsFromBix')";
-                                        
+                                            natureOfBusiness, nbspTIN, assessedRealProperty, grossEarnings, dateAndTimeProcessed) VALUES ('$firstName', '$middle', '$lastName', '$corporation',
+                                            '$homeAddress', '$dateOfBirth', '$placeOfRegistration', '$natureOfBusiness', '$nbspTIN', '$assessedValueOfProp', '$grossEarningsFromBix', '$dateAndTime')";                                        
 
                                         if (mysqli_query($con, $sql))
                                         {
@@ -92,7 +93,8 @@
                                             echo "<strong>Total Assessed Value of Real Property: </strong>" . "PHP " . $assessedValueOfProp;
                                             echo "<br/>";
                                             echo "<strong>Total Gross Earnings from Business: </strong>" . "PHP " . $grossEarningsFromBix;
-                                        }
+                                            echo "<br/>";
+                                            echo "<strong>Date and time processed: </strong>" . $dateAndTime;                                        }
                                         else
                                             echo "Your data was unsuccessfully uploaded to the database. Please reach out our staff regarding this matter.";
                                     ?>

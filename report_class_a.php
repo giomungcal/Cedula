@@ -63,10 +63,12 @@
                                         $placeOfBirth = $_POST['birthplace'];
                                         $civilStatus = $_POST['civilstatus'];
                                         $gender = $_POST['gender'];
+                                        date_default_timezone_set("Asia/Brunei");
+                                        $dateAndTime = date("Y-m-d H:i:s");
 
                                         $sql = "INSERT INTO classa (firstName, middle, lastName, homeAddress, dateOfBirth, placeOfBirth,
-                                        civilStatus, gender) VALUES ('$firstName', '$middle', '$lastName', '$homeAddress', '$dateOfBirth',
-                                        '$placeOfBirth', '$civilStatus', '$gender')";
+                                        civilStatus, gender, dateAndTimeProcessed) VALUES ('$firstName', '$middle', '$lastName', '$homeAddress', '$dateOfBirth',
+                                        '$placeOfBirth', '$civilStatus', '$gender', '$dateAndTime')";
 
                                         if (mysqli_query($con, $sql))
                                         {
@@ -82,6 +84,8 @@
                                             echo "<strong>Civil Status: </strong>" . $civilStatus;
                                             echo "<br/>";
                                             echo "<strong>Gender: </strong>" . $gender;
+                                            echo "<br/>";
+                                            echo "<strong>Date and time processed: </strong>" . $dateAndTime;
                                         }
                                         else
                                             echo "Your data was unsuccessfully uploaded to the database. Please reach out our staff regarding this matter.";
