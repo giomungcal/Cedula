@@ -109,8 +109,8 @@ u might try that if that interests you
                                             <td><?php echo $rows['heightCentimeters']; ?></td>
                                             <td><?php echo $rows['weightKilograms']; ?></td>
                                             <td><?php echo $rows['realPropertyIncome']; ?></td>
-                                            <td><?php echo $rows['grossReceiptsFromBusiness']; ?></td>
-                                            <td><?php echo $rows['salariesFromProfession']; ?></td>
+                                            <td>PHP <?php echo $rows['grossReceiptsFromBusiness']; ?></td>
+                                            <td>PHP <?php echo $rows['salariesFromProfession']; ?></td>
                                             <td><a href="">View</a></td>
                                         </tr>
                                 <?php

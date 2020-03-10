@@ -1,13 +1,8 @@
-*Warning if usr leaves report page
-*if there is no form submitted yet, do not access report_form
+*Warning if user leaves report page (data will be deleted)
 *Date in numeral convert into word
 *GENERATE QUEUEING NUMBER
-*admin/user
 *GENERATE/PRINT PDF
 *TYPE PASSWORD BEFORE LOGGING OUT
-*ADMIN LOGIN
-*password case insensitive
-*"Select" option accepted
 *code optimization
 *Class AB acr no.
 *See comments I made
