@@ -26,7 +26,7 @@
             }
             else
             {
-            // Alert box or error message below submit button if user typed wrong credentials? Mr Mungcal u decide hahahahha      
+            // Alert box or error message below submit button if user typed wrong credentials? Mr Mungcal u decide hahahahha
             //Alert box
 
             echo '<script type="text/javascript">

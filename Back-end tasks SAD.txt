@@ -1,5 +1,4 @@
 *Warning if user leaves report page (data will be deleted)
-*Date in numeral convert into word
 *GENERATE QUEUEING NUMBER
 *GENERATE/PRINT PDF
 *TYPE PASSWORD BEFORE LOGGING OUT
@@ -7,7 +6,9 @@
 *Class AB acr no.
 *See comments I made
 *Class AB
+test if not uploaded to databse
 ----------------------------
 | PHP  |                   |
 ---------------------------
 *If tax exceeds 5000 enable/disable
+

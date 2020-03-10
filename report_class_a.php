@@ -5,6 +5,13 @@
         header("location: index.php");
     if($_SESSION['login_user'] == "admin")
         header("location: admin_class_a.php");
+
+    $con = mysqli_connect('127.0.0.1','root','');
+    mysqli_select_db($con,'cedula');
+    if(!$con)
+        echo 'ERROR: Not connected to server.';
+    if (!mysqli_select_db($con,'cedula'))
+        echo 'ERROR: Database not selected.';
 ?>
 
 <!DOCTYPE html>
@@ -70,19 +77,35 @@
                                             date_default_timezone_set("Asia/Brunei");
                                             $dateAndTime = date("Y-m-d H:i:s");
 
-                                            $con = mysqli_connect('127.0.0.1','root','');
-                                            if(!$con)
-                                                echo 'ERROR: Not connected to server.';
-                                            if (!mysqli_select_db($con,'cedula'))
-                                                echo 'ERROR: Database not selected.';
-
                                             $sql = "INSERT INTO classa (firstName, middle, lastName, homeAddress, dateOfBirth, placeOfBirth,
                                             civilStatus, gender, dateAndTimeProcessed) VALUES ('$firstName', '$middle', '$lastName', '$homeAddress', '$dateOfBirth',
                                             '$placeOfBirth', '$civilStatus', '$gender', '$dateAndTime')";
 
                                             if (mysqli_query($con, $sql))
                                             {
-                                                echo "<h1>Queue Number: </h1>";
+                                            $sql = "SELECT ID FROM classa ORDER BY id DESC LIMIT 1";
+                                            $result = mysqli_query($con, $sql);
+                                            $rows = mysqli_fetch_assoc($result);
+                                            $count = $rows['ID']%100;
+
+                                            if($count==0)
+                                                $count=100;
+
+                                            if ($count/100 < 1)
+                                                if ($count/10 < 1)
+                                                    $queue = "00";
+                                                else
+                                                    $queue = "0";
+                                            else
+                                                $queue = "";
+                                            
+                                            $queueingNumber = "CA-" . $queue . ($count%100);
+
+                                                echo "<h1> Queue Number: " . $queueingNumber . "</h1>";
+                                                echo "<br/>";
+                                                echo "<strong>Timestamp: </strong>" . $dateAndTime;
+                                                echo "<br/>";
+                                                echo "<br/>";
                                                 echo "<br><strong>Full Name: </strong>" . $firstName . " " . $middle . " " . $lastName;
                                                 echo "<br/>";
                                                 echo "<strong>Home Address: </strong>" . $homeAddress;
@@ -93,9 +116,8 @@
                                                 echo "<br/>";
                                                 echo "<strong>Civil Status: </strong>" . $civilStatus;
                                                 echo "<br/>";
-                                                echo "<strong>Gender: </strong>" . $gender;
-                                                echo "<br/>";
-                                                echo "<strong>Date and time processed: </strong>" . $dateAndTime;
+                                                echo "<strong>Gender at Birth: </strong>" . $gender;
+                                                echo "<br/><br/>";
                                             }
                                             else
                                                 echo "Your data was unsuccessfully uploaded to the database. Please reach out our staff regarding this matter.";
@@ -104,14 +126,17 @@
                                     </p>
                             <p align="center">
                             <br>
-                            <!-- <a class="editbtn" style="cursor: pointer" href="form_class_a.php" align="center">Confirm</a> -->
+                            <!-- <a class="editbtn" style="cursor: pointer" onclick="goBack()" align="center">Go Back</a> -->
                             <a class="printbtn" target="blank" style="cursor: pointer" onclick="window.print();" align="center">Print</a>
-                        </p>
+                            </p>
                         </div><br> 
                     </div>
                 </div>
             </div>
         </div>
         <br/><br/><br/>
+<script type="text/javascript">
+
+</script>
     </body>
 </html>

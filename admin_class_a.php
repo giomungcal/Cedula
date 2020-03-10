@@ -95,7 +95,7 @@ u might try that if that interests you
                                             <td><?php echo $rows['gender']; ?></td>
                                             <td><a href="">View</a></td>
                                         </tr>
-                                <?php
+                                        <?php
                                     }
                                 ?>
                             </tbody>
