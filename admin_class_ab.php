@@ -28,11 +28,11 @@ u might try that if that interests you
         </style>
     </head>
     <body>
-        <div class="mainclassa">
+        <div class="1mainclassa">
             <div class="container">
                 <div class="navbar">
                     <div class="logo-pic"><img src="img/Clogo.png" height="25px" width="25px"></div>
-                    <div class="logo"><a href="admin_class_ab.php"><i>manila</i>&nbsp;<b>cedula</b>&nbsp;administrator</a></div>
+                    <div class="logo"><a href="admin_class_c.php"><i>manila</i>&nbsp;<b>cedula</b>&nbsp;administrator</a></div>
                 <div class="menu">
                     <ul class="navbar_ul">
                         <!-- <li id="btn1"><a class="btn" href=""><b>How&nbsp;to&nbsp;Use</b></a></li> -->
@@ -52,7 +52,7 @@ u might try that if that interests you
             </div>
             </div>
             <div class="maincontent_form">
-                <h1>Class A: Unemployed </h1>
+                <h1>Class AB: Employed & Business Owners</h1>
                 <label for="birthday"><b>Date:</b></label>
                 <!-- Eto yung pagshow ng entries depende sa date? -->
                 <input type="date" id="birthday" name="birthday" required><br/><br>
@@ -67,9 +67,18 @@ u might try that if that interests you
                                 <th>Last Name</th>
                                 <th>Address</th>
                                 <th>Birthday</th>
+                                <th>Citizenship</th>
                                 <th>Birthplace</th>
                                 <th>Civil Status</th>
                                 <th>Gender</th>
+                                <th>Profession</th>
+                                <th>Tax Account No.</th>
+                                <th>ACR No.</th>
+                                <th>Height (in cm)</th>
+                                <th>Weight (in kg)</th>
+                                <th>Income from Real Property</th>
+                                <th>Gross Receipts/Earnings derived from business during the preceding year</th>
+                                <th> Salaries/Gross Receipts/Earnings derived from exercise of profession/pursuit of any occupation</th>
                                 <td>View</td>
                               </tr>
                             </thead>
@@ -77,7 +86,7 @@ u might try that if that interests you
                                 <?php
                                     $con = mysqli_connect('localhost', 'root', '');
                                     mysqli_select_db($con, 'cedula');
-                                    $query = "SELECT * FROM classa";
+                                    $query = "SELECT * FROM classab";
                                     $result=mysqli_query($con, $query);
 
                                     while($rows=mysqli_fetch_assoc($result))
@@ -90,9 +99,18 @@ u might try that if that interests you
                                             <td><?php echo $rows['lastName']; ?></td>
                                             <td><?php echo $rows['homeAddress']; ?></td>
                                             <td><?php echo $rows['dateOfBirth']; ?></td>
+                                            <td><?php echo $rows['citizenship']; ?></td>
                                             <td><?php echo $rows['placeOfBirth']; ?></td>
                                             <td><?php echo $rows['civilStatus']; ?></td>
                                             <td><?php echo $rows['gender']; ?></td>
+                                            <td><?php echo $rows['profession']; ?></td>
+                                            <td><?php echo $rows['taxAccountNo']; ?></td>
+                                            <td><?php echo $rows['ACRNo']; ?></td>
+                                            <td><?php echo $rows['heightCentimeters']; ?></td>
+                                            <td><?php echo $rows['weightKilograms']; ?></td>
+                                            <td><?php echo $rows['realPropertyIncome']; ?></td>
+                                            <td><?php echo $rows['grossReceiptsFromBusiness']; ?></td>
+                                            <td><?php echo $rows['salariesFromProfession']; ?></td>
                                             <td><a href="">View</a></td>
                                         </tr>
                                 <?php
@@ -105,7 +123,7 @@ u might try that if that interests you
             </div>
         </div>
   
-    <script type="text/javascript">
+        <script type="text/javascript">
         th = document.getElementsByTagName('th');
         for(let c=0; c<th.length; c++)
         {
@@ -156,6 +174,6 @@ u might try that if that interests you
             }
             }
 
-    </script>
+    </script>        
     </body>
 </html>

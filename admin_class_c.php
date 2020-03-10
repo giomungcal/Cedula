@@ -28,11 +28,11 @@ u might try that if that interests you
         </style>
     </head>
     <body>
-        <div class="mainclassa">
+        <div class="1mainclassa">
             <div class="container">
                 <div class="navbar">
                     <div class="logo-pic"><img src="img/Clogo.png" height="25px" width="25px"></div>
-                    <div class="logo"><a href="admin_class_ab.php"><i>manila</i>&nbsp;<b>cedula</b>&nbsp;administrator</a></div>
+                    <div class="logo"><a href="admin_class_a.php"><i>manila</i>&nbsp;<b>cedula</b>&nbsp;administrator</a></div>
                 <div class="menu">
                     <ul class="navbar_ul">
                         <!-- <li id="btn1"><a class="btn" href=""><b>How&nbsp;to&nbsp;Use</b></a></li> -->
@@ -52,7 +52,7 @@ u might try that if that interests you
             </div>
             </div>
             <div class="maincontent_form">
-                <h1>Class A: Unemployed </h1>
+                <h1>Class C: Corporation</h1>
                 <label for="birthday"><b>Date:</b></label>
                 <!-- Eto yung pagshow ng entries depende sa date? -->
                 <input type="date" id="birthday" name="birthday" required><br/><br>
@@ -62,14 +62,15 @@ u might try that if that interests you
                             <thead>
                               <tr>
                                 <th>Date and time processed</th>
-                                <th>First Name</th>
-                                <th>Middle Initial</th>
-                                <th>Last Name</th>
-                                <th>Address</th>
-                                <th>Birthday</th>
-                                <th>Birthplace</th>
-                                <th>Civil Status</th>
-                                <th>Gender</th>
+                                <th>Authorized Representative</th>
+                                <th>Corporation</th>
+                                <th>Address of Corporation</th>
+                                <th>Date of Registration</th>
+                                <th>Place of Registration</th>
+                                <th>Nature of Business</th>
+                                <th>NBSP TIN No.</th>
+                                <th>Total Assessed Value of Real Property</th>
+                                <th>Total Gross Earnings from Business</th>
                                 <td>View</td>
                               </tr>
                             </thead>
@@ -77,7 +78,7 @@ u might try that if that interests you
                                 <?php
                                     $con = mysqli_connect('localhost', 'root', '');
                                     mysqli_select_db($con, 'cedula');
-                                    $query = "SELECT * FROM classa";
+                                    $query = "SELECT * FROM classc";
                                     $result=mysqli_query($con, $query);
 
                                     while($rows=mysqli_fetch_assoc($result))
@@ -85,14 +86,15 @@ u might try that if that interests you
                                 ?>
                                         <tr>
                                             <td><?php echo $rows['dateAndTimeProcessed']; ?></td>
-                                            <td><?php echo $rows['firstName']; ?></td>
-                                            <td><?php echo $rows['middle']; ?></td>
-                                            <td><?php echo $rows['lastName']; ?></td>
-                                            <td><?php echo $rows['homeAddress']; ?></td>
-                                            <td><?php echo $rows['dateOfBirth']; ?></td>
-                                            <td><?php echo $rows['placeOfBirth']; ?></td>
-                                            <td><?php echo $rows['civilStatus']; ?></td>
-                                            <td><?php echo $rows['gender']; ?></td>
+                                            <td><?php echo $rows['firstName']; echo " "; echo $rows['middle']; echo " "; echo $rows['lastName']; ?></td>
+                                            <td><?php echo $rows['corporation']; ?></td>
+                                            <td><?php echo $rows['addressOfCorporation']; ?></td>
+                                            <td><?php echo $rows['dateOfRegistration']; ?></td>
+                                            <td><?php echo $rows['placeOfRegistration']; ?></td>
+                                            <td><?php echo $rows['natureOfBusiness']; ?></td>
+                                            <td><?php echo $rows['nbspTIN']; ?></td>
+                                            <td>PHP <?php echo $rows['assessedRealProperty']; ?></td>
+                                            <td>PHP <?php echo $rows['grossEarnings']; ?></td>
                                             <td><a href="">View</a></td>
                                         </tr>
                                 <?php
@@ -104,8 +106,9 @@ u might try that if that interests you
                 </div>
             </div>
         </div>
-  
-    <script type="text/javascript">
+
+ 
+        <script type="text/javascript">
         th = document.getElementsByTagName('th');
         for(let c=0; c<th.length; c++)
         {
@@ -156,6 +159,6 @@ u might try that if that interests you
             }
             }
 
-    </script>
+    </script>        
     </body>
 </html>
