@@ -26,6 +26,10 @@ u might try that if that interests you
         <style>
             @import url('https://fonts.googleapis.com/css?family=Montserrat|Muli|Roboto&display=swap');
         </style>
+        <!-- MDBootstrap Datatables  -->
+        <link href="css/addons/datatables.min.css" rel="stylesheet">
+        <!-- MDBootstrap Datatables  -->
+        <script type="text/javascript" src="js/addons/datatables.min.js"></script>
     </head>
     <body>
         <div class="mainclassa">
@@ -52,24 +56,26 @@ u might try that if that interests you
             </div>
             </div>
             <div class="maincontent_form">
-                <h1>Class A: Unemployed </h1>
-                <label for="birthday"><b>Date:</b></label>
+                <h1>Class A: Unemployed &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for first name.."></h1>
+                <br>
+                <!-- <label for="birthday"><b>Date:</b></label> -->
                 <!-- Eto yung pagshow ng entries depende sa date? -->
-                <input type="date" id="birthday" name="birthday" required><br/><br>
+                <!-- <input type="date" id="birthday" name="birthday" required><br/><br> -->
                 <div class="table_container">
                     <div class="table_classa">
-                        <table id="myTable" class="table" style="width: 100%;">
+                        <table id="myTable" class="table" style="width: 100%; height: 30px">
                             <thead>
                               <tr>
-                                <th>Date and time processed</th>
-                                <th>First Name</th>
-                                <th>Middle Initial</th>
-                                <th>Last Name</th>
-                                <th>Address</th>
-                                <th>Birthday</th>
-                                <th>Birthplace</th>
-                                <th>Civil Status</th>
-                                <th>Gender</th>
+                                <th><a style="cursor: pointer">Date and time processed ▴</a></th>
+                                <th><a style="cursor: pointer">First Name ▴</a></th>
+                                <th><a style="cursor: pointer">M. I. ▴</a></th>
+                                <th><a style="cursor: pointer">Last Name ▴</a></th>
+                                <th><a style="cursor: pointer">Address ▴</a></th>
+                                <th><a style="cursor: pointer">Birthday ▴</a></th>
+                                <th><a style="cursor: pointer">Birthplace ▴</a></th>
+                                <th><a style="cursor: pointer">Civil Status ▴</a></th>
+                                <th><a style="cursor: pointer">Gender ▴</a></th>
                                 <td>View</td>
                               </tr>
                             </thead>
@@ -155,6 +161,28 @@ u might try that if that interests you
                 }
             }
             }
+
+            function myFunction() {
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[1];
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                    } else {
+                    tr[i].style.display = "none";
+                        }
+                    }
+                }
+            }    
 
     </script>
     </body>
