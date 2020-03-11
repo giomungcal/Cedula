@@ -6,7 +6,7 @@
     if($_SESSION['login_user'] == "admin")
         header("location: admin_class_a.php");
 
-    $con = mysqli_connect('127.0.0.1','root','');
+    $con = mysqli_connect('localhost','root','');
     mysqli_select_db($con,'cedula');
     if(!$con)
         echo 'ERROR: Not connected to server.';
@@ -75,36 +75,33 @@
                                             $civilStatus = $_POST['civilstatus'];
                                             $gender = $_POST['gender'];
                                             date_default_timezone_set("Asia/Brunei");
-                                            $dateAndTime = date("Y-m-d H:i:s");
+                                            $dateProcessed = date("Y-m-d");
+                                            $timeProcessed = date("H:i:s");
 
-                                            $sql = "INSERT INTO classa (firstName, middle, lastName, homeAddress, dateOfBirth, placeOfBirth,
-                                            civilStatus, gender, dateAndTimeProcessed) VALUES ('$firstName', '$middle', '$lastName', '$homeAddress', '$dateOfBirth',
-                                            '$placeOfBirth', '$civilStatus', '$gender', '$dateAndTime')";
+                                            $sql1 = "INSERT INTO classa (firstName, middle, lastName, homeAddress, dateOfBirth, placeOfBirth,
+                                            civilStatus, gender, dateProcessed, timeProcessed) VALUES ('$firstName', '$middle', '$lastName', '$homeAddress', '$dateOfBirth',
+                                            '$placeOfBirth', '$civilStatus', '$gender', '$dateProcessed', '$timeProcessed')";
 
-                                            if (mysqli_query($con, $sql))
+                                            if (mysqli_query($con, $sql1))
                                             {
-                                            $sql = "SELECT ID FROM classa ORDER BY id DESC LIMIT 1";
-                                            $result = mysqli_query($con, $sql);
+                                            $sql2 = "SELECT COUNT(*) FROM classa WHERE dateProcessed LIKE '$dateProcessed'";
+                                            $result = mysqli_query($con, $sql2);
                                             $rows = mysqli_fetch_assoc($result);
-                                            $count = $rows['ID']%100;
+                                            $queueingNo = $rows['COUNT(*)'];
 
-                                            if($count==0)
-                                                $count=100;
-
-                                            if ($count/100 < 1)
-                                                if ($count/10 < 1)
+                                            if($queueingNo/100==1)
+                                                $queueingNo=100;
+                                            else if ($queueingNo/100 < 1)
+                                                if ($queueingNo/10 < 1)
                                                     $queue = "00";
                                                 else
                                                     $queue = "0";
                                             else
                                                 $queue = "";
-                                            
-                                            $queueingNumber = "CA-" . $queue . ($count%100);
 
-                                                echo "<h1> Queue Number: " . $queueingNumber . "</h1>";
-                                                echo "<br/>";
-                                                echo "<strong>Timestamp: </strong>" . $dateAndTime;
-                                                echo "<br/>";
+                                            $queueingNo = "CA-" . $queue . $queueingNo%100;
+                                                echo "<h1> Queue Number: " . $queueingNo . "</h1>";
+                                                echo "<strong>Timestamp: </strong>" . $dateProcessed . " " . $timeProcessed;
                                                 echo "<br/>";
                                                 echo "<br><strong>Full Name: </strong>" . $firstName . " " . $middle . " " . $lastName;
                                                 echo "<br/>";
@@ -118,6 +115,13 @@
                                                 echo "<br/>";
                                                 echo "<strong>Gender at Birth: </strong>" . $gender;
                                                 echo "<br/><br/>";
+
+                                                $sql3 = "SET @count = 0";
+                                                $sql4 = "UPDATE classa SET classa.id = @count:= @count + 1";
+                                                $sql5 = "ALTER TABLE classa AUTO_INCREMENT = 1";
+                                                mysqli_query($con, $sql3);
+                                                mysqli_query($con, $sql4);
+                                                mysqli_query($con, $sql5);
                                             }
                                             else
                                                 echo "Your data was unsuccessfully uploaded to the database. Please reach out our staff regarding this matter.";

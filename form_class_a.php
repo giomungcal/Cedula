@@ -70,9 +70,9 @@
                             <option value="Widowed">Widowed</option>
                         </select>
                         <label for="gender">Gender at Birth</label>
-                        <input type="radio" name="gender" value="Male"> 
+                        <input type="radio" name="gender" value="Male">
                             <label for="gender1">Male&nbsp;&nbsp;&nbsp;</label>
-                        <input type="radio" name="gender" value="Female"> 
+                        <input type="radio" name="gender" value="Female">
                             <label for="gender1">Female</label><br><br><br>
                         <div style="text-align: center;">
                         <input type="submit" class="submitform" value="SUBMIT FORM">
