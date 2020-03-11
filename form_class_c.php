@@ -71,10 +71,10 @@
                         <label for="grossearn">Total Gross Earnings from Business</label>
                         <input type="text" id="grossearn" name="grossearn" required placeholder="in Philippine Peso"><br>
 
-                        <br><br><br>
+                        <p align=center><b>NOTE:</b> Please double check your input data before submitting.</p><br>
                         <div style="text-align: center;">
-                            <input type="submit" class="submitform" value="SUBMIT FORM">
-                            <p align=center>NOTE: Please double check your input data before submitting.<br/></p>
+                        <input type="submit" class="submitform" value="SUBMIT FORM">
+                        <br>
                         </div>
                         
                     </form>

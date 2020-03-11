@@ -69,6 +69,7 @@ html
     padding: 10px;
     flex: 2;
     text-decoration: none;
+    color: #1f4498;
 }
 
 .logo > a:focus
@@ -179,7 +180,7 @@ html
 
 .formfield_a{
     padding: 2.5rem 3rem;
-    height: 380px;
+    height: 100%;
     color: #1f4498;
     border-radius: 10px;
     border: steelblue;
@@ -287,7 +288,7 @@ label[for="gender1"]{
 
 .formfield_ab{
     padding: 2.5rem 3rem;
-    height: 940px;
+    height: 20%;
     color: #1f4498;
     border-radius: 10px;
     border: steelblue;
@@ -519,7 +520,7 @@ label[for="grossearn"]{
 /* ADMIN TABLES */
 .table_container{
     padding: .5rem .5rem;
-    height: 380px;
+    height: 100%;
     color: #1f4498;
     border-radius: 3px;
     border: steelblue;
@@ -529,14 +530,15 @@ label[for="grossearn"]{
 
 .table_classa {
     border-collapse: collapse;
+    font-size: 10px;
     width: 100%;
     background-color: white;
-    color: #ec2a2b;
+    color: #160d5d;
   }
   
 td, th {
     border: 1px solid #dddddd;
     text-align: left;
-    padding: 8px;
+    padding: 4px;
   }
   

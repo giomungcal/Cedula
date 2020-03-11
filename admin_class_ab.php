@@ -52,10 +52,8 @@ u might try that if that interests you
             </div>
             </div>
             <div class="maincontent_form">
-                <h1>Class AB: Employed & Business Owners</h1>
-                <label for="birthday"><b>Date:</b></label>
-                <!-- Eto yung pagshow ng entries depende sa date? -->
-                <input type="date" id="birthday" name="birthday" required><br/><br>
+                <h1>Class AB: Employed & Business Owners<div style="text-align: left;"> <input style="width:60%" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for first name.."></div></h1>
+                <br>
                 <div class="table_container">
                     <div class="table_classa">
                         <table id="myTable" class="table" style="width: 100%;">
@@ -175,6 +173,27 @@ u might try that if that interests you
                 }
             }
             }
+            function myFunction() {
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[1];
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                    } else {
+                    tr[i].style.display = "none";
+                        }
+                    }
+                }
+            }   
 
     </script>        
     </body>

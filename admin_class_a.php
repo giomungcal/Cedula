@@ -26,6 +26,10 @@ u might try that if that interests you
         <style>
             @import url('https://fonts.googleapis.com/css?family=Montserrat|Muli|Roboto&display=swap');
         </style>
+        <!-- MDBootstrap Datatables  -->
+        <link href="css/addons/datatables.min.css" rel="stylesheet">
+        <!-- MDBootstrap Datatables  -->
+        <script type="text/javascript" src="js/addons/datatables.min.js"></script>
     </head>
     <body>
         <div class="mainclassa">
@@ -52,25 +56,27 @@ u might try that if that interests you
             </div>
             </div>
             <div class="maincontent_form">
-                <h1>Class A: Unemployed </h1>
-                <label for="birthday"><b>Date:</b></label>
+                <h1>Class A: Unemployed 
+                <div style="text-align: left;"> <input style="width:60%" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for first name.."></div></h1>
+                <br>
+                <!-- <label for="birthday"><b>Date:</b></label> -->
                 <!-- Eto yung pagshow ng entries depende sa date? -->
-                <input type="date" id="birthday" name="birthday" required><br/><br>
+                <!-- <input type="date" id="birthday" name="birthday" required><br/><br> -->
                 <div class="table_container">
                     <div class="table_classa">
-                        <table id="myTable" class="table" style="width: 100%;">
+                        <table id="myTable" class="table" style="width: 100%; height: 30px">
                             <thead>
                               <tr>
-                                <th>Date and time processed</th>
-                                <th>First Name</th>
-                                <th>Middle Initial</th>
-                                <th>Last Name</th>
-                                <th>Address</th>
-                                <th>Birthday</th>
-                                <th>Birthplace</th>
-                                <th>Civil Status</th>
-                                <th>Gender</th>
+                                <th><a style="cursor: pointer">Date and time processed ▴</a></th>
+                                <th><a style="cursor: pointer">Queue Number ▴</a></th>
                                 <td>View</td>
+                                <th><a style="cursor: pointer">First Name ▴</a></th>
+                                <th><a style="cursor: pointer">M. I. ▴</a></th>
+                                <th><a style="cursor: pointer">Last Name ▴</a></th>
+                                <th><a style="cursor: pointer">Address ▴</a></th>
+                                <th><a style="cursor: pointer">Birthday ▴</a></th>
+                                <th><a style="cursor: pointer">Birthplace ▴</a></th>
+                                <th><a style="cursor: pointer">Gender ▴</a></th>
                               </tr>
                             </thead>
                             <tbody>
@@ -85,15 +91,15 @@ u might try that if that interests you
                                 ?>
                                         <tr>
                                             <td><?php echo $rows['dateProcessed'] . " " . $rows['timeProcessed']; ?></td>
+                                            <td>A001031120</td>
+                                            <td><a href="">View</a></td>
                                             <td><?php echo $rows['firstName']; ?></td>
                                             <td><?php echo $rows['middle']; ?></td>
                                             <td><?php echo $rows['lastName']; ?></td>
                                             <td><?php echo $rows['homeAddress']; ?></td>
                                             <td><?php echo $rows['dateOfBirth']; ?></td>
                                             <td><?php echo $rows['placeOfBirth']; ?></td>
-                                            <td><?php echo $rows['civilStatus']; ?></td>
                                             <td><?php echo $rows['gender']; ?></td>
-                                            <td><a href="">View</a></td>
                                         </tr>
                                         <?php
                                     }
@@ -155,6 +161,28 @@ u might try that if that interests you
                 }
             }
             }
+
+            function myFunction() {
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[1];
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                    } else {
+                    tr[i].style.display = "none";
+                        }
+                    }
+                }
+            }    
 
     </script>
     </body>
