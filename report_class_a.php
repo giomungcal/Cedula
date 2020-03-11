@@ -81,18 +81,18 @@
                                             $checkDuplicateData =  "SELECT * FROM classa WHERE firstName='$firstName' AND
                                             middle='$middle' AND lastName='$lastName' AND homeAddress='$homeAddress' AND
                                             dateOfBirth='$dateOfBirth' AND placeOfBirth='$placeOfBirth' AND civilStatus='$civilStatus'
-                                            AND gender='$gender'";
+                                            AND gender='$gender' AND dateProcessed='$dateProcessed'";
 
                                             $testResult = mysqli_query($con, $checkDuplicateData);
                                             $duplicateDataCount = mysqli_num_rows($testResult);
 
                                             if ($duplicateDataCount > 0)
                                             {
-                                                echo "
+                                            ?>
                                                 <script type='text/javascript'>
-                                                    alert('The data already exists.');
+                                                    alert('The following data are already inserted into the database.\nPlease click OK to go back to the previous page.');
                                                 </script>
-                                                ";
+                                            <?php
                                             }
                                             else
                                             {

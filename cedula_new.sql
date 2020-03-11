@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 11, 2020 at 10:16 AM
+-- Generation Time: Mar 11, 2020 at 11:49 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -51,7 +51,8 @@ INSERT INTO `classa` (`ID`, `firstName`, `middle`, `lastName`, `homeAddress`, `d
 (2, 'Regina Joyce', 'C.', 'Pacheco', '231 Moderna St., Balut, Tondo, Manila', '1999-05-27', 'Tondo, Manila', 'Single', 'Female', '2020-03-11', '12:47:01'),
 (3, 'Pedro', 'C.', 'Flores', '1 Antonio St., Brgy. 342, Zone 34, Sta. Cruz, Manila', '1992-12-02', 'Imus, Cavite', 'Single', 'Male', '2020-03-11', '12:56:29'),
 (4, 'Juan', 'F.', 'Mungcal', '100 Moderna St., Balut, Tondo, Manila', '1998-05-15', 'San Rafael, Bulacan', 'Separated', 'Male', '2020-03-11', '13:11:53'),
-(5, 'Giomar', 'P.', 'Fonte', '1 Ongpin St., Binondo, Manila', '1993-01-01', 'Valenzuela', 'Married', 'Male', '2020-03-11', '16:46:48');
+(5, 'Giomar', 'P.', 'Fonte', '1 Ongpin St., Binondo, Manila', '1993-01-01', 'Valenzuela', 'Married', 'Male', '2020-03-11', '16:46:48'),
+(6, 'Karl Vincent', 'M.', 'Sy', '2000 Pedro Gil St., Paco, Manila', '1988-08-08', 'General Santos City', 'Single', 'Male', '2020-03-11', '17:30:35');
 
 -- --------------------------------------------------------
 
@@ -179,7 +180,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `classa`
 --
 ALTER TABLE `classa`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `classab`

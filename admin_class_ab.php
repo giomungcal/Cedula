@@ -1,4 +1,7 @@
-<!-- ATTN Mr Mungcal
+<!-- 
+JUST TRIED TO REDUCE TABLE COLUMNS 3/11 -H
+    
+    ATTN Mr Mungcal
 just tried the table sorting feature, but can only sort in ascending order (no descending).
 pls feel free to remove the codes for the sorting feature if you're able to make a
 code which sorts table data in both asc. and desc. orders
@@ -42,6 +45,7 @@ u might try that if that interests you
                         <!-- <li><a class="btn" href=""><b>About</b></a></li> -->
                         <!-- <li><a class="btn" href=""><b>Settings</b></a></li> Change password feature. Yay or  nay? -H -->
                         <li><a  class="btn" href="logout.php"><b>Logout</b></a></li>
+                        <li><a class="btn">back-end dev's note: include queueing number @ the table</a></li>
                         <!--
                         <li id="btn1"><a class="btn" href=""><b>How&nbsp;to&nbsp;Use</b></a></li>
                         <li><a class="btn" href=""><b>Procedure</b></a></li>

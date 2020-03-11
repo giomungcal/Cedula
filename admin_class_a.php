@@ -46,6 +46,7 @@ u might try that if that interests you
                         <!-- <li><a class="btn" href=""><b>About</b></a></li> -->
                         <!-- <li><a class="btn" href=""><b>Settings</b></a></li> Change password feature. Yay or  nay? -H -->
                         <li><a  class="btn" href="logout.php"><b>Logout</b></a></li>
+                        <li><a class="btn">back-end dev's note: include queueing number @ the table</a></li>
                         <!--
                         <li id="btn1"><a class="btn" href=""><b>How&nbsp;to&nbsp;Use</b></a></li>
                         <li><a class="btn" href=""><b>Procedure</b></a></li>
@@ -67,16 +68,22 @@ u might try that if that interests you
                         <table id="myTable" class="table" style="width: 100%; height: 30px">
                             <thead>
                               <tr>
+                                <!-- SUGGESTION: ang nakalagay lang dito are
+                                date/time processed
+                                queue no
+                                full name
+                                gender
+                                 -->
                                 <th><a style="cursor: pointer">Date and time processed ▴</a></th>
                                 <th><a style="cursor: pointer">Queue Number ▴</a></th>
-                                <td>View</td>
+                                <th><a style="cursor: pointer">Last Name ▴</a></th>
                                 <th><a style="cursor: pointer">First Name ▴</a></th>
                                 <th><a style="cursor: pointer">M. I. ▴</a></th>
-                                <th><a style="cursor: pointer">Last Name ▴</a></th>
-                                <th><a style="cursor: pointer">Address ▴</a></th>
+                                <!-- <th><a style="cursor: pointer">Address ▴</a></th>
                                 <th><a style="cursor: pointer">Birthday ▴</a></th>
-                                <th><a style="cursor: pointer">Birthplace ▴</a></th>
+                                <th><a style="cursor: pointer">Birthplace ▴</a></th> -->
                                 <th><a style="cursor: pointer">Gender ▴</a></th>
+                                <td>View</td> <!-- just placing it here -->
                               </tr>
                             </thead>
                             <tbody>
@@ -92,14 +99,15 @@ u might try that if that interests you
                                         <tr>
                                             <td><?php echo $rows['dateProcessed'] . " " . $rows['timeProcessed']; ?></td>
                                             <td>A001031120</td>
-                                            <td><a href="">View</a></td>
+                                            <td><?php echo $rows['lastName']; ?></td>
                                             <td><?php echo $rows['firstName']; ?></td>
                                             <td><?php echo $rows['middle']; ?></td>
-                                            <td><?php echo $rows['lastName']; ?></td>
-                                            <td><?php echo $rows['homeAddress']; ?></td>
-                                            <td><?php echo $rows['dateOfBirth']; ?></td>
-                                            <td><?php echo $rows['placeOfBirth']; ?></td>
+
+                                            <!-- <td><?php //echo $rows['homeAddress']; ?></td> -->
+                                            <!-- <td><?php //echo $rows['dateOfBirth']; ?></td> -->
+                                            <!-- <td><?php //echo $rows['placeOfBirth']; ?></td>  -->
                                             <td><?php echo $rows['gender']; ?></td>
+                                            <td><a href="">View</a></td>
                                         </tr>
                                         <?php
                                     }

@@ -1,3 +1,5 @@
+QUEUEING NUMBER
+
 I WANT YOU BACK MATTHAIOS
 BATANG PASAWAY
 REPEAT AL JAMES
@@ -31,6 +33,7 @@ So if 2 "subwindows" lang ang sinet as i-oopen nila, ang pagsasalit-salit ng win
 
 *May priority lanes ba sila for senior citizens? If yes, priority lanes will be set doon sa mga PCs instead na doon sa windows.
 *What's the case for multiple citizenships? Do they have both TIN No. and ACR No.?
+*Ilang beses ba nag-aapply for cedula ang mga tao?
 
 SELECT ID FROM classa ORDER BY id DESC LIMIT 1
 Access last value
