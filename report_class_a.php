@@ -28,7 +28,7 @@
     </head>
     <body>
         <div class="mainclassa">
-            <div class="container">
+            <div class="container_all">
                 <div class="navbar">
                     <div class="logo-pic"><img src="img/Clogo.png" height="25px" width="25px"></div>
                         <div class="logo"><a href="home.php"><i>manila</i>&nbsp;<b>cedula</b></a></div>
@@ -152,8 +152,11 @@
                                     </p>
                             <p align="center">
                             <br>
-                            <!-- <a class="editbtn" style="cursor: pointer" onclick="goBack()" align="center">Go Back</a> -->
-                            <a class="printbtn" target="blank" style="cursor: pointer" onclick="window.print();" align="center">Print</a>
+                           
+
+                            <!-- ETO HEHER YUNG PART NA KAPAG CINLICK KO YUNG PRINT, IBANG PAGE YUNG MAGPPRINT HEHE pero idk kung pwede ichange yung content ng html tho-->
+                            <iframe src="queueing_tix_a.html" style="display:none;" name="frame"></iframe>
+                            <a class="printbtn" onclick="frames['frame'].print()" value="printletter" target="blank" style="cursor: pointer" align="center">Print</a>
                             </p>
                         </div><br> 
                     </div>

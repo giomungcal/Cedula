@@ -1,197 +1,87 @@
-<!-- ATTN Mr Mungcal
-just tried the table sorting feature, but can only sort in ascending order (no descending).
-pls feel free to remove the codes for the sorting feature if you're able to make a
-code which sorts table data in both asc. and desc. orders
-note: some tutorials show they use bootstrap/jquery for the asc./desc. ordering of tables.
-u might try that if that interests you
--->
+<?php  
+include 'session.php';
 
-<?php
-    include 'session.php';
-
-    if(!isset($_SESSION['login_user']))
-        header("location: index.php");
-    if($_SESSION['login_user'] == "user")
-        header("location: home.php");
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meat name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Manila City Hall: Cedula</title>
-        <link rel="stylesheet" href="style.css" />
-        <style>
+if(!isset($_SESSION['login_user']))
+    header("location: index.php");
+if($_SESSION['login_user'] == "user")
+    header("location: home.php");
+?>  
+<!DOCTYPE html>  
+<html style="background-color: white;">  
+     <head>  
+          <title>Manila City Hall: Cedula</title>  
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+          <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>  
+          <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>            
+          <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />  
+          <link rel="stylesheet" href="style.css" />
+          <style>
             @import url('https://fonts.googleapis.com/css?family=Montserrat|Muli|Roboto&display=swap');
         </style>
-        <!-- MDBootstrap Datatables  -->
-        <link href="css/addons/datatables.min.css" rel="stylesheet">
-        <!-- MDBootstrap Datatables  -->
-        <script type="text/javascript" src="js/addons/datatables.min.js"></script>
-    </head>
-    <body>
-        <div class="mainclassa">
-            <div class="container">
-                <div class="navbar">
-                    <div class="logo-pic"><img src="img/Clogo.png" height="25px" width="25px"></div>
-                    <div class="logo"><a href="admin_class_ab.php"><i>manila</i>&nbsp;<b>cedula</b>&nbsp;administrator</a></div>
-                <div class="menu">
-                    <ul class="navbar_ul">
-                        <!-- <li id="btn1"><a class="btn" href=""><b>How&nbsp;to&nbsp;Use</b></a></li> -->
-                        <!-- <li><a class="btn" href=""><b>Procedure</b></a></li> -->
-                        <!-- I just set this as comment in order to include "Settings" option. I know this ("Procedure" option) is important.
-                        Maybe you could place all five options without affecting the overall design of the panel. -H -->
-                        <!-- <li><a class="btn" href=""><b>About</b></a></li> -->
-                        <!-- <li><a class="btn" href=""><b>Settings</b></a></li> Change password feature. Yay or  nay? -H -->
-                        <li><a  class="btn" href="logout.php"><b>Logout</b></a></li>
-                        <li><a class="btn">back-end dev's note: include queueing number @ the table</a></li>
-                        <!--
-                        <li id="btn1"><a class="btn" href=""><b>How&nbsp;to&nbsp;Use</b></a></li>
-                        <li><a class="btn" href=""><b>Procedure</b></a></li>
-                        <li><a class="btn" href=""><b>About</b></a></li>
-                        -->
+     </head>  
+     <body>  
+     <div class="adminclass">
+        <div class="container_all">
+                <div class="navbaradmin">
+                    <div class="logoadmin-pic"><img src="img/Clogo.png" height="25px" width="25px"></div>
+                    <div class="logoadmin"><a href="admin_class_ab.php"><i>manila</i>&nbsp;<b>cedula</b>&nbsp;administrator</a></div>
+                <div class="menuadmin">
+                    <ul class="navbaradmin_ul">
+                    <li><a  class="btn" href="admin_class_a.php"><b>Class A</b></a></li>
+                    <li><a  class="btn" href="admin_class_ab.php"><b>Class AB</b></a></li>
+                    <li><a  class="btn" href="admin_class_c.php"><b>Class C</b></a></li>
+                    <li><a  class="btn" href="logout.php"><b>Logout</b></a></li>
                     </ul>
                 </div>
             </div>
-            </div>
-            <div class="maincontent_form">
-                <h1>Class A: Unemployed 
-                <div style="text-align: left;"> <input style="width:60%" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for first name.."></div></h1>
-                <br>
-                <!-- <label for="birthday"><b>Date:</b></label> -->
-                <!-- Eto yung pagshow ng entries depende sa date? -->
-                <!-- <input type="date" id="birthday" name="birthday" required><br/><br> -->
-                <div class="table_container">
-                    <div class="table_classa">
-                        <table id="myTable" class="table" style="width: 100%; height: 30px">
-                            <thead>
-                              <tr>
-                                <!-- SUGGESTION: ang nakalagay lang dito are
-                                date/time processed
-                                queue no
-                                full name
-                                gender
-                                 -->
-                                <th><a style="cursor: pointer">Date and time processed ▴</a></th>
-                                <th><a style="cursor: pointer">Queue Number ▴</a></th>
-                                <th><a style="cursor: pointer">Last Name ▴</a></th>
-                                <th><a style="cursor: pointer">First Name ▴</a></th>
-                                <th><a style="cursor: pointer">M. I. ▴</a></th>
-                                <!-- <th><a style="cursor: pointer">Address ▴</a></th>
-                                <th><a style="cursor: pointer">Birthday ▴</a></th>
-                                <th><a style="cursor: pointer">Birthplace ▴</a></th> -->
-                                <th><a style="cursor: pointer">Gender ▴</a></th>
-                                <td>View</td> <!-- just placing it here -->
-                              </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                    $con = mysqli_connect('localhost', 'root', '');
-                                    mysqli_select_db($con, 'cedula');
-                                    $query = "SELECT * FROM classa";
-                                    $result=mysqli_query($con, $query);
-
-                                    while($rows=mysqli_fetch_assoc($result))
-                                    {
-                                ?>
-                                        <tr>
-                                            <td><?php echo $rows['dateProcessed'] . " " . $rows['timeProcessed']; ?></td>
-                                            <td>A001031120</td>
-                                            <td><?php echo $rows['lastName']; ?></td>
-                                            <td><?php echo $rows['firstName']; ?></td>
-                                            <td><?php echo $rows['middle']; ?></td>
-
-                                            <!-- <td><?php //echo $rows['homeAddress']; ?></td> -->
-                                            <!-- <td><?php //echo $rows['dateOfBirth']; ?></td> -->
-                                            <!-- <td><?php //echo $rows['placeOfBirth']; ?></td>  -->
-                                            <td><?php echo $rows['gender']; ?></td>
-                                            <td><a href="">View</a></td>
-                                        </tr>
-                                        <?php
-                                    }
-                                ?>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
         </div>
-  
-    <script type="text/javascript">
-        th = document.getElementsByTagName('th');
-        for(let c=0; c<th.length; c++)
-        {
-            th[c].addEventListener('click',item(c));
-        }
+          <div class="container" style="font-family: 'Montserrat';">  
+               <h3 align="center" style="color: #1f4498"><b>Class A (Unemployed)</b></h3>  
+               <br />  
+               <div class="table-responsive">  
+                    <table id="class_a_data" class="table table-striped table-bordered">  
+                         <thead>  
+                              <tr>  
+                                   <td>Date Processed</td>  
+                                   <td>Queue</td>  
+                                   <td>View</td>  
+                                   <td>First Name</td>  
+                                   <td>M.I.</td>  
+                                   <td>Last Name</td>  
+                                   <td>Gender</td>  
+                                   <td>Address</td>
+                              </tr>  
+                         </thead>  
+                         <?php  
+                         $con = mysqli_connect('localhost', 'root', '');
+                         mysqli_select_db($con, 'cedula');
+                         $query = "SELECT * FROM classa";
+                         $result=mysqli_query($con, $query);
 
-        function item(c)
-        {
-            return function()
-            {
-                console.log(c);
-                sortTable(c);
-            }
-        }
-
-        function sortTable(c) {
-            var table, rows, switching, i, x, y, shouldSwitch;
-            table = document.getElementById("myTable");
-            switching = true;
-            /*Make a loop that will continue until
-            no switching has been done:*/
-            while (switching) {
-                //start by saying: no switching is done:
-                switching = false;
-                rows = table.rows;
-                /*Loop through all table rows (except the
-                first, which contains table headers):*/
-                for (i = 1; i < (rows.length - 1); i++) {
-                //start by saying there should be no switching:
-                shouldSwitch = false;
-                /*Get the two elements you want to compare,
-                one from current row and one from the next:*/
-                x = rows[i].getElementsByTagName("td")[c];
-                y = rows[i + 1].getElementsByTagName("td")[c];
-                //check if the two rows should switch place:
-                if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                    //if so, mark as a switch and break the loop:
-                    shouldSwitch = true;
-                    break;
-                }
-                }
-                if (shouldSwitch) {
-                /*If a switch has been marked, make the switch
-                and mark that a switch has been done:*/
-                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-                switching = true;
-                }
-            }
-            }
-
-            function myFunction() {
-            // Declare variables
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("myTable");
-            tr = table.getElementsByTagName("tr");
-
-            // Loop through all table rows, and hide those who don't match the search query
-                for (i = 0; i < tr.length; i++) {
-                    td = tr[i].getElementsByTagName("td")[1];
-                    if (td) {
-                        txtValue = td.textContent || td.innerText;
-                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                            tr[i].style.display = "";
-                    } else {
-                    tr[i].style.display = "none";
-                        }
-                    }
-                }
-            }    
-
-    </script>
-    </body>
-</html>
+                         while($row = mysqli_fetch_array($result))  
+                         {  
+                              echo '  
+                              <tr>  
+                                   <td>'.$row["dateAndTimeProcessed"].'</td>
+                                   <td> A001-031120 </td>
+                                   <td><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⨭&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
+                                   <td>'.$row["firstName"].'</td>  
+                                   <td>'.$row["middle"].'</td>  
+                                   <td>'.$row["lastName"].'</td>  
+                                   <td>'.$row["gender"].'</td>  
+                                   <td>'.$row["homeAddress"].'</td>   
+                              </tr>  
+                              ';  
+                         }  
+                         ?>  
+                    </table>  <br><br><br>
+               </div>  
+          </div>  
+     </body>  
+</html>  
+<script>  
+$(document).ready(function(){  
+     $('#class_a_data').DataTable();  
+});  
+</script> 

@@ -24,7 +24,7 @@
 
     <body>
         <div class="mainclassab">
-            <div class="container">
+            <div class="container_all">
                 <div class="navbar">
                     <div class="logo-pic"><img src="img/Clogo.png" height="25px" width="25px"></div>
                     <div class="logo"><a href="home.php"><i>manila</i>&nbsp;<b>cedula</b></a></div>

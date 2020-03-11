@@ -28,7 +28,7 @@ html
     background-size: cover;
 }
 
-.container
+.container_all
 {
     padding: 3rem 6rem;
 }
@@ -473,7 +473,7 @@ label[for="grossearn"]{
 
 .menu_report_a{
     padding: 2.5rem 3rem;
-    height: 280px;
+    height: 100%;
     color: #1f4498;
     border-radius: 10px;
     border: steelblue;
@@ -518,27 +518,129 @@ label[for="grossearn"]{
 
 
 /* ADMIN TABLES */
-.table_container{
-    padding: .5rem .5rem;
-    height: 100%;
-    color: #1f4498;
-    border-radius: 3px;
-    border: steelblue;
+  
+.adminclass{
+    width: 100%;
+    height: 100vh;
     background-color: white;
-    border-color: aliceblue;
 }
 
-.table_classa {
-    border-collapse: collapse;
-    font-size: 10px;
-    width: 100%;
-    background-color: white;
-    color: #160d5d;
-  }
-  
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 4px;
-  }
-  
+.navbaradmin_ul
+{
+    text-align: right;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbaradmin_ul > li{
+    background-image: url(arrow.gif);
+    background-repeat: no-repeat;
+    background-position: 100% .4em;
+    padding-right: .6em;
+}
+
+.navbaradmin
+{
+   display: flex ;
+   color: white;
+   background-color: #1f4498;
+   height: 45px;
+   width: 100%;
+   border-radius: 5px;
+}
+
+.menuadmin
+{
+    flex: 1;
+    color: rgb(213, 22, 22);
+    font-size: 13px;
+}
+
+.menuadmin > ul
+{
+    display: flex;
+    list-style: none;
+}
+
+#btn
+{
+    padding-left: 330px;
+}
+
+/* .menu>ul>li>a
+{
+    text-align: end;
+} */
+
+.menuadmin .btn
+{
+    background-color: transparent;
+    padding: 10px 34px 13px;
+    color: #1f4498;
+    background-color: transparent;
+    text-decoration: none;
+    font-family: Muli;
+    transition: 0.5s;
+    border-radius: 2px;
+}
+
+.menuadmin .btn:hover
+{
+    background-color: #ffffff;
+    color: #1f4498;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+.navbaradmin_ul
+{
+    text-align: right;
+    list-style-type: none;
+    padding-left: 205px;
+    margin: 0;
+}
+
+.navbaradmin_ul > li{
+    background-image: url(arrow.gif);
+    background-repeat: no-repeat;
+    background-position: 100%;
+}
+
+.navbaradmin
+{
+   display: flex ;
+   color: darkturquoise;
+   background-color: rgb(238, 238, 238);
+   height: 45px;
+   width: 100%;
+   border-radius: 5px;
+}
+
+.logoadmin
+{
+    padding-top: 10px;
+    padding-right: 100px;
+    font-family: 'Muli';
+    font-weight: 300;
+    font-size: 17px;
+}
+
+.logoadmin > a
+{
+    padding: 10px;
+    flex: 2;
+    text-decoration: none;
+    color: #1f4498;
+}
+
+.logoadmin > a:focus
+{
+    background-color:transparent;  
+    color: #1f4498;
+}
+
+.logoadmin-pic
+{
+    padding: 10px;
+}
