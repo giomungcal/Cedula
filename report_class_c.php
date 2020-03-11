@@ -5,6 +5,13 @@
         header("location: index.php");
     if($_SESSION['login_user'] == "admin")
         header("location: admin_class_a.php");
+
+    $con = mysqli_connect('127.0.0.1','root','');
+    mysqli_select_db($con,'cedula');
+    if(!$con)
+        echo 'ERROR: Not connected to server.';
+    if (!mysqli_select_db($con,'cedula'))
+        echo 'ERROR: Database not selected.';
 ?>
 
 <!DOCTYPE html>
@@ -75,23 +82,35 @@
                                             $assessedValueOfProp = $_POST['assessedval'];
                                             $grossEarningsFromBix = $_POST['grossearn'];
                                             date_default_timezone_set("Asia/Brunei");
-                                            $dateAndTime = date("Y-m-d H:i:s");
-                                            
-                                            $con = mysqli_connect('127.0.0.1','root','');
+                                            $dateProcessed = date("Y-m-d");
+                                            $timeProcessed = date("H:i:s");
+                                        
+                                            $sql1 = "INSERT INTO classc (firstName, middle, lastName, corporation, addressOfCorporation, dateOfRegistration, placeOfRegistration,
+                                            natureOfBusiness, nbspTIN, assessedRealProperty, grossEarnings, dateProcessed, timeProcessed) VALUES ('$firstName', '$middle', '$lastName', '$corporation',
+                                            '$homeAddress', '$dateOfBirth', '$placeOfRegistration', '$natureOfBusiness', '$nbspTIN', '$assessedValueOfProp', '$grossEarningsFromBix', '$dateProcessed', '$timeProcessed')";
 
-                                            if(!$con)
-                                                echo 'Not connected to server.';
-                                            if (!mysqli_select_db($con,'cedula'))
-                                                echo 'Database not selected.';
-
-                                            $sql = "INSERT INTO classc (firstName, middle, lastName, corporation, addressOfCorporation, dateOfRegistration, placeOfRegistration,
-                                            natureOfBusiness, nbspTIN, assessedRealProperty, grossEarnings, dateAndTimeProcessed) VALUES ('$firstName', '$middle', '$lastName', '$corporation',
-                                            '$homeAddress', '$dateOfBirth', '$placeOfRegistration', '$natureOfBusiness', '$nbspTIN', '$assessedValueOfProp', '$grossEarningsFromBix', '$dateAndTime')";                                        
-
-                                        if (mysqli_query($con, $sql))
+                                        if (mysqli_query($con, $sql1))
                                         {
-                                            echo "<h1>Queue Number: </h1>";
-                                            echo "<br><strong>President/Authorized Representative: </strong>" . $firstName . " " . $middle . " " . $lastName;
+                                            $sql2 = "SELECT COUNT(*) FROM classc WHERE dateProcessed LIKE '$dateProcessed'";
+                                            $result = mysqli_query($con, $sql2);
+                                            $rows = mysqli_fetch_assoc($result);
+                                            $queueingNo = $rows['COUNT(*)'];
+
+                                            if($queueingNo/100==1)
+                                                $queueingNo=100;
+                                            else if ($queueingNo/100 < 1)
+                                                if ($queueingNo/10 < 1)
+                                                    $queue = "00";
+                                                else
+                                                    $queue = "0";
+                                            else
+                                                $queue = "";
+
+                                            $queueingNo = "CC-" . $queue . $queueingNo%100;
+                                            echo "<h1> Queue Number: " . $queueingNo . "</h1>";
+                                            echo "<strong>Timestamp: </strong>" . $dateProcessed . " " . $timeProcessed;
+                                            echo "<br/><br/>";
+                                            echo "<strong>President/Authorized Representative: </strong>" . $firstName . " " . $middle . " " . $lastName;
                                             echo "<br/>";
                                             echo "<strong>Corporation: </strong>" . $corporation;
                                             echo "<br/>";
@@ -105,11 +124,18 @@
                                             echo "<br/>";
                                             echo "<strong>NBSP TIN: </strong>" . $nbspTIN;
                                             echo "<br/>";
-                                            echo "<strong>Total Assessed Value of Real Property: </strong>" . "PHP " . $assessedValueOfProp;
+                                            echo "<strong>Total Assessed Value of Real Property: </strong>" . "PHP " . sprintf("%.2f", $assessedValueOfProp);
                                             echo "<br/>";
-                                            echo "<strong>Total Gross Earnings from Business: </strong>" . "PHP " . $grossEarningsFromBix;
-                                            echo "<br/>";
-                                            echo "<strong>Date and time processed: </strong>" . $dateAndTime;                                        }
+                                            echo "<strong>Total Gross Earnings from Business: </strong>" . "PHP " . sprintf("%.2f", $grossEarningsFromBix);
+                                            echo "<br/><br/>";
+
+                                            $sql3 = "SET @count = 0";
+                                            $sql4 = "UPDATE classc SET classc.id = @count:= @count + 1";
+                                            $sql5 = "ALTER TABLE classc AUTO_INCREMENT = 1";
+                                            mysqli_query($con, $sql3);
+                                            mysqli_query($con, $sql4);
+                                            mysqli_query($con, $sql5);
+                                        }
                                         else
                                             echo "Your data was unsuccessfully uploaded to the database. Please reach out our staff regarding this matter.";
                                         }

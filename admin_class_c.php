@@ -85,7 +85,7 @@ u might try that if that interests you
                                     {
                                 ?>
                                         <tr>
-                                            <td><?php echo $rows['dateAndTimeProcessed']; ?></td>
+                                            <td><?php echo $rows['dateProcessed'] . " " . $rows['timeProcessed']; ?></td>
                                             <td><?php echo $rows['firstName']; echo " "; echo $rows['middle']; echo " "; echo $rows['lastName']; ?></td>
                                             <td><?php echo $rows['corporation']; ?></td>
                                             <td><?php echo $rows['addressOfCorporation']; ?></td>
@@ -93,8 +93,8 @@ u might try that if that interests you
                                             <td><?php echo $rows['placeOfRegistration']; ?></td>
                                             <td><?php echo $rows['natureOfBusiness']; ?></td>
                                             <td><?php echo $rows['nbspTIN']; ?></td>
-                                            <td>PHP <?php echo $rows['assessedRealProperty']; ?></td>
-                                            <td>PHP <?php echo $rows['grossEarnings']; ?></td>
+                                            <td>PHP <?php echo sprintf("%.2f", $rows['assessedRealProperty']); ?></td>
+                                            <td>PHP <?php echo sprintf("%.2f", $rows['grossEarnings']); ?></td>
                                             <td><a href="">View</a></td>
                                         </tr>
                                 <?php
@@ -158,7 +158,6 @@ u might try that if that interests you
                 }
             }
             }
-
     </script>        
     </body>
 </html>

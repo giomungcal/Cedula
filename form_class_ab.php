@@ -105,11 +105,11 @@
                              Else, enable/show this form.
                         -->
                         <label for="incomerp"><b>1.</b>&nbsp;Income from Real Property.</label><br>
-                        <input type="text" id="incomerp" name="incomerp" placeholder="(P1.00 for every P1,000.00)"><br>
+                        <input type="text" id="incomerp" name="incomerp" required placeholder="(P1.00 for every P1,000.00)"><br>
                         <label for="grossrec"><b>2.</b>&nbsp;Gross Receipts or Earnings derived from business during the preceding year.</label>
-                        <input type="text" id="grossrec" name="grossrec" placeholder="(P1.00 for every P1,000.00)"><br>
+                        <input type="text" id="grossrec" name="grossrec" required placeholder="(P1.00 for every P1,000.00)"><br>
                         <label for="salgrossrec"><b>3.</b>&nbsp;Salaries or Gross Receipts or Earnings derived from exercise of profession or pursuit of any occupation.</label>
-                        <input type="text" id="salgrossrec" name="salgrossrec" placeholder="(P1.00 for every P1,000.00)"><br>
+                        <input type="text" id="salgrossrec" name="salgrossrec" required placeholder="(P1.00 for every P1,000.00)"><br>
                         <br><br><br>
                         <div style="text-align: center;">
                             <input type="submit" class="submitform" value="SUBMIT FORM">

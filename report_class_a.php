@@ -78,12 +78,34 @@
                                             $dateProcessed = date("Y-m-d");
                                             $timeProcessed = date("H:i:s");
 
-                                            $sql1 = "INSERT INTO classa (firstName, middle, lastName, homeAddress, dateOfBirth, placeOfBirth,
-                                            civilStatus, gender, dateProcessed, timeProcessed) VALUES ('$firstName', '$middle', '$lastName', '$homeAddress', '$dateOfBirth',
-                                            '$placeOfBirth', '$civilStatus', '$gender', '$dateProcessed', '$timeProcessed')";
+                                            $checkDuplicateData =  "SELECT * FROM classa WHERE firstName='$firstName' AND
+                                            middle='$middle' AND lastName='$lastName' AND homeAddress='$homeAddress' AND
+                                            dateOfBirth='$dateOfBirth' AND placeOfBirth='$placeOfBirth' AND civilStatus='$civilStatus'
+                                            AND gender='$gender'";
 
-                                            if (mysqli_query($con, $sql1))
+                                            $testResult = mysqli_query($con, $checkDuplicateData);
+                                            $duplicateDataCount = mysqli_num_rows($testResult);
+
+                                            if ($duplicateDataCount > 0)
                                             {
+                                                echo "
+                                                <script type='text/javascript'>
+                                                    alert('The data already exists.');
+                                                </script>
+                                                ";
+                                            }
+                                            else
+                                            {
+                                                $sql1 = "INSERT INTO classa (firstName, middle, lastName, homeAddress, dateOfBirth, placeOfBirth,
+                                                civilStatus, gender, dateProcessed, timeProcessed) VALUES ('$firstName', '$middle', '$lastName', '$homeAddress', '$dateOfBirth',
+                                                '$placeOfBirth', '$civilStatus', '$gender', '$dateProcessed', '$timeProcessed')";
+                                                mysqli_query($con, $sql1);
+                                            }
+                                            
+
+                                            // if (mysqli_query($con, $sql1))
+                                            // {
+
                                             $sql2 = "SELECT COUNT(*) FROM classa WHERE dateProcessed LIKE '$dateProcessed'";
                                             $result = mysqli_query($con, $sql2);
                                             $rows = mysqli_fetch_assoc($result);
@@ -122,9 +144,9 @@
                                                 mysqli_query($con, $sql3);
                                                 mysqli_query($con, $sql4);
                                                 mysqli_query($con, $sql5);
-                                            }
-                                            else
-                                                echo "Your data was unsuccessfully uploaded to the database. Please reach out our staff regarding this matter.";
+                                            
+                                            // else
+                                            //     echo "Your data was unsuccessfully uploaded to the database. Please reach out our staff regarding this matter.";
                                     }
                                     ?>
                                     </p>

@@ -84,7 +84,7 @@ u might try that if that interests you
                                     {
                                 ?>
                                         <tr>
-                                            <td><?php echo $rows['dateAndTimeProcessed']; ?></td>
+                                            <td><?php echo $rows['dateProcessed'] . " " . $rows['timeProcessed']; ?></td>
                                             <td><?php echo $rows['firstName']; ?></td>
                                             <td><?php echo $rows['middle']; ?></td>
                                             <td><?php echo $rows['lastName']; ?></td>

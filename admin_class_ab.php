@@ -93,7 +93,7 @@ u might try that if that interests you
                                     {
                                 ?>
                                         <tr>
-                                            <td><?php echo $rows['dateAndTimeProcessed']; ?></td>
+                                            <td><?php echo $rows['dateProcessed'] . " " . $rows['timeProcessed']; ?></td>
                                             <td><?php echo $rows['firstName']; ?></td>
                                             <td><?php echo $rows['middle']; ?></td>
                                             <td><?php echo $rows['lastName']; ?></td>
@@ -108,9 +108,9 @@ u might try that if that interests you
                                             <td><?php echo $rows['ACRNo']; ?></td>
                                             <td><?php echo $rows['heightCentimeters']; ?></td>
                                             <td><?php echo $rows['weightKilograms']; ?></td>
-                                            <td><?php echo $rows['realPropertyIncome']; ?></td>
-                                            <td>PHP <?php echo $rows['grossReceiptsFromBusiness']; ?></td>
-                                            <td>PHP <?php echo $rows['salariesFromProfession']; ?></td>
+                                            <td>PHP <?php echo sprintf("%.2f", $rows['realPropertyIncome']); ?></td>
+                                            <td>PHP <?php echo sprintf("%.2f", $rows['grossReceiptsFromBusiness']); ?></td>
+                                            <td>PHP <?php echo sprintf("%.2f", $rows['salariesFromProfession']); ?></td>
                                             <td><a href="">View</a></td>
                                         </tr>
                                 <?php
@@ -122,6 +122,8 @@ u might try that if that interests you
                 </div>
             </div>
         </div>
+        <br/></br/><br/></br/><br/></br/><br/>
+        <button align="center">HELLO</button>
   
         <script type="text/javascript">
         th = document.getElementsByTagName('th');

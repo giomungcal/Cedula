@@ -5,6 +5,13 @@
         header("location: index.php");
     if($_SESSION['login_user'] == "admin")
         header("location: admin_class_a.php");
+
+    $con = mysqli_connect('127.0.0.1','root','');
+    mysqli_select_db($con,'cedula');
+    if(!$con)
+        echo 'ERROR: Not connected to server.';
+    if (!mysqli_select_db($con,'cedula'))
+        echo 'ERROR: Database not selected.';
 ?>
 
 <!DOCTYPE html>
@@ -81,25 +88,37 @@
                                             $grossReceiptsFromBix = $_POST['grossrec'];
                                             $salariesFromProfession = $_POST['salgrossrec'];
                                             date_default_timezone_set("Asia/Brunei");
-                                            $dateAndTime = date("Y-m-d H:i:s");
+                                            $dateProcessed = date("Y-m-d");
+                                            $timeProcessed = date("H:i:s");
                                             
-                                            $con = mysqli_connect('127.0.0.1','root','');
-
-                                            if(!$con)
-                                                echo 'ERROR: Not connected to server.';
-                                            if (!mysqli_select_db($con,'cedula'))
-                                                echo 'ERROR: Database not selected.';
-                                            
-                                            $sql = "INSERT INTO classab (firstName, middle, lastName, homeAddress, dateOfBirth, citizenship, placeOfBirth, civilStatus,
+                                            $sql1 = "INSERT INTO classab (firstName, middle, lastName, homeAddress, dateOfBirth, citizenship, placeOfBirth, civilStatus,
                                             gender, profession, taxAccountNo, ACRNo, heightCentimeters, weightKilograms, realPropertyIncome, grossReceiptsFromBusiness,
-                                            salariesFromProfession, dateAndTimeProcessed) VALUES ('$firstName', '$middle', '$lastName', '$homeAddress', '$dateOfBirth', '$citizenship',
+                                            salariesFromProfession, dateProcessed, timeProcessed) VALUES ('$firstName', '$middle', '$lastName', '$homeAddress', '$dateOfBirth', '$citizenship',
                                             '$placeOfBirth', '$civilStatus', '$gender', '$profession', '$taxAccountNo', '$acrNo', '$height', '$weight', '$incomeFromRealProp',
-                                            '$grossReceiptsFromBix', '$salariesFromProfession', '$dateAndTime')";
+                                            '$grossReceiptsFromBix', '$salariesFromProfession', '$dateProcessed', '$timeProcessed')";
 
-                                            if (mysqli_query($con, $sql))
+                                            if (mysqli_query($con, $sql1))
                                             {
-                                                echo "<h1>Queue Number: </h1>";
-                                                echo "<br><strong>Full Name: </strong>" . $firstName . " " . $middle . " " . $lastName;
+                                                $sql2 = "SELECT COUNT(*) FROM classab WHERE dateProcessed LIKE '$dateProcessed'";
+                                                $result = mysqli_query($con, $sql2);
+                                                $rows = mysqli_fetch_assoc($result);
+                                                $queueingNo = $rows['COUNT(*)'];
+    
+                                                if($queueingNo/100==1)
+                                                    $queueingNo=100;
+                                                else if ($queueingNo/100 < 1)
+                                                    if ($queueingNo/10 < 1)
+                                                        $queue = "00";
+                                                    else
+                                                        $queue = "0";
+                                                else
+                                                    $queue = "";
+    
+                                                $queueingNo = "CAB-" . $queue . $queueingNo%100;
+                                                echo "<h1> Queue Number: " . $queueingNo . "</h1>";
+                                                echo "<strong>Timestamp: </strong>" . $dateProcessed . " " . $timeProcessed;
+                                                echo "<br/><br/>";
+                                                echo "<strong>Full Name: </strong>" . $firstName . " " . $middle . " " . $lastName;
                                                 echo "<br/>";
                                                 echo "<strong>Home Address: </strong>" . $homeAddress;
                                                 echo "<br/>";
@@ -117,19 +136,24 @@
                                                 echo "<br/>";
                                                 echo "<strong>Taxpayer's Account No.: </strong>" . $taxAccountNo;
                                                 echo "<br/>";
-                                                echo "<strong>ACR No.: </strong>" . $acrNo;
+                                                echo "<strong>ACR No.: </strong>" . (($acrNo == "") ? "N/A" : $acrNo);
                                                 echo "<br/>";
                                                 echo "<strong>Height: </strong>" . $height . " cm";
                                                 echo "<br/>";
                                                 echo "<strong>Weight: </strong>" . $weight . " kgs";
                                                 echo "<br/>";
-                                                echo "<strong>Income from Real Property: </strong>" . " PHP " . $incomeFromRealProp;
+                                                echo "<strong>Income from Real Property: </strong>" . " PHP " . sprintf("%.2f", $incomeFromRealProp);
                                                 echo "<br/>";
-                                                echo "<strong>Gross Receipts or Earnings derived from business during the preceding year: </strong>" . " PHP " . $grossReceiptsFromBix;
+                                                echo "<strong>Gross receipts/earnings derived from business during the preceding year: </strong>" . " PHP " . sprintf("%.2f", $grossReceiptsFromBix);
                                                 echo "<br/>";
-                                                echo "<strong>Salaries/Gross Receipts/Earnings derived from exercise of profession/pursuit of any occupation: </strong>" . " PHP " . $salariesFromProfession;
-                                                echo "<br/>";
-                                                echo "<strong>Date and time processed: </strong>" . $dateAndTime;
+                                                echo "<strong>Salaries/gross receipts/earnings derived from exercise of profession/pursuit of any occupation: </strong>" . " PHP " . sprintf("%.2f", $salariesFromProfession);
+
+                                                $sql3 = "SET @count = 0";
+                                                $sql4 = "UPDATE classab SET classab.id = @count:= @count + 1";
+                                                $sql5 = "ALTER TABLE classab AUTO_INCREMENT = 1";
+                                                mysqli_query($con, $sql3);
+                                                mysqli_query($con, $sql4);
+                                                mysqli_query($con, $sql5);
                                             }
                                             else
                                                 echo "Your data was unsuccessfully uploaded to the database. Please reach out our staff regarding this matter.";
