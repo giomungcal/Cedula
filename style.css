@@ -180,7 +180,7 @@ html
 
 .formfield_a{
     padding: 2.5rem 3rem;
-    height: 380px;
+    height: 100%;
     color: #1f4498;
     border-radius: 10px;
     border: steelblue;
@@ -288,7 +288,7 @@ label[for="gender1"]{
 
 .formfield_ab{
     padding: 2.5rem 3rem;
-    height: 940px;
+    height: 20%;
     color: #1f4498;
     border-radius: 10px;
     border: steelblue;

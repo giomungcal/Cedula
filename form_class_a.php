@@ -73,12 +73,11 @@
                         <input type="radio" name="gender" value="Male">
                             <label for="gender1">Male&nbsp;&nbsp;&nbsp;</label>
                         <input type="radio" name="gender" value="Female">
-                            <label for="gender1">Female</label><br><br><br>
+                            <label for="gender1">Female</label><br><br>
+                        <p align=center><b>NOTE:</b> Please double check your input data before submitting.</p><br>
                         <div style="text-align: center;">
                         <input type="submit" class="submitform" value="SUBMIT FORM">
-                        <br/>
-                        <p align=center>NOTE: Please double check your input data before submitting.<br/></p>
-                        
+                        <br>
                         </div>
                     </form>
                 </div>

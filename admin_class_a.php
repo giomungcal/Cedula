@@ -56,8 +56,8 @@ u might try that if that interests you
             </div>
             </div>
             <div class="maincontent_form">
-                <h1>Class A: Unemployed &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for first name.."></h1>
+                <h1>Class A: Unemployed 
+                <div style="text-align: left;"> <input style="width:60%" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for first name.."></div></h1>
                 <br>
                 <!-- <label for="birthday"><b>Date:</b></label> -->
                 <!-- Eto yung pagshow ng entries depende sa date? -->
@@ -68,15 +68,15 @@ u might try that if that interests you
                             <thead>
                               <tr>
                                 <th><a style="cursor: pointer">Date and time processed ▴</a></th>
+                                <th><a style="cursor: pointer">Queue Number ▴</a></th>
+                                <td>View</td>
                                 <th><a style="cursor: pointer">First Name ▴</a></th>
                                 <th><a style="cursor: pointer">M. I. ▴</a></th>
                                 <th><a style="cursor: pointer">Last Name ▴</a></th>
                                 <th><a style="cursor: pointer">Address ▴</a></th>
                                 <th><a style="cursor: pointer">Birthday ▴</a></th>
                                 <th><a style="cursor: pointer">Birthplace ▴</a></th>
-                                <th><a style="cursor: pointer">Civil Status ▴</a></th>
                                 <th><a style="cursor: pointer">Gender ▴</a></th>
-                                <td>View</td>
                               </tr>
                             </thead>
                             <tbody>
@@ -91,15 +91,15 @@ u might try that if that interests you
                                 ?>
                                         <tr>
                                             <td><?php echo $rows['dateAndTimeProcessed']; ?></td>
+                                            <td>A001031120</td>
+                                            <td><a href="">View</a></td>
                                             <td><?php echo $rows['firstName']; ?></td>
                                             <td><?php echo $rows['middle']; ?></td>
                                             <td><?php echo $rows['lastName']; ?></td>
                                             <td><?php echo $rows['homeAddress']; ?></td>
                                             <td><?php echo $rows['dateOfBirth']; ?></td>
                                             <td><?php echo $rows['placeOfBirth']; ?></td>
-                                            <td><?php echo $rows['civilStatus']; ?></td>
                                             <td><?php echo $rows['gender']; ?></td>
-                                            <td><a href="">View</a></td>
                                         </tr>
                                         <?php
                                     }

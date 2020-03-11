@@ -29,13 +29,14 @@
             // Alert box or error message below submit button if user typed wrong credentials? Mr Mungcal u decide hahahahha
             //Alert box
 
-            echo '<script type="text/javascript">
-            alert("The username or password you entered is invalid.");
-            </script>';
+             echo '<script type="text/javascript">
+             window.alert("The username or password you entered is invalid.");
+             </script>';
 
 
             // error message below submit button
             // $error = 'The username or password you entered is invalid.';
+
         }
 
             mysqli_close($conn);
