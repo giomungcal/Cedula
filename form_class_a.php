@@ -53,7 +53,7 @@
                         <div class="formsdropdown">
                             <form id="chooseclasstype" method="POST" style="">
                                 <select id="classtypelist" class="classtypes" name="classtypes" onchange="selectClassType()">
-                                    <option selected disabled value="">Select class:</option>
+                                    <option selected disabled value="">Change class:</option>
                                     <option value="classab">Class AB (Employed)</option>
                                     <option value="classc">Class C (Corporation)</option>
                                 </select>&nbsp;&nbsp;
