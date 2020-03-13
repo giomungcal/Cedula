@@ -403,8 +403,9 @@ label[for="grossearn"]{
 #username, #password{
     width: 65%;
     padding: 13px 17px;
-    margin: 1rem 1rem 0rem 4rem;
-    display: inline-block;
+    /* margin: 1rem 1rem 0rem 1rem; */
+    margin-bottom: 20px;
+    /* display: inline-block; */
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -412,16 +413,17 @@ label[for="grossearn"]{
 
 #username{
     margin-top: 3rem;
-    margin-left: 107px;
+    /* margin-left: 107px; */
 }
 
 #password{
     margin-bottom: 1rem;
-    margin-left: 107px;
+    /* margin-left: 107px; */
 }
 
 .logincontainer{
-    padding: 4rem 18rem;
+    padding: 5% 25%;
+    text-align: center;
 }
 
 .loginform{
@@ -443,7 +445,6 @@ label[for="grossearn"]{
     transition: .4s;
     cursor: pointer;
     margin-bottom: 3rem;
-    margin-right: 12px;
 }
 
 .submitlogin:hover{

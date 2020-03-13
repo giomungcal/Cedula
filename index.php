@@ -28,11 +28,17 @@
                 <div class="logo-pic" style="text-align: center;"><img src="img/Clogo.png" height="60px" width="60px"></div>
                 <!-- <h2 style="text-align: center;">Administrator Login</h2><br> --><br><br>
                 <div class="loginform">
-                    <form id="login" action="" method="post">
-                        <input type="text" id="username" name="username" required placeholder="Username"><br>
-                        <input type="password" id="password" name="password" required placeholder="Password"><br>
-                        <div style="text-align: center;"><input type="submit" id="submit" name ="submit" class="submitlogin" value="Log In"></div>
-                    </form>
+                    <div class="logincontainerx" style="width: 100%;">
+                        <div class="loginboxes" style="width: 100%;">
+                            <form id="login" action="" method="post">
+                            <input type="text" id="username" name="username" required placeholder="Username"><br>
+                            <input type="password" id="password" name="password" required placeholder="Password"><br>
+                            <div>
+                                <input type="submit" id="submit" name ="submit" class="submitlogin" value="Log In">
+                            </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 <span align="center"><?php echo $error; ?></span> 
                 <p id="res"></p>

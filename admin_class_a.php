@@ -63,7 +63,7 @@ if($_SESSION['login_user'] == "user")
                          {  
                               echo '  
                               <tr>  
-                                   <td>'.$row["dateAndTimeProcessed"].'</td>
+                                   <td>'.$row["dateProcessed"].'</td>
                                    <td> A001-031120 </td>
                                    <td><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⨭&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
                                    <td>'.$row["firstName"].'</td>  
