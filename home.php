@@ -48,11 +48,11 @@
                     <br><br>
                     <div class="dropdown">
                         <form id="chooseclasstype" action="" method="POST">
-                            <select id="classtypelist" class="classtypes" name="classtypes" onchange="selectClassType()">
-                                <option selected disabled>Please select a class.</option>
-                                <option value="classa">Class A</option>
-                                <option value="classab">Class AB</option>
-                                <option value="classc">Class C</option>
+                            <select id="classtypelist" class="classtypes" name="classtypes" onchange="selectClassType()" required>
+                                <option selected disabled value="">Please select a class.</option>
+                                <option value="classa">Class A (Unemployed)</option>
+                                <option value="classab">Class AB (Employed)</option>
+                                <option value="classc">Class C (Corporation)</option>
                             </select>
                             <br><br>
                             <input type="submit" value="Proceed" class="proceedbtn">

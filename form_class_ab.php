@@ -45,8 +45,24 @@
             </div>
             </div>
             <div class="maincontent_form">
-                <h1>Class AB Form:</h1>
-                <h2><i>(Employed & Business Owners)</i></h2><br>
+            <div class="headerdivcontainer">
+                    <div class="headerdiv">
+                        <div class="headertitle">
+                            <h1>Class AB Form:</h1>
+                            <h2><i>(Employed)</i></h2><br>
+                        </div>
+                        <div class="formsdropdown">
+                            <form id="chooseclasstype" method="POST" style="">
+                                <select id="classtypelist" class="classtypes" name="classtypes" onchange="selectClassType()">
+                                    <option selected disabled value="">Select class:</option>
+                                    <option value="classa">Class A (Unemployed)</option>
+                                    <option value="classc">Class C (Corporation)</option>
+                                </select>&nbsp;&nbsp;
+                                <input type="submit" value="Proceed" class="proceedbtn">
+                            </form>
+                        </div>
+                    </div>
+                </div>
                 <div class="formfield_ab">
                     <h2><i>Please fill in your information:</i></h2>
                     <br>

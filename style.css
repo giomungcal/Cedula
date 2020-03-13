@@ -95,12 +95,14 @@ html
 {
     display: flex;
     list-style: none;
+    margin-right: 4px;
+    float: right;
 }
-
+/* 
 #btn1
 {
     padding-left: 330px;
-}
+} */
 
 /* .menu>ul>li>a
 {
@@ -140,7 +142,7 @@ html
 
 .classtypes
 {
-    width: 10rem;
+    width: 12rem;
     padding: 15px;
     background-color: whitesmoke;
     font-size: 15px;
@@ -525,31 +527,6 @@ label[for="grossearn"]{
     background-color: white;
 }
 
-.navbaradmin_ul
-{
-    text-align: right;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.navbaradmin_ul > li{
-    background-image: url(arrow.gif);
-    background-repeat: no-repeat;
-    background-position: 100% .4em;
-    padding-right: .6em;
-}
-
-.navbaradmin
-{
-   display: flex ;
-   color: white;
-   background-color: #1f4498;
-   height: 45px;
-   width: 100%;
-   border-radius: 5px;
-}
-
 .menuadmin
 {
     flex: 1;
@@ -563,10 +540,10 @@ label[for="grossearn"]{
     list-style: none;
 }
 
-#btn
+/* #btn
 {
     padding-left: 330px;
-}
+} */
 
 /* .menu>ul>li>a
 {
@@ -576,7 +553,7 @@ label[for="grossearn"]{
 .menuadmin .btn
 {
     background-color: transparent;
-    padding: 10px 34px 13px;
+    padding: 10px 34px 7px;
     color: #1f4498;
     background-color: transparent;
     text-decoration: none;
@@ -598,7 +575,8 @@ label[for="grossearn"]{
     text-align: right;
     list-style-type: none;
     padding-left: 205px;
-    margin: 0;
+    float: right;
+    margin: 3px;
 }
 
 .navbaradmin_ul > li{
@@ -644,3 +622,26 @@ label[for="grossearn"]{
 {
     padding: 10px;
 }
+
+/* HEADER CLASS CHANGE FOR FORMS */
+
+.headerdivcontainer
+{
+    height: 150px;
+    min-width: 980px;
+}
+
+.headerdiv{
+    margin: 0 auto;
+    padding-top: 13px;
+}
+
+.headertitle{
+    float:left;
+}
+
+.formsdropdown{
+    float:right;
+    padding-top: 50px;
+}
+

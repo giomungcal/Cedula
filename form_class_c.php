@@ -45,8 +45,24 @@
             </div>
             </div>
             <div class="maincontent_form">
-                <h1>Class C Form:</h1>
-                <h2><i>(Corporation)</i></h2><br>
+            <div class="headerdivcontainer">
+                    <div class="headerdiv">
+                        <div class="headertitle">
+                            <h1>Class C Form:</h1>
+                            <h2><i>(Corporation)</i></h2><br>
+                        </div>
+                        <div class="formsdropdown">
+                            <form id="chooseclasstype" method="POST" style="">
+                                <select id="classtypelist" class="classtypes" name="classtypes" onchange="selectClassType()">
+                                    <option selected disabled value="">Select class:</option>
+                                    <option value="classa">Class A (Unemployed)</option>
+                                    <option value="classab">Class AB (Employed)</option>
+                                </select>&nbsp;&nbsp;
+                                <input type="submit" value="Proceed" class="proceedbtn">
+                            </form>
+                        </div>
+                    </div>
+                </div>
                 <div class="formfield_c">
                     <h2><i>Please fill in your information:</i></h2><br>
                     <form onsubmit="return confirm('Are you sure you want to submit?\nYour data will now be uploaded to the database.')" action="report_class_c.php" method="post" class="formstyle">
