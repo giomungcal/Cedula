@@ -34,13 +34,13 @@
                         <div class="logo"><a href="home.php"><i>manila</i>&nbsp;<b>cedula</b></a></div>
                             <div class="menu">
                             <ul>
-                                <li id="btn1"><a class="btn" href=""><b>How&nbsp;to&nbsp;Use</b></a></li>
+                                <li id="btn1"><a class="btn"><b>How&nbsp;to&nbsp;Use</b></a></li>
                                 <!-- <li><a class="btn" href=""><b>Procedure</b></a></li> -->
                                 <!-- I just set this as comment in order to include "Settings" option. I know this ("Procedure" option) is important.
                                 Maybe you could place all five options without affecting the overall design of the panel. -H -->
-                                <li><a class="btn" href=""><b>About</b></a></li>
-                                <li><a class="btn" href=""><b>Settings</b></a></li> <!-- Change password feature. Yay or  nay? -H-->
-                                <li><a class="btn" href="logout.php"><b>Logout</b></a></li>
+                                <li><a class="btn"><b>About</b></a></li>
+                                <li><a class="btn"><b>Settings</b></a></li> <!-- Change password feature. Yay or  nay? -H-->
+                                <li><a class="btn"><b>Logout</b></a></li>
                                 <!--
                                 <li id="btn1"><a class="btn" href=""><b>How&nbsp;to&nbsp;Use</b></a></li>
                                 <li><a class="btn" href=""><b>Procedure</b></a></li>

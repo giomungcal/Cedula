@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 11, 2020 at 05:50 AM
+-- Generation Time: Mar 11, 2020 at 11:49 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -48,7 +48,11 @@ CREATE TABLE `classa` (
 
 INSERT INTO `classa` (`ID`, `firstName`, `middle`, `lastName`, `homeAddress`, `dateOfBirth`, `placeOfBirth`, `civilStatus`, `gender`, `dateProcessed`, `timeProcessed`) VALUES
 (1, 'Juan', 'A.', 'Dela Cruz', '1 Sales St., Sta. Cruz, Manila', '2000-01-01', 'Tondo, Manila', 'Single', 'Male', '2020-03-11', '12:45:28'),
-(2, 'Regina Joyce', 'C.', 'Pacheco', '231 Moderna St., Balut, Tondo, Manila', '1999-05-27', 'Tondo, Manila', 'Single', 'Female', '2020-03-11', '12:47:01');
+(2, 'Regina Joyce', 'C.', 'Pacheco', '231 Moderna St., Balut, Tondo, Manila', '1999-05-27', 'Tondo, Manila', 'Single', 'Female', '2020-03-11', '12:47:01'),
+(3, 'Pedro', 'C.', 'Flores', '1 Antonio St., Brgy. 342, Zone 34, Sta. Cruz, Manila', '1992-12-02', 'Imus, Cavite', 'Single', 'Male', '2020-03-11', '12:56:29'),
+(4, 'Juan', 'F.', 'Mungcal', '100 Moderna St., Balut, Tondo, Manila', '1998-05-15', 'San Rafael, Bulacan', 'Separated', 'Male', '2020-03-11', '13:11:53'),
+(5, 'Giomar', 'P.', 'Fonte', '1 Ongpin St., Binondo, Manila', '1993-01-01', 'Valenzuela', 'Married', 'Male', '2020-03-11', '16:46:48'),
+(6, 'Karl Vincent', 'M.', 'Sy', '2000 Pedro Gil St., Paco, Manila', '1988-08-08', 'General Santos City', 'Single', 'Male', '2020-03-11', '17:30:35');
 
 -- --------------------------------------------------------
 
@@ -75,19 +79,18 @@ CREATE TABLE `classab` (
   `realPropertyIncome` double NOT NULL,
   `grossReceiptsFromBusiness` double NOT NULL,
   `salariesFromProfession` double NOT NULL,
-  `dateAndTimeProcessed` datetime NOT NULL
+  `dateProcessed` date NOT NULL,
+  `timeProcessed` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `classab`
 --
 
-INSERT INTO `classab` (`ID`, `firstName`, `middle`, `lastName`, `homeAddress`, `dateOfBirth`, `citizenship`, `placeOfBirth`, `civilStatus`, `gender`, `profession`, `taxAccountNo`, `ACRNo`, `heightCentimeters`, `weightKilograms`, `realPropertyIncome`, `grossReceiptsFromBusiness`, `salariesFromProfession`, `dateAndTimeProcessed`) VALUES
-(1, 'Pedro', 'A.', 'Rivera', '1 Ongpin St., Binondo, Manila', '1980-01-01', 'Filipino', 'Quezon City', 'Single', 'Male', 'Chemical Engineer', 123456789000, '0', 163, 61, 100, 500, 1000, '0000-00-00 00:00:00'),
-(2, 'John', 'A.', 'Doe', '1 Carriedo St., Quiapo, Manila', '1965-02-14', 'American', 'Los Angeles, California, USA', 'Divorced', 'Male', 'Warehouse Staff', 987654321000, 'F1003000601TV', 180, 60, 0, 0, 0, '0000-00-00 00:00:00'),
-(4, 'Cedric', 'T.', 'Quinto', '1 Gen. Luna, Intramuros, Manila', '2020-01-01', 'Filipino', 'Pasay City', 'Single', 'Male', 'Software Engineer', 123456789000, '', 160, 60, 0, 0, 0, '0000-00-00 00:00:00'),
-(12, 'Algene Steven', 'W.', 'Mendoza', '1 Gen. Luna, Intramuros, Manila', '2020-04-30', 'Filipino', 'Pasay City', 'Divorced', 'Female', 'Mechanical Engineer', 888888888888, '', 160, 60, 10, 10, 10, '2020-03-08 10:37:08'),
-(16, 'Algene Steven', 'T.', 'Mendoza', '1 Gen. Luna, Intramuros, Manila', '2020-01-01', 'Filipino', 'Pasay City', 'Divorced', 'Male', 'Software Engineer', 123456789000, '', 160, 60, 0, 0, 0, '2020-03-08 16:40:19');
+INSERT INTO `classab` (`ID`, `firstName`, `middle`, `lastName`, `homeAddress`, `dateOfBirth`, `citizenship`, `placeOfBirth`, `civilStatus`, `gender`, `profession`, `taxAccountNo`, `ACRNo`, `heightCentimeters`, `weightKilograms`, `realPropertyIncome`, `grossReceiptsFromBusiness`, `salariesFromProfession`, `dateProcessed`, `timeProcessed`) VALUES
+(1, 'Regina', 'F.', 'Reyes', '10 Moderna St., Balut, Tondo, Manila', '1995-01-25', 'Filipino', 'Carmen, Cebu', 'Married', 'Female', 'Network Engineer', 123456789000, '', 165, 60, 0, 0, 0, '2020-03-11', '13:32:42'),
+(2, 'Cedric', 'T.', 'Quinto', '1 Gen. Luna St., Intramuros, Manila', '1998-11-03', 'Filipino', 'Obando, Bulacan', 'Separated', 'Male', 'Database Administrator', 777555333111, '', 170, 65, 0, 0, 0, '2020-03-11', '13:37:10'),
+(3, 'John', 'A.', 'Doe', '1 Carriedo St., Quiapo, Manila', '1965-02-02', 'American', 'Las Vegas, Nevada, USA', 'Divorced', 'Male', 'Warehouse Staff', 987654321000, 'F1003000601TV', 180, 64, 2, 2, 2, '2020-03-11', '13:39:52');
 
 -- --------------------------------------------------------
 
@@ -97,6 +100,8 @@ INSERT INTO `classab` (`ID`, `firstName`, `middle`, `lastName`, `homeAddress`, `
 
 CREATE TABLE `classc` (
   `ID` int(11) NOT NULL,
+  `dateProcessed` date NOT NULL,
+  `timeProcessed` time NOT NULL,
   `firstName` varchar(50) NOT NULL,
   `middle` varchar(5) NOT NULL,
   `lastName` varchar(30) NOT NULL,
@@ -107,20 +112,17 @@ CREATE TABLE `classc` (
   `natureOfBusiness` varchar(50) NOT NULL,
   `nbspTIN` bigint(20) NOT NULL,
   `assessedRealProperty` double NOT NULL,
-  `grossEarnings` double NOT NULL,
-  `dateAndTimeProcessed` datetime NOT NULL
+  `grossEarnings` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `classc`
 --
 
-INSERT INTO `classc` (`ID`, `firstName`, `middle`, `lastName`, `corporation`, `addressOfCorporation`, `dateOfRegistration`, `placeOfRegistration`, `natureOfBusiness`, `nbspTIN`, `assessedRealProperty`, `grossEarnings`, `dateAndTimeProcessed`) VALUES
-(1, 'Andres', 'D.', 'Mendoza', 'Mendoza Group of Companies', '1000 Roxas Blvd., Ermita, Manila', '2006-12-01', 'Ermita, Manila', 'Corporation', 123789456000, 1000000, 2000000, '0000-00-00 00:00:00'),
-(2, 'Vincent', 'A.', 'Xuniga', 'Lebanon Commercial Company', '864 Julio Nakpil St., Tondo, Manila', '2003-01-01', 'Tondo, Manila', 'Corporation', 777777777777, 200000, 500000, '0000-00-00 00:00:00'),
-(10, 'Kendrick', 'M.', 'Xuniga', 'Philippine Commercial Company', '1224 D Quiricada St., Sta. Cruz, Manila', '2008-09-23', 'Tondo, Manila', 'Corporation', 333333333333, 200000, 500000, '2020-03-08 10:42:08'),
-(14, 'Algene Steven', 'W.', 'Fonte', 'Singapore Commercial Company', '2 Gen. Luna, Intramuros, Manila', '2020-01-01', 'Tondo, Manila', 'Corporation', 333222111667, 300000, 10000, '2020-03-08 17:13:34'),
-(15, 'Cedric', 'A.', 'Fonte', 'Philippine Commercial Company', '1224 D Quiricada St., Sta. Cruz, Manila', '2020-01-31', 'Tondo, Manila', 'Corporation', 222111888777, 200000, 10000, '2020-03-08 17:15:29');
+INSERT INTO `classc` (`ID`, `dateProcessed`, `timeProcessed`, `firstName`, `middle`, `lastName`, `corporation`, `addressOfCorporation`, `dateOfRegistration`, `placeOfRegistration`, `natureOfBusiness`, `nbspTIN`, `assessedRealProperty`, `grossEarnings`) VALUES
+(1, '2020-03-11', '14:12:09', 'Karl', 'M.', 'Pacheco', 'Philippine Ramen Corporation', '1000 Roxas Blvd., Ermita, Manila', '2015-01-01', 'Ermita, Manila', 'Food Services', 333333333333, 1000000, 500000),
+(2, '2020-03-11', '14:15:53', 'Vincent', 'A.', 'Zuniga', 'VZ Group of Companies', '1 Julio Nakpil St., Tondo, Manila', '2001-03-01', 'Makati CBD', 'Engineering and Construction', 122344566788, 200000, 50000),
+(3, '2020-03-11', '14:27:09', 'Algene', 'M.', 'Marquez', 'Manila Channel 1 Corporation', '1000 Bonifacio Drive, Port Area, Manila', '1996-09-30', 'Quezon City', 'Broadcasting', 555555555692, 50456789.01, 45231655.44);
 
 -- --------------------------------------------------------
 
@@ -178,19 +180,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `classa`
 --
 ALTER TABLE `classa`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `classab`
 --
 ALTER TABLE `classab`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `classc`
 --
 ALTER TABLE `classc`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
