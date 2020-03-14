@@ -34,13 +34,13 @@
                         <div class="logo"><a href="home.php"><i>manila</i>&nbsp;<b>cedula</b></a></div>
                             <div class="menu">
                             <ul>
-                                <li id="btn1"><a class="btn" href=""><b>How&nbsp;to&nbsp;Use</b></a></li>
+                                <li id="btn1"><a class="btn"><b>How&nbsp;to&nbsp;Use</b></a></li>
                                 <!-- <li><a class="btn" href=""><b>Procedure</b></a></li> -->
                                 <!-- I just set this as comment in order to include "Settings" option. I know this ("Procedure" option) is important.
                                 Maybe you could place all five options without affecting the overall design of the panel. -H -->
-                                <li><a class="btn" href=""><b>About</b></a></li>
-                                <li><a class="btn" href=""><b>Settings</b></a></li> <!-- Change password feature. Yay or  nay? -H-->
-                                <li><a class="btn" href="logout.php"><b>Logout</b></a></li>
+                                <li><a class="btn"><b>About</b></a></li>
+                                <li><a class="btn"><b>Settings</b></a></li> <!-- Change password feature. Yay or  nay? -H-->
+                                <li><a class="btn"><b>Logout</b></a></li>
                                 <!--
                                 <li id="btn1"><a class="btn" href=""><b>How&nbsp;to&nbsp;Use</b></a></li>
                                 <li><a class="btn" href=""><b>Procedure</b></a></li>
@@ -87,37 +87,88 @@
                                             $incomeFromRealProp = $_POST['incomerp'];
                                             $grossReceiptsFromBix = $_POST['grossrec'];
                                             $salariesFromProfession = $_POST['salgrossrec'];
-                                            date_default_timezone_set("Asia/Brunei");
+                                            date_default_timezone_set("Asia/Manila");
                                             $dateProcessed = date("Y-m-d");
                                             $timeProcessed = date("H:i:s");
-                                            
-                                            $sql1 = "INSERT INTO classab (firstName, middle, lastName, homeAddress, dateOfBirth, citizenship, placeOfBirth, civilStatus,
-                                            gender, profession, taxAccountNo, ACRNo, heightCentimeters, weightKilograms, realPropertyIncome, grossReceiptsFromBusiness,
-                                            salariesFromProfession, dateProcessed, timeProcessed) VALUES ('$firstName', '$middle', '$lastName', '$homeAddress', '$dateOfBirth', '$citizenship',
-                                            '$placeOfBirth', '$civilStatus', '$gender', '$profession', '$taxAccountNo', '$acrNo', '$height', '$weight', '$incomeFromRealProp',
-                                            '$grossReceiptsFromBix', '$salariesFromProfession', '$dateProcessed', '$timeProcessed')";
 
-                                            if (mysqli_query($con, $sql1))
+                                            $checkDuplicateData =  "SELECT * FROM classab
+                                                                    WHERE firstName='$firstName'
+                                                                    AND middle='$middle'
+                                                                    AND lastName='$lastName'
+                                                                    AND homeAddress='$homeAddress'
+                                                                    AND dateOfBirth='$dateOfBirth'
+                                                                    AND citizenship='$citizenship'
+                                                                    AND placeOfBirth='$placeOfBirth'
+                                                                    AND civilStatus='$civilStatus'
+                                                                    AND gender='$gender'
+                                                                    AND profession='$profession'
+                                                                    AND taxAccountNo='$taxAccountNo'
+                                                                    AND ACRNo='$acrNo' 
+                                                                    AND heightCentimeters='$height'
+                                                                    AND weightKilograms='$weight'
+                                                                    AND realPropertyIncome='$incomeFromRealProp'
+                                                                    AND grossReceiptsFromBusiness='$grossReceiptsFromBix'
+                                                                    AND salariesFromProfession='$salariesFromProfession'
+                                                                    AND dateProcessed='$dateProcessed'";
+
+                                            $testResult = mysqli_query($con, $checkDuplicateData);
+                                            $duplicateDataCount = mysqli_num_rows($testResult);
+
+                                            if ($duplicateDataCount > 0)
+                                            {
+                                            ?>
+                                                <script type='text/javascript'>
+                                                    alert('The following data are already inserted into the database.\nPlease click OK to go back to the previous page.');
+                                                </script>
+                                            <?php
+                                                $query1 = "SELECT * FROM classab ORDER BY id DESC LIMIT 1";
+                                                $resulting = mysqli_query($con, $query1);
+                                                $rowstemp = mysqli_fetch_assoc($resulting);
+                                                echo "<h1> Queue Number: " . substr($rowstemp['queueNo'], 2, -9) . "</h1>";
+                                                echo "<strong>Timestamp: " . $rowstemp['dateProcessed']. " " . $rowstemp['timeProcessed'] . "</strong>";
+                                                echo "<br/><br/>";
+                                            }
+                                            else
                                             {
                                                 $sql2 = "SELECT COUNT(*) FROM classab WHERE dateProcessed LIKE '$dateProcessed'";
                                                 $result = mysqli_query($con, $sql2);
                                                 $rows = mysqli_fetch_assoc($result);
-                                                $queueingNo = $rows['COUNT(*)'];
+                                                $queueingNo = $rows['COUNT(*)']+1;
     
-                                                if($queueingNo/100==1)
-                                                    $queueingNo=100;
-                                                else if ($queueingNo/100 < 1)
-                                                    if ($queueingNo/10 < 1)
-                                                        $queue = "00";
-                                                    else
-                                                        $queue = "0";
-                                                else
+                                                if(((float)$queueingNo/100) >= 1)
                                                     $queue = "";
-    
-                                                $queueingNo = "CAB-" . $queue . $queueingNo%100;
-                                                echo "<h1> Queue Number: " . $queueingNo . "</h1>";
+                                                else if (((float)$queueingNo/100) >= 0.1)
+                                                    $queue = "0";
+                                                else
+                                                    $queue = "00";
+
+                                                $queueing = "A-" . $queue . $queueingNo . "-" . date("mdY");
+
+                                                echo "<h1> Queue Number: " . $queue . $queueingNo . "</h1>";
                                                 echo "<strong>Timestamp: </strong>" . $dateProcessed . " " . $timeProcessed;
                                                 echo "<br/><br/>";
+
+                                            $sql1 = "INSERT INTO classab
+                                            (queueNo, firstName, middle, lastName, homeAddress,
+                                            dateOfBirth, citizenship, placeOfBirth,
+                                            civilStatus, gender, profession, taxAccountNo, ACRNo,
+                                            heightCentimeters, weightKilograms,
+                                            realPropertyIncome, grossReceiptsFromBusiness,
+                                            salariesFromProfession,
+                                            dateProcessed, timeProcessed)
+                                            VALUES
+                                            ('$queueing', '$firstName', '$middle', '$lastName', '$homeAddress',
+                                            '$dateOfBirth', '$citizenship','$placeOfBirth',
+                                            '$civilStatus', '$gender', '$profession', '$taxAccountNo', '$acrNo',
+                                            '$height', '$weight',
+                                            '$incomeFromRealProp', '$grossReceiptsFromBix',
+                                            '$salariesFromProfession',
+                                            '$dateProcessed', '$timeProcessed')";
+
+                                            mysqli_query($con, $sql1);
+                                            }
+
+
                                                 echo "<strong>Full Name: </strong>" . $firstName . " " . $middle . " " . $lastName;
                                                 echo "<br/>";
                                                 echo "<strong>Home Address: </strong>" . $homeAddress;
@@ -154,17 +205,19 @@
                                                 mysqli_query($con, $sql3);
                                                 mysqli_query($con, $sql4);
                                                 mysqli_query($con, $sql5);
-                                            }
-                                            else
-                                                echo "Your data was unsuccessfully uploaded to the database. Please reach out our staff regarding this matter.";
+                                            
+                                            //else
+                                            //    echo "Your data was unsuccessfully uploaded to the database. Please reach out our staff regarding this matter.";
                                             }
                                         ?>
                                     </p>
                             <p align="center">
                             <br>
-                            <a class="printbtn" target="blank" style="cursor: pointer" onclick="window.print();" align="center">Print</a>
+                            <!-- ETO HEHER YUNG PART NA KAPAG CINLICK KO YUNG PRINT, IBANG PAGE YUNG MAGPPRINT HEHE pero idk kung pwede ichange yung content ng html tho-->
+                            <iframe src="queueing_tix_ab.php" style="display:none;" name="frame"></iframe>
+                            <a class="printbtn" onclick="frames['frame'].print()" value="printletter" target="blank" style="cursor: pointer" align="center">Print</a>
                         </p>
-                        </div><br> 
+                        </div><br>
                     </div>
                 </div>
             </div>

@@ -11,16 +11,17 @@
     </style>
       <body>
             <div class="queue_number" style="font-size: 25px; font-family: Roboto;">
-                <img src="img/Clogo.png" height="20px" width="20px">&nbsp;A001031120
+                <img src="img/Clogo.png" height="20px" width="20px">&nbsp;C001031120
             </div>
             <div class="payment_amt" style="font-size: 20px;">
-                <b>Php 5.80</b>
+                <b>Php 5800</b>
             </div>
             <div class="procedure" style="font-size: 15px;">
-                Prepare the following:
+                Please prepare the following:
                     <div class="procedure_list" style="font-size: 12px;">
                         <b>1. Valid ID.<br>
-                        2. Exact amount for faster transaction.<br></b>
+                        2. Appropriate Proof of Income and/or Assessment.<br>
+                        3. Exact amount for faster transaction.<br></b>
                         Wait for your number to appear on the queueing screen.<br>
                         <a style="font-size: 13px;"><i>Thank you, Manileño!</i></a>
                     </div>
