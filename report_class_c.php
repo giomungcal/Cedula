@@ -34,13 +34,13 @@
                         <div class="logo"><a href="home.php"><i>manila</i>&nbsp;<b>cedula</b></a></div>
                             <div class="menu">
                             <ul>
-                                <li id="btn1"><a class="btn" href="#"><b>How&nbsp;to&nbsp;Use</b></a></li>
+                                <li id="btn1"><a class="btn"><b>How&nbsp;to&nbsp;Use</b></a></li>
                                 <!-- <li><a class="btn" href=""><b>Procedure</b></a></li> -->
                                 <!-- I just set this as comment in order to include "Settings" option. I know this ("Procedure" option) is important.
                                 Maybe you could place all five options without affecting the overall design of the panel. -H -->
-                                <li><a class="btn" href="#"><b>About</b></a></li>
-                                <li><a class="btn" href="#"><b>Settings</b></a></li> <!-- Change password feature. Yay or  nay? -H-->
-                                <li><a class="btn" href="logout.php"><b>Logout</b></a></li>
+                                <li><a class="btn"><b>About</b></a></li>
+                                <li><a class="btn"><b>Settings</b></a></li> <!-- Change password feature. Yay or  nay? -H-->
+                                <li><a class="btn"><b>Logout</b></a></li>
                                 <!--
                                 <li id="btn1"><a class="btn" href=""><b>How&nbsp;to&nbsp;Use</b></a></li>
                                 <li><a class="btn" href=""><b>Procedure</b></a></li>
@@ -84,32 +84,64 @@
                                             date_default_timezone_set("Asia/Brunei");
                                             $dateProcessed = date("Y-m-d");
                                             $timeProcessed = date("H:i:s");
-                                        
-                                            $sql1 = "INSERT INTO classc (firstName, middle, lastName, corporation, addressOfCorporation, dateOfRegistration, placeOfRegistration,
-                                            natureOfBusiness, nbspTIN, assessedRealProperty, grossEarnings, dateProcessed, timeProcessed) VALUES ('$firstName', '$middle', '$lastName', '$corporation',
-                                            '$homeAddress', '$dateOfBirth', '$placeOfRegistration', '$natureOfBusiness', '$nbspTIN', '$assessedValueOfProp', '$grossEarningsFromBix', '$dateProcessed', '$timeProcessed')";
 
-                                        if (mysqli_query($con, $sql1))
-                                        {
-                                            $sql2 = "SELECT COUNT(*) FROM classc WHERE dateProcessed LIKE '$dateProcessed'";
-                                            $result = mysqli_query($con, $sql2);
-                                            $rows = mysqli_fetch_assoc($result);
-                                            $queueingNo = $rows['COUNT(*)'];
+                                            $checkDuplicateData =  "SELECT * FROM classc
+                                                                    WHERE firstName='$firstName'
+                                                                    AND middle='$middle'
+                                                                    AND lastName='$lastName'
+                                                                    AND corporation='$corporation'
+                                                                    AND addressOfCorporation='$homeAddress'
+                                                                    AND dateOfRegistration='$dateOfBirth'
+                                                                    AND placeOfRegistration='$placeOfRegistration'
+                                                                    AND natureOfBusiness='$natureOfBusiness'
+                                                                    AND nbspTIN='$nbspTIN'
+                                                                    AND assessedRealProperty='$assessedValueOfProp'
+                                                                    AND grossEarnings='$grossEarningsFromBix'
+                                                                    AND dateProcessed='$dateProcessed'";
 
-                                            if($queueingNo/100==1)
-                                                $queueingNo=100;
-                                            else if ($queueingNo/100 < 1)
-                                                if ($queueingNo/10 < 1)
-                                                    $queue = "00";
-                                                else
-                                                    $queue = "0";
+                                            $testResult = mysqli_query($con, $checkDuplicateData);
+                                            $duplicateDataCount = mysqli_num_rows($testResult);
+
+                                            if ($duplicateDataCount > 0)
+                                            {
+                                            ?>
+                                                <script type='text/javascript'>
+                                                    alert('The following data are already inserted into the database.\nPlease click OK to go back to the previous page.');
+                                                </script>
+                                            <?php
+                                                $query1 = "SELECT * FROM classc ORDER BY id DESC LIMIT 1";
+                                                $resulting = mysqli_query($con, $query1);
+                                                $rowstemp = mysqli_fetch_assoc($resulting);
+                                                echo "<h1> Queue Number: " . substr($rowstemp['queueNo'], 2, -9) . "</h1>";
+                                                echo "<strong>Timestamp: " . $rowstemp['dateProcessed']. " " . $rowstemp['timeProcessed'] . "</strong>";
+                                                echo "<br/><br/>";
+                                            }
                                             else
-                                                $queue = "";
+                                            {
+                                                $sql2 = "SELECT COUNT(*) FROM classc WHERE dateProcessed LIKE '$dateProcessed'";
+                                                $result = mysqli_query($con, $sql2);
+                                                $rows = mysqli_fetch_assoc($result);
+                                                $queueingNo = $rows['COUNT(*)']+1;
 
-                                            $queueingNo = "CC-" . $queue . $queueingNo%100;
-                                            echo "<h1> Queue Number: " . $queueingNo . "</h1>";
-                                            echo "<strong>Timestamp: </strong>" . $dateProcessed . " " . $timeProcessed;
-                                            echo "<br/><br/>";
+                                                if(((float)$queueingNo/100) >= 1)
+                                                    $queue = "";
+                                                else if (((float)$queueingNo/100) >= 0.1)
+                                                    $queue = "0";
+                                                else
+                                                    $queue = "00";
+
+                                                $queueing = "A-" . $queue . $queueingNo . "-" . date("mdY");
+
+                                                echo "<h1> Queue Number: " . $queue . $queueingNo . "</h1>";
+                                                echo "<strong>Timestamp: </strong>" . $dateProcessed . " " . $timeProcessed;
+                                                echo "<br/><br/>";
+                                            
+                                            $sql1 = "INSERT INTO classc (queueNo, firstName, middle, lastName, corporation, addressOfCorporation, dateOfRegistration, placeOfRegistration,
+                                            natureOfBusiness, nbspTIN, assessedRealProperty, grossEarnings, dateProcessed, timeProcessed) VALUES ('$queueing', '$firstName', '$middle', '$lastName', '$corporation',
+                                            '$homeAddress', '$dateOfBirth', '$placeOfRegistration', '$natureOfBusiness', '$nbspTIN', '$assessedValueOfProp', '$grossEarningsFromBix', '$dateProcessed', '$timeProcessed')";
+                                            mysqli_query($con, $sql1);
+                                            }
+
                                             echo "<strong>President/Authorized Representative: </strong>" . $firstName . " " . $middle . " " . $lastName;
                                             echo "<br/>";
                                             echo "<strong>Corporation: </strong>" . $corporation;
@@ -135,15 +167,15 @@
                                             mysqli_query($con, $sql3);
                                             mysqli_query($con, $sql4);
                                             mysqli_query($con, $sql5);
-                                        }
-                                        else
-                                            echo "Your data was unsuccessfully uploaded to the database. Please reach out our staff regarding this matter.";
+                                                                            
                                         }
                                     ?>
                                     </p>
                             <p align="center">
                             <br>
-                            <a class="printbtn" target="blank" style="cursor: pointer" onclick="window.print();" align="center">Print</a>
+                            <iframe src="queueing_tix_c.php" style="display:none;" name="frame"></iframe>
+                            <a class="printbtn" onclick="frames['frame'].print()" value="printletter" target="blank" style="cursor: pointer" align="center">Print</a>
+                            <!-- <a class="printbtn" target="blank" style="cursor: pointer" onclick="window.print();" align="center">Print</a> -->
                         </p>
                         </div><br>
                     </div>

@@ -1,12 +1,11 @@
-QUEUEING NUMBER
 
-I WANT YOU BACK MATTHAIOS
-BATANG PASAWAY
-REPEAT AL JAMES
-NEED YOU EXB
-BABY CAKES EXB
-CHINITA RAF DAVIS
-IKAW LAMANG SKUSTA CLEE
+
+
+IF TAX ACCOUNT ALREADY EXISTS
+DISABLE PRINT BUTTON IF DUPLICATE
+QUEUEING NUMBER
+INVALIDATE MINORS
+
 
 *Duplicate data
 *GENERATE/PRINT PDF
@@ -30,10 +29,10 @@ class A applicant no. 3 goes to "subwindow" 3, class A applicant no. 4 goes to "
 Sa admin side, doon iseset ng tellers kung anong mga "subwindows" ang bubuksan.
 So if 2 "subwindows" lang ang sinet as i-oopen nila, ang pagsasalit-salit ng window na pupuntahan ng applicant is "subwindow" 1, "subwindow" 2, tas balik ulit sa "subwindow 1.
 
-
 *May priority lanes ba sila for senior citizens? If yes, priority lanes will be set doon sa mga PCs instead na doon sa windows.
 *What's the case for multiple citizenships? Do they have both TIN No. and ACR No.?
 *Ilang beses ba nag-aapply for cedula ang mga tao?
+*Ilan ang nag-aapply ng cedula for each class sa isang araw?
 
 SELECT ID FROM classa ORDER BY id DESC LIMIT 1
 Access last value

@@ -54,7 +54,7 @@
                         <div class="formsdropdown">
                             <form id="chooseclasstype" method="POST" style="">
                                 <select id="classtypelist" class="classtypes" name="classtypes" onchange="selectClassType()">
-                                    <option selected disabled value="">Change class:</option>
+                                    <option selected disabled value="">Change class</option> <!-- Please don't include a punctuation mark -H-->
                                     <option value="classa">Class A (Unemployed)</option>
                                     <option value="classc">Class C (Corporation)</option>
                                 </select>&nbsp;&nbsp;
@@ -125,7 +125,7 @@
                         <label for="grossrec"><b>2.</b>&nbsp;Gross Receipts or Earnings derived from business during the preceding year.</label>
                         <input type="text" id="grossrec" name="grossrec" required placeholder="(P1.00 for every P1,000.00)"><br>
                         <label for="salgrossrec"><b>3.</b>&nbsp;Salaries or Gross Receipts or Earnings derived from exercise of profession or pursuit of any occupation.</label>
-                        <input type="text" id="salgrossrec" name="salgrossrec" placeholder="(P1.00 for every P1,000.00)"><br>
+                        <input type="text" id="salgrossrec" name="salgrossrec" required placeholder="(P1.00 for every P1,000.00)"><br>
                         <p align=center><b>NOTE:</b> Please double check your input data before submitting.</p><br>
                         <div style="text-align: center;">
                         <input type="submit" class="submitform" value="SUBMIT FORM">

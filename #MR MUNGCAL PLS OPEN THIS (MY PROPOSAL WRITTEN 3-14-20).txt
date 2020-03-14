@@ -1,0 +1,3 @@
+Proposal for class ab
+*If user inputted "Filipino" at the Citizenship, enable TIN No., disable ACR No. Pero I'm curious what's the case for multiple citizenships? Do they have both TIN No. and ACR No. kaya?
+*Does your tax do not exceed 5000? If yes, enable yung last three textboxes. If no, disable them.
