@@ -28,7 +28,7 @@
                         <div class="logo"><a href=""><i>manila</i>&nbsp;<b>cedula</b></a></div>
                     <div class="menu">
                         <ul>
-                            <li id="btn1"><a class="btn" href=""><b>How&nbsp;to&nbsp;Use</b></a></li>
+                            <li id="btn1"><a class="btn"><b>How&nbsp;to&nbsp;Use</b></a></li>
                             <!-- <li><a class="btn" href=""><b>Procedure</b></a></li> -->
                             <li><a class="btn" href=""><b>About</b></a></li>
                             <li><a class="btn" href=""><b>Settings</b></a></li> <!-- Change password feature. Yay or  nay? -H-->
@@ -59,8 +59,19 @@
                         </form>
                     </div>
                 </div>
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>Some text in the Modal..</p>
+                </div>
+
+                </div>
             </div>
         </div>
-        <script src="script.js"></script>
+        <script src="script.js">
+        </script>
     </body>
 </html>
