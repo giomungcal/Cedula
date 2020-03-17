@@ -652,7 +652,7 @@ label[for="grossearn"]{
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding-top: 30px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -660,16 +660,26 @@ label[for="grossearn"]{
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    transition: all 0.5s;
+    
   }
   
   /* Modal Content */
-  .modal-content {
+  .modal-content-container {
+    max-height: calc(300vh - 200px);
+    overflow-y: auto;
+    color: #31487f;
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 60%;
+    height: 600px;
+  }
+
+  .modal-content{
+      height: 1450px;
+      padding: 50px;
+      padding-top: 30px;
   }
   
   /* The Close Button */
@@ -685,4 +695,77 @@ label[for="grossearn"]{
     color: #000;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  .icon{
+      float: left;
+      padding-right: 15px;
+  }
+
+  .icon-title{
+      float: left;
+      color: #31487f;
+  }
+
+  .icon-subtitle{
+      font-size: 15px;
+      color: rgb(186, 186, 186);
+  }
+
+  .steps-container{
+      width: 500px;
+      height: 26.5%;
+      padding-top: 20px;
+      padding-right: 40px;
+      padding-left: 40px;
+  }
+
+  .steps-content{
+      float: left;
+      width: 500px;
+      height: 60px;
+  }
+  .number-header{
+      float: left;
+      font-family: Muli;
+      font-size: 25px;
+      color: #193882;
+      /* padding-left: 40px; */
+      /* padding-right: 40px; */
+      width: 50px;
+      height: 50px;
+  }
+
+  .number-content{
+      font-size: 20px;
+      width: 640px;
+      height: 100px;
+      padding-top: 13px;
+  }
+
+  .number-content h2{
+      font-family: montserrat;
+      font-size: 20px;
+      /* padding-top: 17px; */
+  }
+
+  .number-content p{
+      /* float: left; */
+      /* margin-left: 60px; */
+      font-size: 11px;
+  }
+
+  .content-icons{
+      /* padding-top: 17px; */
+      float: left;
+      width: 30px;
+      height: 30px;
+      padding-right: 7px;
+  }
+
+  .faqs-text{
+      width: 640px;
+      padding-top: 12px;
+      font-size: 12px;
+      padding-left: 35px;
   }
