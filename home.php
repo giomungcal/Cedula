@@ -106,14 +106,14 @@
                                             <b>CLASS “A” </b>- For unemployed individuals 
                                             <br>Requirements: 
                                                 <p>
-                                                    &emsp;- Information sheet<br>
+                                                    &emsp;- Queue Stub<br>
                                                     &emsp;- Valid ID <br>
                                                     &emsp;- Fees/Payment<br>
                                                 </p>
                                                 <b>CLASS “AB” </b>- For employed individuals and for sole proprietor or a person who is the exclusive owner of a business.
                                             <br>Requirements: 
                                                 <p>
-                                                    &emsp;- Information sheet<br>
+                                                    &emsp;- Queue Stub<br>
                                                     &emsp;- Valid ID <br>
                                                     &emsp;- Proof of income (Form W2)<br>
                                                     &emsp;- Fees/Payment<br>
@@ -121,7 +121,7 @@
                                                 <b>CLASS “C” </b>- For corporation.
                                             <br>Requirements: 
                                                 <p>
-                                                    &emsp;- Information sheet<br>
+                                                    &emsp;- Queue Stub<br>
                                                     &emsp;- Valid ID <br>
                                                     &emsp;- Appropriate Proof of income and/or assessment <br>
                                                     &emsp;- Fees/Payment<br>
