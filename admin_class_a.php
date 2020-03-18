@@ -25,7 +25,7 @@ if($_SESSION['login_user'] == "user")
         <div class="container_all">
                 <div class="navbaradmin">
                     <div class="logoadmin-pic"><img src="img/Clogo.png" height="25px" width="25px"></div>
-                    <div class="logoadmin"><a href="admin_class_ab.php"><i>manila</i>&nbsp;<b>cedula</b>&nbsp;administrator</a></div>
+                    <div class="logoadmin"><a href=""><i>manila</i>&nbsp;<b>cedula</b>&nbsp;administrator</a></div>
                 <div class="menuadmin">
                     <ul class="navbaradmin_ul">
                     <li><a  class="btn" href="admin_class_a.php"><b>Class A</b></a></li>
@@ -38,12 +38,12 @@ if($_SESSION['login_user'] == "user")
         </div>
           <div class="container" style="font-family: 'Montserrat';">  
                <h3 align="center" style="color: #1f4498"><b>Class A (Unemployed)</b></h3>  
-               <br />  
+               <br />
                <div class="table-responsive">  
                     <table id="class_a_data" class="table table-striped table-bordered">  
-                         <?php  
+                         <?php
                          include 'admin_class_a_table.php';
-                         ?>  
+                         ?>
                     </table>  <br><br><br>
                </div>  
           </div>  

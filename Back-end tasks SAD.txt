@@ -1,6 +1,4 @@
-
-
-
+BLINKING TABLE MYSQL PROBLEM
 IF TAX ACCOUNT ALREADY EXISTS
 DISABLE PRINT BUTTON IF DUPLICATE
 QUEUEING NUMBER
@@ -33,6 +31,7 @@ So if 2 "subwindows" lang ang sinet as i-oopen nila, ang pagsasalit-salit ng win
 *What's the case for multiple citizenships? Do they have both TIN No. and ACR No.?
 *Ilang beses ba nag-aapply for cedula ang mga tao?
 *Ilan ang nag-aapply ng cedula for each class sa isang araw?
+*Anong oras kayo nagbubukas for application? Gusto niyo ba na strictly magbubukas lang ang registraton within the open hours? If yes, we might include a feature para malock yung system before the open hours.
 
 SELECT ID FROM classa ORDER BY id DESC LIMIT 1
 Access last value
