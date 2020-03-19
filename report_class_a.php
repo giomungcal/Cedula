@@ -34,7 +34,7 @@
                         <div class="logo"><a href="home.php"><i>manila</i>&nbsp;<b>cedula</b></a></div>
                             <div class="menu">
                             <ul>
-                                <li id="btn1"><a class="btn"><b>How&nbsp;to&nbsp;Use</b></a></li>
+                                <li id="btn1"><a class="btn"><b>Help</b></a></li>
                                 <!-- <li><a class="btn" href=""><b>Procedure</b></a></li> -->
                                 <!-- I just set this as comment in order to include "Settings" option. I know this ("Procedure" option) is important.
                                 Maybe you could place all five options without affecting the overall design of the panel. -H -->
@@ -114,6 +114,9 @@
                                             }
                                             else
                                             {
+                                                $query1 = "SELECT * FROM classab ORDER BY id DESC LIMIT 1";
+                                                $resulting = mysqli_query($con, $query1);
+                                                $rowstemp = mysqli_fetch_assoc($resulting);
                                                 $sql2 = "SELECT COUNT(*) FROM classa WHERE dateProcessed LIKE '$dateProcessed'";
                                                 $result = mysqli_query($con, $sql2);
                                                 $rows = mysqli_fetch_assoc($result);
@@ -136,8 +139,8 @@
                                                 civilStatus, gender, dateProcessed, timeProcessed) VALUES ('$queueing', '$firstName', '$middle', '$lastName', '$homeAddress', '$dateOfBirth',
                                                 '$placeOfBirth', '$civilStatus', '$gender', '$dateProcessed', '$timeProcessed')";
                                                 mysqli_query($con, $sql1);
-                                                $_SESSION['dateProcessedForPrinting'] = $rowstemp['dateProcessed'];
-                                                $_SESSION['timeProcessedForPrinting'] = $rowstemp['timeProcessed'];
+                                                $_SESSION['dateProcessedForPrinting'] = $dateProcessed;
+                                                $_SESSION['timeProcessedForPrinting'] = $timeProcessed;
                                             }
 
                                                 echo "<strong>Full Name: </strong>" . $firstName . " " . $middle . " " . $lastName;

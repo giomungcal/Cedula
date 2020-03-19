@@ -10,6 +10,7 @@
 
     $con = mysqli_connect('localhost','root','');
     mysqli_select_db($con,'cedula');
+
     if(!$con)
         echo 'ERROR: Not connected to server.';
     if (!mysqli_select_db($con,'cedula'))
@@ -40,6 +41,7 @@
                         echo "Your queueing no is " . "<b>" . substr($rowOfData['queueNo'], 2, -9) ."</b>. " . "Kindly wait for your turn.";
                         // ATTN: Engr Mungcal. This is just a test text. Please replace the statement above with a better and good-to-read statement/
                 ?>
+                <br/><br/>
             </div>
             <div class="payment_amt" style="font-size: 20px;">
                 <b>Php 5.80</b>
@@ -54,23 +56,24 @@
                         <br/><br/><br/><br/><br/>
                     </div>
             </div>
-            <?php
-            if ($row = mysqli_fetch_array($sortedTable))
-            {
-    echo "<strong>Full Name: </strong>" . $row['firstName'] . " " . $row['middle'] . " " . $row['lastName'];
-    echo "<br/>";
-    echo "<strong>Home Address: </strong>" . $row['homeAddress'];
-    echo "<br/>";
-    echo "<strong>Date of Birth: </strong>" . $row['dateOfBirth'];
-    echo "<br/>";
-    echo "<strong>Place of Birth: </strong>" . $row['placeOfBirth'];
-    echo "<br/>";
-    echo "<strong>Civil Status: </strong>" . $row['civilStatus'];
-    echo "<br/>";
-    echo "<strong>Gender at Birth: </strong>" . $row['gender'];
-    echo "<br/><br/>";
-}
 
+            <?php
+
+                $newquery1="SELECT * FROM classa WHERE dateProcessed='$date' AND timeProcessed='$time'";
+                $sortedTable1 = mysqli_query($con, $newquery1);
+                $rowOfData = mysqli_fetch_array($sortedTable1);
+                echo "<strong>Full Name: </strong>" . $rowOfData['firstName'] . " " . $rowOfData['middle'] . " " . $rowOfData['lastName'];
+                echo "<br/>";
+                echo "<strong>Home Address: </strong>" . $rowOfData['homeAddress'];
+                echo "<br/>";
+                echo "<strong>Date of Birth: </strong>" . $rowOfData['dateOfBirth'];
+                echo "<br/>";
+                echo "<strong>Place of Birth: </strong>" . $rowOfData['placeOfBirth'];
+                echo "<br/>";
+                echo "<strong>Civil Status: </strong>" . $rowOfData['civilStatus'];
+                echo "<br/>";
+                echo "<strong>Gender at Birth: </strong>" . $rowOfData['gender'];
+                echo "<br/><br/>";
             ?>
       </body>
 </html>

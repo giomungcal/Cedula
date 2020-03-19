@@ -4,7 +4,7 @@
     if(!isset($_SESSION['login_user']))
         header("location: index.php");
     if($_SESSION['login_user'] == "admin")
-        header("location: admin_class_a.php");
+        header("location: admin_class_ab.php");
 
     $con = mysqli_connect('127.0.0.1','root','');
     mysqli_select_db($con,'cedula');
@@ -34,7 +34,7 @@
                         <div class="logo"><a href="home.php"><i>manila</i>&nbsp;<b>cedula</b></a></div>
                             <div class="menu">
                             <ul>
-                                <li id="btn1"><a class="btn"><b>How&nbsp;to&nbsp;Use</b></a></li>
+                                <li id="btn1"><a class="btn"><b>Help</b></a></li>
                                 <!-- <li><a class="btn" href=""><b>Procedure</b></a></li> -->
                                 <!-- I just set this as comment in order to include "Settings" option. I know this ("Procedure" option) is important.
                                 Maybe you could place all five options without affecting the overall design of the panel. -H -->
@@ -124,12 +124,17 @@
                                                 $query1 = "SELECT * FROM classab ORDER BY id DESC LIMIT 1";
                                                 $resulting = mysqli_query($con, $query1);
                                                 $rowstemp = mysqli_fetch_assoc($resulting);
-                                                echo "<h1> Queue Number: " . substr($rowstemp['queueNo'], 2, -9) . "</h1>";
+                                                echo "<h1> Queue Number: " . substr($rowstemp['queueNo'], 3, -9) . "</h1>";
                                                 echo "<strong>Timestamp: " . $rowstemp['dateProcessed']. " " . $rowstemp['timeProcessed'] . "</strong>";
                                                 echo "<br/><br/>";
+                                                $_SESSION['dateProcessedClassABPrint'] = $rowstemp['dateProcessed'];
+                                                $_SESSION['timeProcessedClassABPrint'] = $rowstemp['timeProcessed'];
                                             }
                                             else
                                             {
+                                                $query1 = "SELECT * FROM classab ORDER BY id DESC LIMIT 1";
+                                                $resulting = mysqli_query($con, $query1);
+                                                $rowstemp = mysqli_fetch_assoc($resulting);
                                                 $sql2 = "SELECT COUNT(*) FROM classab WHERE dateProcessed LIKE '$dateProcessed'";
                                                 $result = mysqli_query($con, $sql2);
                                                 $rows = mysqli_fetch_assoc($result);
@@ -142,7 +147,7 @@
                                                 else
                                                     $queue = "00";
 
-                                                $queueing = "A-" . $queue . $queueingNo . "-" . date("mdY");
+                                                $queueing = "AB-" . $queue . $queueingNo . "-" . date("mdY");
 
                                                 echo "<h1> Queue Number: " . $queue . $queueingNo . "</h1>";
                                                 echo "<strong>Timestamp: </strong>" . $dateProcessed . " " . $timeProcessed;
@@ -164,10 +169,10 @@
                                             '$incomeFromRealProp', '$grossReceiptsFromBix',
                                             '$salariesFromProfession',
                                             '$dateProcessed', '$timeProcessed')";
-
                                             mysqli_query($con, $sql1);
+                                            $_SESSION['dateProcessedClassABPrint'] = $dateProcessed;
+                                            $_SESSION['timeProcessedClassABPrint'] = $timeProcessed;
                                             }
-
 
                                                 echo "<strong>Full Name: </strong>" . $firstName . " " . $middle . " " . $lastName;
                                                 echo "<br/>";
@@ -195,9 +200,9 @@
                                                 echo "<br/>";
                                                 echo "<strong>Income from Real Property: </strong>" . " PHP " . sprintf("%.2f", $incomeFromRealProp);
                                                 echo "<br/>";
-                                                echo "<strong>Gross receipts/earnings derived from business during the preceding year: </strong>" . " PHP " . sprintf("%.2f", $grossReceiptsFromBix);
+                                                echo "<strong>Gross receipts from business: </strong>" . " PHP " . sprintf("%.2f", $grossReceiptsFromBix);
                                                 echo "<br/>";
-                                                echo "<strong>Salaries/gross receipts/earnings derived from exercise of profession/pursuit of any occupation: </strong>" . " PHP " . sprintf("%.2f", $salariesFromProfession);
+                                                echo "<strong>Gross receipts from from exercise/pursuit of profession/occupation: </strong>" . " PHP " . sprintf("%.2f", $salariesFromProfession);
 
                                                 $sql3 = "SET @count = 0";
                                                 $sql4 = "UPDATE classab SET classab.id = @count:= @count + 1";

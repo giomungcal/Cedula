@@ -34,7 +34,7 @@
                         <div class="logo"><a href="home.php"><i>manila</i>&nbsp;<b>cedula</b></a></div>
                             <div class="menu">
                             <ul>
-                                <li id="btn1"><a class="btn"><b>How&nbsp;to&nbsp;Use</b></a></li>
+                                <li id="btn1"><a class="btn"><b>Help</b></a></li>
                                 <!-- <li><a class="btn" href=""><b>Procedure</b></a></li> -->
                                 <!-- I just set this as comment in order to include "Settings" option. I know this ("Procedure" option) is important.
                                 Maybe you could place all five options without affecting the overall design of the panel. -H -->
@@ -130,7 +130,7 @@
                                                 else
                                                     $queue = "00";
 
-                                                $queueing = "A-" . $queue . $queueingNo . "-" . date("mdY");
+                                                $queueing = "C-" . $queue . $queueingNo . "-" . date("mdY");
 
                                                 echo "<h1> Queue Number: " . $queue . $queueingNo . "</h1>";
                                                 echo "<strong>Timestamp: </strong>" . $dateProcessed . " " . $timeProcessed;
@@ -140,7 +140,9 @@
                                             natureOfBusiness, nbspTIN, assessedRealProperty, grossEarnings, dateProcessed, timeProcessed) VALUES ('$queueing', '$firstName', '$middle', '$lastName', '$corporation',
                                             '$homeAddress', '$dateOfBirth', '$placeOfRegistration', '$natureOfBusiness', '$nbspTIN', '$assessedValueOfProp', '$grossEarningsFromBix', '$dateProcessed', '$timeProcessed')";
                                             mysqli_query($con, $sql1);
-                                            }
+                                            $_SESSION['dateProcessedClassCPrint'] = $dateProcessed;
+                                            $_SESSION['timeProcessedClassCPrint'] = $timeProcessed;
+                                        }
 
                                             echo "<strong>President/Authorized Representative: </strong>" . $firstName . " " . $middle . " " . $lastName;
                                             echo "<br/>";
@@ -156,9 +158,9 @@
                                             echo "<br/>";
                                             echo "<strong>NBSP TIN: </strong>" . $nbspTIN;
                                             echo "<br/>";
-                                            echo "<strong>Total Assessed Value of Real Property: </strong>" . "PHP " . sprintf("%.2f", $assessedValueOfProp);
+                                            echo "<strong>Assessed value of real property: </strong>" . "PHP " . sprintf("%.2f", $assessedValueOfProp);
                                             echo "<br/>";
-                                            echo "<strong>Total Gross Earnings from Business: </strong>" . "PHP " . sprintf("%.2f", $grossEarningsFromBix);
+                                            echo "<strong>Gross earnings from business: </strong>" . "PHP " . sprintf("%.2f", $grossEarningsFromBix);
                                             echo "<br/><br/>";
 
                                             $sql3 = "SET @count = 0";
@@ -166,8 +168,7 @@
                                             $sql5 = "ALTER TABLE classc AUTO_INCREMENT = 1";
                                             mysqli_query($con, $sql3);
                                             mysqli_query($con, $sql4);
-                                            mysqli_query($con, $sql5);
-                                                                            
+                                            mysqli_query($con, $sql5);                            
                                         }
                                     ?>
                                     </p>

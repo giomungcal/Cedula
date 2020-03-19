@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 19, 2020 at 01:09 AM
+-- Generation Time: Mar 19, 2020 at 04:39 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -51,7 +51,8 @@ INSERT INTO `classa` (`ID`, `queueNo`, `firstName`, `middle`, `lastName`, `homeA
 (1, 'A-001-03142020', 'Cedrick', 'S.', 'Dela Cruz', '1 Antonio St., Brgy. 342, Zone 34, Sta. Cruz, Manila', '1990-01-01', 'Obando, Bulacan', 'Single', 'Male', '2020-03-14', '15:02:01'),
 (2, 'A-002-03142020', 'Juan', 'M.', 'Fonte', '10 Moderna St., Balut, Tondo, Manila', '1990-01-01', 'Carmen, Cebu', 'Single', 'Male', '2020-03-14', '15:27:17'),
 (3, 'A-003-03142020', 'John', 'F.', 'Flores', '1000 Moderna St., Balut, Tondo, Manila', '2020-01-01', 'San Rafael, Bulacan', 'Single', 'Male', '2020-03-14', '15:58:15'),
-(4, 'A-001-03192020', 'Heherson', 'I.', 'Domael', '1 Muralla St., Intramuros, Manila', '1998-08-18', 'Quezon City', 'Single', 'Male', '2020-03-19', '06:37:04');
+(4, 'A-001-03192020', 'Heherson', 'I.', 'Domael', '1 Muralla St., Intramuros, Manila', '1998-08-18', 'Quezon City', 'Single', 'Male', '2020-03-19', '06:37:04'),
+(5, 'A-002-03192020', 'Ma. Regina', 'V.', 'Guerra', '3 Felix Hidalgo St., Quiapo, Manila', '1973-04-02', 'Chinese General Hospital', 'Married', 'Female', '2020-03-19', '09:57:25');
 
 -- --------------------------------------------------------
 
@@ -88,8 +89,9 @@ CREATE TABLE `classab` (
 --
 
 INSERT INTO `classab` (`ID`, `queueNo`, `firstName`, `middle`, `lastName`, `homeAddress`, `dateOfBirth`, `citizenship`, `placeOfBirth`, `civilStatus`, `gender`, `profession`, `taxAccountNo`, `ACRNo`, `heightCentimeters`, `weightKilograms`, `realPropertyIncome`, `grossReceiptsFromBusiness`, `salariesFromProfession`, `dateProcessed`, `timeProcessed`) VALUES
-(1, 'A-001-03142020', 'Regina Joyce', 'P.', 'Mungcal', '231 Moderna St., Balut, Tondo, Manila', '1999-05-27', 'Filipino', 'Tondo, Manila', 'Married', 'Female', 'Network Engineer', 777555333111, '', 160, 65, 0, 0, 0, '2020-03-14', '16:01:41'),
-(2, 'A-001-03192020', 'Giomar', 'C.', 'Cajucom', '2 Muralla St., Intramuros, Manila', '1998-05-15', 'Filipino', 'San Rafael, Bulcan', 'Single', 'Male', 'Chief Technology Officer', 515515515515, '', 170, 59, 0, 0, 0, '2020-03-19', '07:15:57');
+(1, 'AB-001-03142020', 'Regina Joyce', 'P.', 'Mungcal', '231 Moderna St., Balut, Tondo, Manila', '1999-05-27', 'Filipino', 'Tondo, Manila', 'Married', 'Female', 'Network Engineer', 777555333111, '', 160, 65, 0, 0, 0, '2020-03-14', '16:01:41'),
+(2, 'AB-001-03192020', 'Giomar', 'C.', 'Cajucom', '2 Muralla St., Intramuros, Manila', '1998-05-15', 'Filipino', 'San Rafael, Bulcan', 'Single', 'Male', 'Chief Technology Officer', 515515515515, '', 170, 59, 0, 0, 0, '2020-03-19', '07:15:57'),
+(3, 'AB-002-03192020', 'Giomar Luis', 'V.', 'Manzano', '35 Magallanes St., Intramuros, Manila', '1979-10-31', 'Filipino', 'Chinese General Hospital', 'Married', 'Male', 'Actor', 257257257257, '', 175, 60, 0, 0, 0, '2020-03-19', '09:23:14');
 
 -- --------------------------------------------------------
 
@@ -120,9 +122,9 @@ CREATE TABLE `classc` (
 --
 
 INSERT INTO `classc` (`ID`, `queueNo`, `dateProcessed`, `timeProcessed`, `firstName`, `middle`, `lastName`, `corporation`, `addressOfCorporation`, `dateOfRegistration`, `placeOfRegistration`, `natureOfBusiness`, `nbspTIN`, `assessedRealProperty`, `grossEarnings`) VALUES
-(1, 'A-001-03142020', '2020-03-14', '16:27:09', 'Karl Vincent', 'M.', 'Pacheco', 'Philippine Ramen Corporation', '1000 Roxas Blvd., Ermita, Manila', '2015-01-01', 'Ermita, Manila', 'Food Services', 333333333333, 1000000, 500000),
-(2, 'A-002-03142020', '2020-03-14', '16:40:27', 'Vincent', 'M.', 'Zuniga', 'VZ Group of Companies', '1 Julio Nakpil St., Tondo, Manila', '2001-04-03', 'Makati CBD', 'Engineering and Construction', 122344566788, 5456789.01, 4231755.44),
-(3, 'A-001-03192020', '2020-03-19', '08:03:45', 'Regina Joyce', 'F.', 'Cruz', 'Cruz-Pacheco-Cruzado Land and Lifescapes', '120 España Blvd., Sampaloc, Manila', '2017-10-20', 'Sampaloc, Manila', 'Real Estate', 102030405060, 2234123.22, 1896423.75);
+(1, 'C-001-03142020', '2020-03-14', '16:27:09', 'Karl Vincent', 'M.', 'Pacheco', 'Philippine Ramen Corporation', '1000 Roxas Blvd., Ermita, Manila', '2015-01-01', 'Ermita, Manila', 'Food Services', 333333333333, 1000000, 500000),
+(2, 'C-002-03142020', '2020-03-14', '16:40:27', 'Vincent', 'M.', 'Zuniga', 'VZ Group of Companies', '1 Julio Nakpil St., Tondo, Manila', '2001-04-03', 'Makati CBD', 'Engineering and Construction', 122344566788, 5456789.01, 4231755.44),
+(3, 'C-001-03192020', '2020-03-19', '08:03:45', 'Regina Joyce', 'F.', 'Cruz', 'Cruz-Pacheco-Cruzado Land and Lifescapes', '120 España Blvd., Sampaloc, Manila', '2017-10-20', 'Sampaloc, Manila', 'Real Estate', 102030405060, 2234123.22, 1896423.75);
 
 -- --------------------------------------------------------
 
@@ -180,19 +182,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `classa`
 --
 ALTER TABLE `classa`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `classab`
 --
 ALTER TABLE `classab`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `classc`
 --
 ALTER TABLE `classc`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
