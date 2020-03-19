@@ -48,7 +48,7 @@
             <div class="headerdivcontainer">
                     <div class="headerdiv">
                         <div class="headertitle">
-                            <h1>Class C Form:</h1>
+                            <h1>Class C Form</h1>
                             <h2><i>(Corporation)</i></h2><br>
                         </div>
                         <div class="formsdropdown">

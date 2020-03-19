@@ -109,6 +109,8 @@
                                                 echo "<h1> Queue Number: " . substr($rowstemp['queueNo'], 2, -9) . "</h1>";
                                                 echo "<strong>Timestamp: " . $rowstemp['dateProcessed']. " " . $rowstemp['timeProcessed'] . "</strong>";
                                                 echo "<br/><br/>";
+                                                $_SESSION['dateProcessedForPrinting'] = $rowstemp['dateProcessed'];
+                                                $_SESSION['timeProcessedForPrinting'] = $rowstemp['timeProcessed'];
                                             }
                                             else
                                             {
@@ -134,7 +136,10 @@
                                                 civilStatus, gender, dateProcessed, timeProcessed) VALUES ('$queueing', '$firstName', '$middle', '$lastName', '$homeAddress', '$dateOfBirth',
                                                 '$placeOfBirth', '$civilStatus', '$gender', '$dateProcessed', '$timeProcessed')";
                                                 mysqli_query($con, $sql1);
+                                                $_SESSION['dateProcessedForPrinting'] = $rowstemp['dateProcessed'];
+                                                $_SESSION['timeProcessedForPrinting'] = $rowstemp['timeProcessed'];
                                             }
+
                                                 echo "<strong>Full Name: </strong>" . $firstName . " " . $middle . " " . $lastName;
                                                 echo "<br/>";
                                                 echo "<strong>Home Address: </strong>" . $homeAddress;

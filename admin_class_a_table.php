@@ -15,7 +15,7 @@
      $con = mysqli_connect('localhost', 'root', '');
      mysqli_select_db($con, 'cedula');
      $query = "SELECT * FROM classa";
-     $result=mysqli_query($con, $query);
+     mysqli_query($con, $query);
      $sortTable="SELECT * FROM classa ORDER BY id DESC";
      $sortedTable = mysqli_query($con, $sortTable);
 
