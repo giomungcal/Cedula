@@ -4,7 +4,7 @@
           <td><b>Time Processed</b></td>
           <td><b>Name of Corporation</b></td>
           <td><b>Corporate Address</b></td>
-          <td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View</b></td>
+          <td align="center"><b>View</b></td>
      </tr>  
 </thead>  
 <?php  
@@ -23,7 +23,7 @@
           <td>'.$row["timeProcessed"].'</td>
           <td>'.$row["corporation"].'</td>
           <td>'.$row["addressOfCorporation"].'</td>
-          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">👁️</a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td align="center"><a href="">👁️</a></td>
      </tr>
      ';
      } 

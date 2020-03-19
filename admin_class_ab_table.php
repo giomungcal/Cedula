@@ -8,7 +8,7 @@
           <td><b>Citizenship</b></td>
           <td><b>Gender at Birth</b></td>
           <td><b>Profession</b></td>
-          <td><b>&nbsp;&nbsp;&nbsp;&nbsp;View</b></td> 
+          <td align="center"><b>View</b></td> 
      </tr>  
 </thead>  
 <?php  
@@ -31,7 +31,7 @@
                <td>'.$row["citizenship"].'</td>
                <td>'.$row["gender"].'</td>
                <td>'.$row["profession"].'</td>
-               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="">👁️</a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+               <td align="center"><a href="">👁️</a></td>
           </tr>
           ';  
      }  
