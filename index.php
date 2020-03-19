@@ -26,7 +26,7 @@
         <div class="main_login">
             <div class="logincontainer">
                 <div class="logo-pic" style="text-align: center;"><img src="img/Clogo.png" height="60px" width="60px"></div>
-                <!-- <h2 style="text-align: center;">Administrator Login</h2><br> --><br><br>
+                 <h2 style="text-align: center;"></h2>natanggal ko ata ung sorter arrows sa admin tables (???) apologies if ako nga<br> --><br><br>
                 <div class="loginform">
                     <div class="logincontainerx" style="width: 100%;">
                         <div class="loginboxes" style="width: 100%;">
