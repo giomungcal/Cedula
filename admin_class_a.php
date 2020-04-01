@@ -51,6 +51,6 @@ if($_SESSION['login_user'] == "user")
 </html>  
 <script>  
 setInterval(() => {
-     $('#class_a_data').load("admin_class_a_table.php");
-}, 1);
+     $('#class_a_data').load('admin_class_a_table.php');
+}, 10000);
 </script> 
