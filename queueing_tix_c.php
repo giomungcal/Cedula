@@ -43,7 +43,20 @@
                 <br/><br/>
                 </div>
             <div class="payment_amt" style="font-size: 20px;">
-                <b>Php 5800</b>
+<?php
+/*
+    The computation is just an assumption
+    If assessedValueOfProp < 5k and grossEarningsFromBix < 5k, magkakaroon ng centavos na additional payment
+    If may remainder ung assessedValueOfProp tsaka grossEarningsFromBix kapag dinivide sa 5k, macocount ung remainder
+    na yun in the form of centavos
+    But this must be clarified baka hindi nagsisingil ng butal
+    (I meant kapag may butal, baka counted na yun as additional 2 pesos)
+*/
+
+    $finalPayment = 500 + 2*($_SESSION['assessedValueOfProp']/5000) + 2*($_SESSION['grossEarningsFromBix']/5000);
+?>
+
+                <b>Php <?php echo sprintf("%.2f", $finalPayment) ?></b>
             </div>
             <div class="procedure" style="font-size: 15px;">
                 Please prepare the following:
