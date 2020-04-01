@@ -3,6 +3,9 @@
 
     $_SESSION['currentPage'] = 'queueing_tix_a';
 
+    if(!isset($_SERVER['HTTP_REFERER']))
+        exit;
+
     if(!isset($_SESSION['login_user']))
         header("location: index.php");
     if($_SESSION['login_user'] == 'admin')

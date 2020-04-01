@@ -1,6 +1,8 @@
 <?php
     include 'session.php';
 
+    $_SESSION['currentPage'] = 'report_class_ab';
+
     if(!isset($_SESSION['login_user']))
         header("location: index.php");
     if($_SESSION['login_user'] == "admin")

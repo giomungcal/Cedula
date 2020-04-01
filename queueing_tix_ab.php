@@ -2,6 +2,9 @@
     include 'session.php';
 
     $_SESSION['currentPage'] = 'queueing_tix_ab';
+    
+    if(!isset($_SERVER['HTTP_REFERER']))
+        exit;
 
     if(!isset($_SESSION['login_user']))
         header("location: index.php");
