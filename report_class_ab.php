@@ -153,25 +153,29 @@
                                                 echo "<strong>Timestamp: </strong>" . $dateProcessed . " " . $timeProcessed;
                                                 echo "<br/><br/>";
 
-                                            $sql1 = "INSERT INTO classab
-                                            (queueNo, firstName, middle, lastName, homeAddress,
-                                            dateOfBirth, citizenship, placeOfBirth,
-                                            civilStatus, gender, profession, taxAccountNo, ACRNo,
-                                            heightCentimeters, weightKilograms,
-                                            realPropertyIncome, grossReceiptsFromBusiness,
-                                            salariesFromProfession,
-                                            dateProcessed, timeProcessed)
-                                            VALUES
-                                            ('$queueing', '$firstName', '$middle', '$lastName', '$homeAddress',
-                                            '$dateOfBirth', '$citizenship','$placeOfBirth',
-                                            '$civilStatus', '$gender', '$profession', '$taxAccountNo', '$acrNo',
-                                            '$height', '$weight',
-                                            '$incomeFromRealProp', '$grossReceiptsFromBix',
-                                            '$salariesFromProfession',
-                                            '$dateProcessed', '$timeProcessed')";
-                                            mysqli_query($con, $sql1);
-                                            $_SESSION['dateProcessedClassABPrint'] = $dateProcessed;
-                                            $_SESSION['timeProcessedClassABPrint'] = $timeProcessed;
+                                                $sql1 = "INSERT INTO classab
+                                                (queueNo, firstName, middle, lastName, homeAddress,
+                                                dateOfBirth, citizenship, placeOfBirth,
+                                                civilStatus, gender, profession, taxAccountNo, ACRNo,
+                                                heightCentimeters, weightKilograms,
+                                                realPropertyIncome, grossReceiptsFromBusiness,
+                                                salariesFromProfession,
+                                                dateProcessed, timeProcessed)
+                                                VALUES
+                                                ('$queueing', '$firstName', '$middle', '$lastName', '$homeAddress',
+                                                '$dateOfBirth', '$citizenship','$placeOfBirth',
+                                                '$civilStatus', '$gender', '$profession', '$taxAccountNo', '$acrNo',
+                                                '$height', '$weight',
+                                                '$incomeFromRealProp', '$grossReceiptsFromBix',
+                                                '$salariesFromProfession',
+                                                '$dateProcessed', '$timeProcessed')";
+                                                mysqli_query($con, $sql1);
+
+                                                $_SESSION['dateProcessedClassABPrint'] = $dateProcessed;
+                                                $_SESSION['timeProcessedClassABPrint'] = $timeProcessed;
+                                                $_SESSION['incomeFromRealProp'] = $incomeFromRealProp;
+                                                $_SESSION['grossReceiptsFromBix'] = $grossReceiptsFromBix;
+                                                $_SESSION['salariesFromProfession'] = $salariesFromProfession;
                                             }
 
                                                 echo "<strong>Full Name: </strong>" . $firstName . " " . $middle . " " . $lastName;

@@ -140,6 +140,9 @@
                                             natureOfBusiness, nbspTIN, assessedRealProperty, grossEarnings, dateProcessed, timeProcessed) VALUES ('$queueing', '$firstName', '$middle', '$lastName', '$corporation',
                                             '$homeAddress', '$dateOfBirth', '$placeOfRegistration', '$natureOfBusiness', '$nbspTIN', '$assessedValueOfProp', '$grossEarningsFromBix', '$dateProcessed', '$timeProcessed')";
                                             mysqli_query($con, $sql1);
+
+                                            $_SESSION['assessedValueOfProp'] = $assessedValueOfProp;
+                                            $_SESSION['grossEarningsFromBix'] = $grossEarningsFromBix;
                                             $_SESSION['dateProcessedClassCPrint'] = $dateProcessed;
                                             $_SESSION['timeProcessedClassCPrint'] = $timeProcessed;
                                         }

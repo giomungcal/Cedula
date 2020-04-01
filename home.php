@@ -150,7 +150,7 @@
                                             <br>
                                             <b>CLASS “AB”</b><br>
                                                 &emsp;Basic Community Tax = ₱10<br>
-                                                &emsp;+ Gross Receipt or Earnings from Business during the preceding year P 1.00 for every P 1,000.00<br>
+                                                &emsp;+ Gross Receipt or Earnings from Business during the preceding year – P 1.00 for every P 1,000.00<br>
                                                 &emsp;+ Salaries or Gross Receipt or Earnings derived from exercise of Profession – P 1.00 for every P 1,000.00<br>
                                                 &emsp;+ Income from Real Property – P 1.00 for every P 1,000.00<br>
 

@@ -43,7 +43,9 @@
                 <br/><br/>
             </div>
             <div class="payment_amt" style="font-size: 20px;">
-                <b>Php 480</b>
+                <b>Php <?php echo sprintf("%.2f", 10.00 + $_SESSION['incomeFromRealProp'] +
+                                                          $_SESSION['grossReceiptsFromBix'] +
+                                                          $_SESSION['salariesFromProfession']);?></b>
             </div>
             <div class="procedure" style="font-size: 15px;">
                 Please prepare the following:
