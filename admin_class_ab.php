@@ -48,7 +48,7 @@ if($_SESSION['login_user'] == "user")
      </body>  
 </html>  
 <script>  
-setInterval(() => {
-     $('#class_ab_data').load("admin_class_ab_table.php");
-}, 1);
+// setInterval(() => {
+//      $('#class_ab_data').load("admin_class_ab_table.php");
+// }, 1);
 </script> 
