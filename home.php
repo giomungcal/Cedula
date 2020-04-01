@@ -28,11 +28,12 @@
                         <div class="logo"><a href=""><i>manila</i>&nbsp;<b>cedula</b></a></div>
                     <div class="menu">
                         <ul>
+                            <li><a href="home.php" class='btn' ><b>Home</b></a></li>
                             <li id="btn1"><a class="btn"><b>Help</b></a></li>
                             <!-- <li><a class="btn" href=""><b>Procedure</b></a></li> -->
                             <!-- button below must be "About" -->
-                            <li><a class="btn" onclick="alert('GCM, Proposals for class ab\n*If user inputted \'Filipino\' at the Citizenship, enable TIN No., disable ACR No (but Im curious whats the case for multiple citizenships? Do they have both TIN No. and ACR No.?)\n*Does your tax do not exceed 5000? If yes, enable yung last three textboxes. If no, disable them.\n\nOther: Please include a \'Close\' button at the bottom of help modal. Sorry dont know how to do it. In my part, will do the computation for payments and soon\n\n-H :)');"><b>Gio click me!</b></a></li>
-                            <li><a class="btn" href=""><b>Settings</b></a></li> <!-- Change password feature. Yay or  nay? -H-->
+                            <!-- <li><a class="btn" onclick="alert('GCM, Proposals for class ab\n*If user inputted \'Filipino\' at the Citizenship, enable TIN No., disable ACR No (but Im curious whats the case for multiple citizenships? Do they have both TIN No. and ACR No.?)\n*Does your tax do not exceed 5000? If yes, enable yung last three textboxes. If no, disable them.\n\nOther: Please include a \'Close\' button at the bottom of help modal. Sorry dont know how to do it. In my part, will do the computation for payments and soon\n\n-H :)');"><b>Gio click me!</b></a></li> -->
+                            <!-- <li><a class="btn" href=""><b>Settings</b></a></li> Change password feature. Yay or  nay? -H -->
                             <li><a class="btn" href="logout.php"><b>Logout</b></a></li>
                         </ul>
                     </div>

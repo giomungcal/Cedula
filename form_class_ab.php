@@ -30,10 +30,10 @@
                     <div class="logo"><a href="home.php"><i>manila</i>&nbsp;<b>cedula</b></a></div>
                 <div class="menu">
                     <ul>
-                        <li id="btn1"><a class="btn" href=""><b>Help</b></a></li>
+                        <li><a href="home.php" class='btn' ><b>Home</b></a></li>
                         <!-- <li><a class="btn" href=""><b>Procedure</b></a></li> --> <!-- Thinking this might just be similar to "How to Use" (?) -H -->
-                        <li><a class="btn" href=""><b>About</b></a></li>
-                        <li><a class="btn" href=""><b>Settings</b></a></li> <!-- Change password feature. Yay or  nay? -H-->
+                        <!-- <li><a class="btn" href=""><b>About</b></a></li>
+                        <li><a class="btn" href=""><b>Settings</b></a></li> Change password feature. Yay or  nay? -H -->
                         <li><a class="btn" href="logout.php"><b>Logout</b></a></li>
                         <!--
                         <li id="btn1"><a class="btn" href=""><b>How&nbsp;to&nbsp;Use</b></a></li>
@@ -84,7 +84,7 @@
                         <label for="birthplace">Place of Birth</label>
                         <input type="text" id="birthplace" name="birthplace" required><br>
                         <label for="civilstatus">Civil Status</label>
-                        <select id="civilstatus" class="civilstatus" name="civilstatus"> 
+                        <select required id="civilstatus" class="civilstatus" name="civilstatus"> 
                             <option selected disabled>Select</option>
                             <option value="Single">Single</option>
                             <option value="Married">Married</option>
@@ -100,9 +100,9 @@
                         <label for="profession">Profession/Occupation Business</label>
                         <input type="text" id="profession" name="profession" required>
                         <label for="taxaccnum">Taxpayer's Account Number</label>
-                        <input type="text" id="taxaccnum" name="taxaccnum" required><br>
-                        <label for="acrnum">ACR Number <i>(if Alien)</i></label>
-                        <input type="text" id="acrnum" name="acrnum"><br>
+                        <input type="text" id="taxaccnum" name="taxaccnum"><br>
+                        <label for="acrnum">ACR Number</label>
+                        <input type="text" id="acrnum" name="acrnum" placeholder="Leave blank if Filipino citizen" ><br>
                         <!-- Temporarily removed the required attribute for acrnum. Assuming for now that all Class AB applicants are Filipinos. -->
                         <label for="height">Height</label>
                         <input type="text" id="height" name="height" required placeholder="in centimeter">
@@ -120,12 +120,15 @@
                              If yes, disable/show this form.
                              Else, enable/show this form.
                         -->
+                        <label for="taxchecker">Does your tax exceed P5,000.00?</label>
+                        <input type="checkbox" id="taxchecker" /><br><br>
+
                         <label for="incomerp"><b>1.</b>&nbsp;Income from Real Property.</label><br>
-                        <input type="text" id="incomerp" name="incomerp" required placeholder="(P1.00 for every P1,000.00)"><br>
+                        <input type="text" id="incomerp" name="incomerp" placeholder="(P1.00 for every P1,000.00)"><br>
                         <label for="grossrec"><b>2.</b>&nbsp;Gross Receipts or Earnings derived from business during the preceding year.</label>
-                        <input type="text" id="grossrec" name="grossrec" required placeholder="(P1.00 for every P1,000.00)"><br>
+                        <input type="text" id="grossrec" name="grossrec" placeholder="(P1.00 for every P1,000.00)"><br>
                         <label for="salgrossrec"><b>3.</b>&nbsp;Salaries or Gross Receipts or Earnings derived from exercise of profession or pursuit of any occupation.</label>
-                        <input type="text" id="salgrossrec" name="salgrossrec" required placeholder="(P1.00 for every P1,000.00)"><br>
+                        <input type="text" id="salgrossrec" name="salgrossrec" placeholder="(P1.00 for every P1,000.00)"><br>
                         <p align=center><b>NOTE:</b> Please double check your input data before submitting.</p><br>
                         <div style="text-align: center;">
                         <input type="submit" class="submitform" value="SUBMIT FORM">
@@ -135,7 +138,13 @@
                 </div>
             </div>
         </div>
-        <script src="script.js">
+        <script type="text/javascript" >
+            document.getElementById('taxchecker').onchange = function() {
+                document.getElementById('incomerp').disabled = this.checked;
+                document.getElementById('grossrec').disabled = this.checked;
+                document.getElementById('salgrossrec').disabled = this.checked;
+        };
+
         </script>
     </body>
 </html>
