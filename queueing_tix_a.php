@@ -44,7 +44,7 @@
                 <br/><br/>
             </div>
             <div class="payment_amt" style="font-size: 20px;">
-                <b>Php 5.80</b>
+                <b>Php 5.00</b>
             </div>
             <div class="procedure" style="font-size: 15px;">
                 Please prepare the following: <!-- Added "please" para may respect-->

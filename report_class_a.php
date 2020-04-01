@@ -162,7 +162,8 @@
                                                 mysqli_query($con, $sql3);
                                                 mysqli_query($con, $sql4);
                                                 mysqli_query($con, $sql5);
-                                             //else
+                                             // alter table classa auto_increment = 1 (in case "old id" "persists")
+											 // else
                                              //    echo "Your data was unsuccessfully uploaded to the database. Please reach out our staff regarding this matter.";
                                     }
                                     ?>
