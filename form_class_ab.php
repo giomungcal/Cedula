@@ -120,8 +120,7 @@
                              If yes, disable/show this form.
                              Else, enable/show this form.
                         -->
-                        <label for="taxchecker">Does your tax exceed P5,000.00?</label>
-                        <input type="checkbox" id="taxchecker" /><br><br>
+                        <label for="taxchecker">Does your tax exceed P5,000.00? Check if applicable. Lapit ka ngang checkbox dito sa tabi ko hahahaha</label><input type="checkbox" id="taxchecker" /><br><br>
 
                         <label for="incomerp"><b>1.</b>&nbsp;Income from Real Property.</label><br>
                         <input type="text" id="incomerp" name="incomerp" placeholder="(P1.00 for every P1,000.00)"><br>
@@ -138,7 +137,20 @@
                 </div>
             </div>
         </div>
-        <script type="text/javascript" >
+        <script type="text/javascript">
+        function selectClassType()
+        {
+            var selectedClassType = document.getElementById("classtypelist").value, nextPage;
+
+            if (selectedClassType == "classa")
+                nextPage = "form_class_a.php";
+            else if (selectedClassType == "classab")
+                nextPage = "form_class_ab.php";
+            else if (selectedClassType == "classc")
+                nextPage = "form_class_c.php";
+
+            document.querySelector("#chooseclasstype").setAttribute("action", nextPage);
+        }        
             document.getElementById('taxchecker').onchange = function() {
                 document.getElementById('incomerp').disabled = this.checked;
                 document.getElementById('grossrec').disabled = this.checked;

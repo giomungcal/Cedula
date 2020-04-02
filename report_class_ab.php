@@ -87,12 +87,22 @@
                                             $acrNo = $_POST['acrnum'];
                                             $height = $_POST['height'];
                                             $weight = $_POST['weight'];
-                                            $incomeFromRealProp = $_POST['incomerp'];
-                                            $grossReceiptsFromBix = $_POST['grossrec'];
-                                            $salariesFromProfession = $_POST['salgrossrec'];
+                                            if (!isset($_POST['incomerp']))
+                                                $incomeFromRealProp=0;
+                                            else
+                                                $incomeFromRealProp=$_POST['incomerp'];
+                                            if (!isset($_POST['grossrec']))
+                                                $grossReceiptsFromBix=0;
+                                            else
+                                                $grossReceiptsFromBix=$_POST['grossrec'];
+                                            if (!isset($_POST['salgrossrec']))
+                                                $salariesFromProfession=0;
+                                            else
+                                                $salariesFromProfession=$_POST['salgrossrec'];
                                             date_default_timezone_set("Asia/Manila");
                                             $dateProcessed = date("Y-m-d");
                                             $timeProcessed = date("H:i:s");
+                                            $communityTax = 10 + $incomeFromRealProp + $grossReceiptsFromBix + $salariesFromProfession;
 
                                             $checkDuplicateData =  "SELECT * FROM classab
                                                                     WHERE firstName='$firstName'
@@ -162,7 +172,7 @@
                                                 civilStatus, gender, profession, taxAccountNo, ACRNo,
                                                 heightCentimeters, weightKilograms,
                                                 realPropertyIncome, grossReceiptsFromBusiness,
-                                                salariesFromProfession,
+                                                salariesFromProfession, communityTax,
                                                 dateProcessed, timeProcessed)
                                                 VALUES
                                                 ('$queueing', '$firstName', '$middle', '$lastName', '$homeAddress',
@@ -170,7 +180,7 @@
                                                 '$civilStatus', '$gender', '$profession', '$taxAccountNo', '$acrNo',
                                                 '$height', '$weight',
                                                 '$incomeFromRealProp', '$grossReceiptsFromBix',
-                                                '$salariesFromProfession',
+                                                '$salariesFromProfession', '$communityTax',
                                                 '$dateProcessed', '$timeProcessed')";
                                                 mysqli_query($con, $sql1);
 

@@ -85,6 +85,15 @@
                                             date_default_timezone_set("Asia/Brunei");
                                             $dateProcessed = date("Y-m-d");
                                             $timeProcessed = date("H:i:s");
+                                            /*
+                                                The computation is just an assumption
+                                                If assessedValueOfProp < 5k and grossEarningsFromBix < 5k, magkakaroon ng centavos na additional payment
+                                                If may remainder ung assessedValueOfProp tsaka grossEarningsFromBix kapag dinivide sa 5k, macocount ung remainder
+                                                na yun in the form of centavos
+                                                But this must be clarified baka hindi nagsisingil ng butal
+                                                (I meant kapag may butal, baka counted na yun as additional 2 pesos)
+                                            */
+                                            $communityTax = round(500 + 2*($assessedValueOfProp/5000) + 2*($grossEarningsFromBix/5000),2);
 
                                             $checkDuplicateData =  "SELECT * FROM classc
                                                                     WHERE firstName='$firstName'
@@ -138,12 +147,11 @@
                                                 echo "<br/><br/>";
                                             
                                             $sql1 = "INSERT INTO classc (queueNo, firstName, middle, lastName, corporation, addressOfCorporation, dateOfRegistration, placeOfRegistration,
-                                            natureOfBusiness, nbspTIN, assessedRealProperty, grossEarnings, dateProcessed, timeProcessed) VALUES ('$queueing', '$firstName', '$middle', '$lastName', '$corporation',
-                                            '$homeAddress', '$dateOfBirth', '$placeOfRegistration', '$natureOfBusiness', '$nbspTIN', '$assessedValueOfProp', '$grossEarningsFromBix', '$dateProcessed', '$timeProcessed')";
+                                            natureOfBusiness, nbspTIN, assessedRealProperty, grossEarnings, communityTax, dateProcessed, timeProcessed) VALUES ('$queueing', '$firstName', '$middle', '$lastName', '$corporation',
+                                            '$homeAddress', '$dateOfBirth', '$placeOfRegistration', '$natureOfBusiness', '$nbspTIN', '$assessedValueOfProp', '$grossEarningsFromBix', '$communityTax', '$dateProcessed', '$timeProcessed')";
                                             mysqli_query($con, $sql1);
 
-                                            $_SESSION['assessedValueOfProp'] = $assessedValueOfProp;
-                                            $_SESSION['grossEarningsFromBix'] = $grossEarningsFromBix;
+                                            $_SESSION['communityTax'] = $communityTax;
                                             $_SESSION['dateProcessedClassCPrint'] = $dateProcessed;
                                             $_SESSION['timeProcessedClassCPrint'] = $timeProcessed;
                                         }

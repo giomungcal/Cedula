@@ -82,6 +82,7 @@
                                             date_default_timezone_set("Asia/Manila");
                                             $dateProcessed = date("Y-m-d");
                                             $timeProcessed = date("H:i:s");
+                                            $communityTax = 10;
 
                                             $checkDuplicateData =  "SELECT * FROM classa
                                                                     WHERE firstName='$firstName'
@@ -137,8 +138,8 @@
                                                 echo "<br/><br/>";
 
                                                 $sql1 = "INSERT INTO classa (queueNo, firstName, middle, lastName, homeAddress, dateOfBirth, placeOfBirth,
-                                                civilStatus, gender, dateProcessed, timeProcessed) VALUES ('$queueing', '$firstName', '$middle', '$lastName', '$homeAddress', '$dateOfBirth',
-                                                '$placeOfBirth', '$civilStatus', '$gender', '$dateProcessed', '$timeProcessed')";
+                                                civilStatus, gender, communityTax, dateProcessed, timeProcessed) VALUES ('$queueing', '$firstName', '$middle', '$lastName', '$homeAddress', '$dateOfBirth',
+                                                '$placeOfBirth', '$civilStatus', '$gender', '$communityTax', '$dateProcessed', '$timeProcessed')";
                                                 mysqli_query($con, $sql1);
                                                 $_SESSION['dateProcessedForPrinting'] = $dateProcessed;
                                                 $_SESSION['timeProcessedForPrinting'] = $timeProcessed;

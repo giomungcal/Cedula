@@ -43,8 +43,6 @@ IF TAX ACCOUNT ALREADY EXISTS
 INVALIDATE MINORS
 
 *TYPE PASSWORD BEFORE LOGGING OUT
-*code optimization
-*See comments I made
 ----------------------------
 | PHP  |                   |
 ---------------------------
