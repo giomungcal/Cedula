@@ -20,7 +20,7 @@ if($_SESSION['login_user'] == "user")
             @import url('https://fonts.googleapis.com/css?family=Montserrat|Muli|Roboto&display=swap');
         </style>
      </head>  
-     <body>  
+     <body>
      <div class="adminclass">
         <div class="container_all">
                 <div class="navbaradmin">

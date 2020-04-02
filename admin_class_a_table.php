@@ -9,8 +9,8 @@
           <td><b>Home Address</b></td>
           <td><b>&nbsp;&nbsp;&nbsp;&nbsp;View</b></td>  
      </tr>  
-</thead> 
-                    
+</thead>
+
 <?php
      $con = mysqli_connect('localhost', 'root', '');
      mysqli_select_db($con, 'cedula');
@@ -41,5 +41,5 @@
 <script>  
 $(document).ready(function(){  
      $('#class_a_data').DataTable();  
-});  
+});
 </script>
