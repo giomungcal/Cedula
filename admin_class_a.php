@@ -29,10 +29,10 @@ if($_SESSION['login_user'] == "user")
                     <div class="logoadmin"><a href=""><i>manila</i>&nbsp;<b>cedula</b>&nbsp;administrator</a></div>
                 <div class="menuadmin">
                     <ul class="navbaradmin_ul">
-                    <li><a  class="btn" href="admin_class_a.php"><b>Class A</b></a></li>
-                    <li><a  class="btn" href="admin_class_ab.php"><b>Class AB</b></a></li>
-                    <li><a  class="btn" href="admin_class_c.php"><b>Class C</b></a></li>
-                    <li><a  class="btn" href="logout.php"><b>Logout</b></a></li>
+                    <li><a class="btn" href="admin_class_a.php"><b>Class A</b></a></li>
+                    <li><a class="btn" href="admin_class_ab.php"><b>Class AB</b></a></li>
+                    <li><a class="btn" href="admin_class_c.php"><b>Class C</b></a></li>
+                    <li><a class="btn" href="logout.php"><b>Logout</b></a></li>
                     </ul>
                 </div>
             </div>
@@ -51,7 +51,7 @@ if($_SESSION['login_user'] == "user")
      </body>
 </html>
 <script>
-// setInterval(() => {
-//      $('#class_a_data').load('admin_class_a_table.php');
-// }, 5000);
+//  setInterval(() => {
+//       $('#class_a_data').load('admin_class_a_table.php');
+//  }, 5000);
 </script>
