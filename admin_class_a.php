@@ -1,32 +1,33 @@
 <?php  
-include 'session.php';
+    include 'session.php';
+    $_SESSION['currentPage'] = 'admin_class_a';
 
-if(!isset($_SESSION['login_user']))
-    header("location: index.php");
-if($_SESSION['login_user'] == "user")
-    header("location: home.php");
+    if(!isset($_SESSION['login_user']))
+        header("location: index.php");
+    if($_SESSION['login_user'] == "user")
+        header("location: home.php");
 ?>
 
-<!DOCTYPE html>  
-<html style="background-color: white;">  
-     <head>
-          <title>Manila City Hall: Cedula</title>  
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-          <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-          <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
-          <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
-          <link rel="stylesheet" href="style.css" />
-          <style>
+<!DOCTYPE html>
+<html style="background-color: white;">
+    <head>
+        <title>Manila City Hall: Cedula</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+        <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
+        <link rel="stylesheet" href="style.css" />
+        <style>
             @import url('https://fonts.googleapis.com/css?family=Montserrat|Muli|Roboto&display=swap');
         </style>
-     </head>
-     <body>
-     <div class="adminclass">
+    </head>
+    <body>
+    <div class="adminclass">
         <div class="container_all">
-                <div class="navbaradmin">
-                    <div class="logoadmin-pic"><img src="img/Clogo.png" height="25px" width="25px"></div>
-                    <div class="logoadmin"><a href=""><i>manila</i>&nbsp;<b>cedula</b>&nbsp;administrator</a></div>
+            <div class="navbaradmin">
+                <div class="logoadmin-pic"><img src="img/Clogo.png" height="25px" width="25px"></div>
+                <div class="logoadmin"><a href=""><i>manila</i>&nbsp;<b>cedula</b>&nbsp;administrator</a></div>
                 <div class="menuadmin">
                     <ul class="navbaradmin_ul">
                     <li><a class="btn" href="admin_class_a.php"><b>Class A</b></a></li>
@@ -37,21 +38,24 @@ if($_SESSION['login_user'] == "user")
                 </div>
             </div>
         </div>
-          <div class="container" style="font-family: 'Montserrat';">  
-               <h3 align="center" style="color: #1f4498"><b>Class A (Unemployed)</b></h3>
-               <br />
-               <div class="table-responsive">
-                    <table id="class_a_data" class="table table-striped table-bordered">
-                         <?php
-                         include 'admin_class_a_table.php';
-                         ?>
-                    </table>  <br><br><br>
-               </div>
-          </div>
-     </body>
+        <div class="container" style="font-family: 'Montserrat';">  
+            <h3 align="center" style="color: #1f4498"><b>Class A (Unemployed)</b></h3>
+            <br>
+            <div class="table-responsive">
+                <table id="class_a_data" class="table table-striped table-bordered">
+                        <?php include 'admin_class_a_table.php'; ?>
+                </table>
+                <br><br><br>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        /*
+        setInterval(() => {
+            $('#class_a_data').load('admin_class_a_table.php');
+        }, 5000);
+        */
+    </script>
+    </body>
 </html>
-<script>
-//  setInterval(() => {
-//       $('#class_a_data').load('admin_class_a_table.php');
-//  }, 5000);
-</script>
