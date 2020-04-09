@@ -1,10 +1,10 @@
 <thead>  
      <tr>  
-          <td><b>ID</b></td>
-          <td><b>Time Processed</b></td>   
-          <td><b>Full Name</b></td> <!-- Strictly don't swap order -->
-          <td><b>Status</b></td>
-          <td><b>&nbsp;&nbsp;&nbsp;&nbsp;View</b></td>  
+          <td align="center"><b>ID</b></td>
+          <td align="center"><b>TIME PROCESSED</b></td>   
+          <td align="center"><b>FULL NAME</b></td> <!-- Strictly don't swap order -->
+          <td align="center"><b>APPLICATION STATUS</b></td>
+          <td align="center"><b>VIEW</b></td>  
      </tr>  
 </thead>
 
@@ -26,15 +26,22 @@
                <td>'.$row["lastName"].', '.$row["firstName"].' '.$row["middle"].'</td>  
                <td align="center" bgcolor="#32CD32"><font color="white">COMPLETED</font></td>
                <!-- Other status: RECEIVED (gray #A9A9A9), CANCELLED (red#8B0000), COMPLETED (green #32CD32)-->
-               <td align="center"><a href="">👁️</a></td>
+               <td align="center"><button type="button" class="btn" style="padding: 0;border: none;background: none;"> 👁️ </button></td>
           </tr>  
-          ';  
+          ';
           // changed the symbol because the previous one has nothing to do with "view"
      }
-?>  
+?>
 
 <script>  
 $(document).ready(function(){  
      $('#class_a_data').DataTable();  
 });
+
+$('.table tbody').on('click','.btn',function(){
+     var currow = $(this).closest('tr');
+     queueNum = currow.find('td:eq(0)').text();
+     window.location.href = 'http://localhost:808/cedula/cedula_printout.php?queueNum=' + queueNum;
+});
+
 </script>
