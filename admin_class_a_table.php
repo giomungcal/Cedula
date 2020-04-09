@@ -3,7 +3,7 @@
           <td align="center"><b>ID</b></td>
           <td align="center"><b>TIME PROCESSED</b></td>   
           <td align="center"><b>FULL NAME</b></td> <!-- Strictly don't swap order -->
-          <td align="center"><b>APPLICATION STATUS</b></td>
+          <td align="center"><b>DATE OF BIRTH</b></td>
           <td align="center"><b>VIEW</b></td>  
      </tr>  
 </thead>
@@ -21,11 +21,10 @@
      {  
           echo '  
           <tr>
-               <td>'.$row["queueNo"].' </td>
-               <td>'.$row["timeProcessed"].'</td>
+               <td align="center">'.$row["queueNo"].' </td>
+               <td align="center">'.$row["timeProcessed"].'</td>
                <td>'.$row["lastName"].', '.$row["firstName"].' '.$row["middle"].'</td>  
-               <td align="center" bgcolor="#32CD32"><font color="white">COMPLETED</font></td>
-               <!-- Other status: RECEIVED (gray #A9A9A9), CANCELLED (red#8B0000), COMPLETED (green #32CD32)-->
+               <td align="center">'.$row["dateOfBirth"].'</td>
                <td align="center"><button type="button" class="btn" style="padding: 0;border: none;background: none;"> 👁️ </button></td>
           </tr>  
           ';
