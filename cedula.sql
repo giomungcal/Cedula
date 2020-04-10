@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 02, 2020 at 10:14 AM
+-- Generation Time: Apr 10, 2020 at 09:31 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -53,7 +53,10 @@ INSERT INTO `classa` (`ID`, `queueNo`, `firstName`, `middle`, `lastName`, `homeA
 (2, 'A-002-03142020', 'Juan', 'M.', 'Fonte', '10 Moderna St., Balut, Tondo, Manila', '1990-01-01', 'Carmen, Cebu', 'Single', 'Male', 10, '2020-03-14', '15:27:17'),
 (3, 'A-003-03142020', 'John', 'F.', 'Flores', '1000 Moderna St., Balut, Tondo, Manila', '2020-01-01', 'San Rafael, Bulacan', 'Single', 'Male', 10, '2020-03-14', '15:58:15'),
 (4, 'A-001-03192020', 'Heherson', 'I.', 'Domael', '1 Muralla St., Intramuros, Manila', '1998-08-18', 'Quezon City', 'Single', 'Male', 10, '2020-03-19', '06:37:04'),
-(5, 'A-002-03192020', 'Ma. Regina', 'V.', 'Guerra', '3 Felix Hidalgo St., Quiapo, Manila', '1973-04-02', 'Chinese General Hospital', 'Married', 'Female', 10, '2020-03-19', '09:57:25');
+(5, 'A-002-03192020', 'Ma. Regina', 'V.', 'Guerra', '3 Felix Hidalgo St., Quiapo, Manila', '1973-04-02', 'Chinese General Hospital', 'Married', 'Female', 10, '2020-03-19', '09:57:25'),
+(6, 'A-001-04022020', 'Giomar Erick', 'E.', 'Maico', '1024 España Blvd., Sampaloc, Manila', '2001-03-31', 'Tanay, Rizal', 'Married', 'Male', 10, '2020-04-02', '16:37:43'),
+(7, 'A-002-04022020', 'Regina Jovita', 'C.', 'Mungcal', '121 Laong Laan Rd., Sampaloc, Manila', '2000-01-01', 'Pasig', 'Single', 'Female', 10, '2020-04-02', '17:53:07'),
+(8, 'A-003-04022020', 'Erick Joshua', 'G.', 'Cruz', '9 Felix Hidalgo St., Quiapo, Manila', '1968-01-01', 'Quezon City', 'Single', 'Male', 10, '2020-04-02', '18:06:15');
 
 -- --------------------------------------------------------
 
@@ -191,7 +194,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `classa`
 --
 ALTER TABLE `classa`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `classab`
