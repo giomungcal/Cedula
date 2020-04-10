@@ -23,7 +23,7 @@
     <body>
         <div class="main_login">
             <div class="logincontainer">
-                <div class="logo-pic" style="text-align: center;"><img src="img/Clogo.png" height="60px" width="60px"></div>
+                <div class="logo-pic" style="text-align: center;"><img src="img/Clogo-White.png" height="60px" width="60px"></div>
                 <h2 style="text-align: center;"></h2><br><br>
                 <div class="loginform">
                     <div class="logincontainerx" style="width: 100%;">

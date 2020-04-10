@@ -24,7 +24,7 @@ if($_SESSION['login_user'] == "user")
      <div class="adminclass">
         <div class="container_all">
                 <div class="navbaradmin">
-                    <div class="logo-pic"><img src="img/Clogo.png" height="25px" width="25px"></div>
+                    <div class="logo-pic"><img src="img/Clogo-Blue.png" height="25px" width="25px"></div>
                     <div class="logo"><a href="admin_class_ab.php"><i>manila</i>&nbsp;<b>cedula</b>&nbsp;administrator</a></div>
                 <div class="menuadmin">
                     <ul class="navbaradmin_ul">

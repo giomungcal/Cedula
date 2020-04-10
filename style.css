@@ -61,6 +61,7 @@ html
 .logo
 {
     padding-top: 10px;
+
     padding-right: 100px;
 }
 
@@ -81,6 +82,7 @@ html
 .logo-pic
 {
     padding: 10px;
+    margin-left: 10px;
 }
 
 .menu
