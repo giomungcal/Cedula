@@ -19,6 +19,7 @@ if($_SESSION['login_user'] == "user")
         <style>
             @import url('https://fonts.googleapis.com/css?family=Montserrat|Muli|Roboto&display=swap');
         </style>
+<<<<<<< HEAD
     </head>
     <body>
     <div class="adminclass">
@@ -33,6 +34,23 @@ if($_SESSION['login_user'] == "user")
                 <li><a  class="btn" href="admin_class_c.php"><b>Class C</b></a></li>
                 <li><a  class="btn" href="logout.php"><b>Logout</b></a></li>
                 </ul>
+=======
+     </head>  
+     <body>
+     <div class="adminclass">
+        <div class="container_all">
+                <div class="navbaradmin">
+                    <div class="logoadmin-pic"><img src="img/Clogo-Blue.png" height="25px" width="25px"></div>
+                    <div class="logoadmin"><a href=""><i>manila</i>&nbsp;<b>cedula</b>&nbsp;administrator</a></div>
+                <div class="menuadmin">
+                    <ul class="navbaradmin_ul">
+                    <li><a  class="btn" href="admin_class_a.php"><b>Class A</b></a></li>
+                    <li><a  class="btn" href="admin_class_ab.php"><b>Class AB</b></a></li>
+                    <li><a  class="btn" href="admin_class_c.php"><b>Class C</b></a></li>
+                    <li><a  class="btn" href="logout.php"><b>Logout</b></a></li>
+                    </ul>
+                </div>
+>>>>>>> 3890775d410728b6d9b000c09ad779c34dbe74e9
             </div>
         </div>
     </div>

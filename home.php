@@ -24,11 +24,11 @@
         <div class="main">
             <div class="container_all">
                 <div class="navbar">
-                    <div class="logo-pic"><img src="img/Clogo.png" height="25px" width="25px"></div>
+                    <div class="logo-pic"><img src="img/Clogo-Blue.png" height="25px" width="25px"></div>
                     <div class="logo"><a href=""><i>manila</i>&nbsp;<b>cedula</b></a></div>
                     <div class="menu">
                         <ul>
-                            <li><a href="home.php"><b>Home</b></a></li>
+                            <li><a href="home.php" class="btn"><b>Home</b></a></li>
                             <li id="btn1"><a class="btn"><b>Help</b></a></li>
                             <li><a href="" class="btn"><b>About</b></a></li>
                             <!-- <li><a class="btn" href=""><b>Procedure</b></a></li> -->
