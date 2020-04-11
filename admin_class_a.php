@@ -50,7 +50,6 @@
         </div>
     </div>
     <script type="text/javascript">
-
         /*
         setInterval(() => {
             $('#class_a_data').load('admin_class_a_table.php');

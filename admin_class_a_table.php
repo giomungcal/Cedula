@@ -17,8 +17,6 @@
 <?php
      $con = mysqli_connect('localhost', 'root', '');
      mysqli_select_db($con, 'cedula');
-     // $query = "SELECT * FROM classa";
-     // mysqli_query($con, $query);
      $sortTable="SELECT ID, queueNo, dateProcessed, timeProcessed, lastName, firstName, middle, dateOfBirth FROM classa";
      $sortedTable = mysqli_query($con, $sortTable);
 
@@ -32,9 +30,9 @@
                     <td align="center">'.$row["timeProcessed"].'</td>
                     <td>'.$row["lastName"].'</td>
                     <td>'.$row["firstName"].'</td>
-                    <td>'.$row["middle"].'</td>  
+                    <td align="center">'.$row["middle"].'</td>
                     <td align="center">'.$row["dateOfBirth"].'</td>
-                    <td align="center"><button type="button" class="btn" style="padding: 0;border: none;background: none;"> 👁️ </button></td>
+                    <td align="center"><button type="button" class="btn" style="padding: 0; border: none; background: none;"> 👁️ </button></td>
                </tr>
           ';
      }
