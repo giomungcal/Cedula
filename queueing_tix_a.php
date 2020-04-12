@@ -38,7 +38,7 @@
     </style>
       <body>
             <div class="queue_number" style="font-size: 25px; font-family: Roboto;">
-                <img src="img/Clogo.png" height="20px" width="20px">&nbsp;
+                <img src="img/Clogo-Blue.png" height="20px" width="20px">&nbsp;
                 <?php
                     if($rowOfData = mysqli_fetch_array($sortedTable))
                         echo "Your queueing no is " . "<b>" . substr($rowOfData['queueNo'], 2, -9) ."</b>. " . "Kindly wait for your turn.";
