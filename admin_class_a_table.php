@@ -45,6 +45,6 @@
      $('.table tbody').on('click','.btn',function() {
           var currow = $(this).closest('tr');
           queueNum = currow.find('td:eq(0)').text();
-          window.location.href = 'http://localhost:808/cedula/cedula_printout.php?queueNum=' + queueNum;
+          window.location.href = 'http://localhost:808/cedula/cedula_printout_a.php?queueNum=' + queueNum;
      });
 </script>
