@@ -47,4 +47,4 @@
           queueNum = currow.find('td:eq(0)').text();
           window.location.href = 'http://localhost:808/cedula/cedula_printout_ab.php?queueNum=' + queueNum;
      });
-</script>
+</script> 
