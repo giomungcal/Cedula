@@ -1,0 +1,72 @@
+https://stackoverflow.com/questions/11763352/jquery-tablesorter-the-sorting-arrows-dont-show
+https://stackoverflow.com/questions/44641234/mysql-realtime-display
+https://stackoverflow.com/questions/19869639/how-to-call-a-javascript-function-within-an-html-body
+
+
+DATE RANGE
+
+
+<?php
+
+function OpenCon()
+ {
+ $dbhost = "localhost";
+ $dbuser = "root";
+ $dbpass = "1234";
+ $db = "example";
+
+
+ $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
+
+ 
+ return $conn;
+ }
+ 
+function CloseCon($conn)
+ {
+ $conn -> close();
+ }
+   
+?>
+
+
+<?php
+include 'db_connection.php';
+
+$conn = OpenCon();
+
+echo "Connected Successfully";
+
+CloseCon($conn);
+
+?>
+
+BIRTHAY GREETING
+INPUT IF THERE IS COMMA IN DIGITS
+BLINKING TABLE MYSQL PROBLEM
+IF TAX ACCOUNT ALREADY EXISTS
+INVALIDATE MINORS
+
+*TYPE PASSWORD BEFORE LOGGING OUT
+----------------------------
+| PHP  |                   |
+---------------------------
+
+*A good feature of our system, if not for recommendations na lang. Pero if I got more time, I'll include this:
+Hiwalay pala talaga ang windows para sa mga classes. Pero, merong 3 "subwindows" for each class.
+Windows 1-3 for Class A, 4-6 for Class AB, 7-9 for Class C.
+Kung gano karaming windows ang bubuksan sa isang class, depende sa volume ng nag-apply for that specific class.
+Example, since kakaunti lang ang pumipila sa Class C, 1 window lang ang madalas binubuksan.
+Sa Class AB ang marami, kaya minsan 2-3 windows ang binubuksan.
+They don't provide 4 or more windows para sa isang class even if sobrang dami sa isang araw. Strictly at most three windows per class lang talaga.
+So sa system natin, bukod sa queueing no., pwede na ring mailagay doon kung saang "subwindow" pupunta ang isang applicant.
+It can be made na salit-salit. Example: class A applicant no. 1 goes to "subwindow" 1, class A applicant no. 2 goes to "subwindow" 2,
+class A applicant no. 3 goes to "subwindow" 3, class A applicant no. 4 goes to "subwindow" 1, and so on.
+Sa admin side, doon iseset ng tellers kung anong mga "subwindows" ang bubuksan.
+So if 2 "subwindows" lang ang sinet as i-oopen nila, ang pagsasalit-salit ng window na pupuntahan ng applicant is "subwindow" 1, "subwindow" 2, tas balik ulit sa "subwindow 1.
+
+*May priority lanes ba sila for senior citizens? If yes, priority lanes will be set doon sa mga PCs instead na doon sa windows.
+*What's the case for multiple citizenships? Do they have both TIN No. and ACR No.?
+*Ilang beses ba nag-aapply for cedula ang mga tao?
+*Ilan ang nag-aapply ng cedula for each class sa isang araw?
+*Anong oras kayo nagbubukas for application? Gusto niyo ba na strictly magbubukas lang ang registraton within the open hours? If yes, we might include a feature para malock yung system before the open hours.

@@ -31,6 +31,8 @@
                 <div class="menu">
                     <ul>
                         <li><a href="home.php" class='btn' ><b>Home</b></a></li>
+                            <li id="btn1"><a class="btn"><b>Help</b></a></li>
+                            <li><a href="" class="btn"><b>About</b></a></li>
                         <!-- <li><a class="btn" href=""><b>Procedure</b></a></li> --> <!-- Thinking this might just be similar to "How to Use" (?) -H -->
                         <!-- <li><a class="btn" href=""><b>About</b></a></li>
                         <li><a class="btn" href=""><b>Settings</b></a></li> Change password feature. Yay or  nay? -H -->

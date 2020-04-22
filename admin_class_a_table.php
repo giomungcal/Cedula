@@ -1,6 +1,3 @@
-*decrease column width for Date/Time Processed, Date of Birth, and View
-<br>
-*increase column width for First/Last Names
 <thead>  
      <tr>
           <td align="center"><b>ID</b></td>
