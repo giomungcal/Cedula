@@ -10,3 +10,7 @@ Adjust checkbox at Additional Residence Tax section
 
 form_class_c
 Create modal for About
+
+Features not included anymore :p
+*Greet the applicant if today's his birthday
+*Ung malalagay sa stub kung saang "subwindow" pupunta ung applicant
