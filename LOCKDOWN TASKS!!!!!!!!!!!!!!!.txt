@@ -1,3 +1,6 @@
+home
+Place "Close" button at the bottom of all modal dialogs
+
 form_class_a
 Create modal for About
 

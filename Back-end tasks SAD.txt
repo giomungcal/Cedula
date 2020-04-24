@@ -43,14 +43,8 @@ CloseCon($conn);
 
 BIRTHAY GREETING
 INPUT IF THERE IS COMMA IN DIGITS
-BLINKING TABLE MYSQL PROBLEM
 IF TAX ACCOUNT ALREADY EXISTS
 INVALIDATE MINORS
-
-*TYPE PASSWORD BEFORE LOGGING OUT
-----------------------------
-| PHP  |                   |
----------------------------
 
 *A good feature of our system, if not for recommendations na lang. Pero if I got more time, I'll include this:
 Hiwalay pala talaga ang windows para sa mga classes. Pero, merong 3 "subwindows" for each class.

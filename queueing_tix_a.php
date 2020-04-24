@@ -42,7 +42,6 @@
                 <?php
                     if($rowOfData = mysqli_fetch_array($sortedTable))
                         echo "Your queueing no is " . "<b>" . substr($rowOfData['queueNo'], 2, -9) ."</b>. " . "Kindly wait for your turn.";
-                        // ATTN: Engr Mungcal. This is just a test text. Please replace the statement above with a better and good-to-read statement/
                 ?>
                 <br/><br/>
             </div>

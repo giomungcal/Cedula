@@ -20,7 +20,7 @@
         echo 'ERROR: Database not selected.';
 
     $queueNum = $_GET['queueNum'];
-    $newquery="SELECT * FROM classa WHERE queueNo='$queueNum'";
+    $newquery="SELECT * FROM classc WHERE queueNo='$queueNum'";
     $fetchData = mysqli_query($con, $newquery);
     $row = mysqli_fetch_array($fetchData);
 ?>
@@ -115,40 +115,40 @@
           <tr>
             <td width="10%" style="font-size: 5px;">YEAR:<p> <?php echo substr($row['dateProcessed'],0,-6); ?> </p></td>
             <td width="40%" style="font-size: 5px;">PLACE OF ISSUE (City/Mun/Prov):<p> Manila, Philippines </p></td>
-            <td width="25%" style="font-size: 5px;">DATE ISSUED:<p> <?php echo date("M. j", strtotime($row['dateProcessed'])); ?> </p></td>
+            <td width="25%" style="font-size: 5px;">DATE ISSUED:<p> <?php echo date("M j", strtotime($row['dateProcessed'])); ?> </p></td>
             <td width="35%" style="text-align: center;"><b>TAXPAYER'S COPY</b></td>
           </tr>
         </table>
         <table class="mytable mytable-body">
           <tr>
-            <td width="65%" style="font-size: 5px;">NAME:<p> <?php echo $row['firstName']." ".$row['middle']. " ".$row['lastName'];?> </p></td>
-            <td width="35%" style="font-size: 5px;">TIN (If Any):<p> N/A </p></td>
+            <td width="65%" style="font-size: 5px;">NAME:<p> <?php echo $row['firstName']." ".$row['middle']. " ".$row['lastName']." (".$row['corporation'].")";?> </p></td>
+            <td width="35%" style="font-size: 5px;">TIN (If Any):<p> <?php echo $row['nbspTIN']; ?> </p></td>
           </tr>
         </table>
         <table class="mytable mytable-body">
             <tr>
-              <td width="75%" style="font-size: 5px;">ADDRESS:<p> <?php echo $row['homeAddress'];?> </p></td>
-              <td width="25%" style="font-size: 5px;">SEX:<p> <?php echo $row['gender']; ?> </p></td>
+              <td width="75%" style="font-size: 5px;">ADDRESS:<p> <?php echo $row['addressOfCorporation'];?> </p></td>
+              <td width="25%" style="font-size: 5px;">SEX:<p> <!--INFO HERE --> </p></td>
             </tr>
         </table>
         <table class="mytable mytable-body">
             <tr>
-              <td width="10%" style="font-size: 5px;">CITIZENSHIP:<p> Filipino </p></td>
-              <td width="30%" style="font-size: 5px;">ICR NO. (If an Alien):<p> N/A </p></td>
-              <td width="40%" style="font-size: 5px;">PLACE OF BIRTH:<p> <?php echo $row['placeOfBirth']; ?> </p></td>
+              <td width="10%" style="font-size: 5px;">CITIZENSHIP:<p> <!--INFO HERE --> </p></td>
+              <td width="30%" style="font-size: 5px;">ICR NO. (If an Alien):<p> <!--INFO HERE --> </p></td>
+              <td width="40%" style="font-size: 5px;">PLACE OF BIRTH:<p> <!--INFO HERE --> </p></td>
               <td width="20%" style="font-size: 5px;">HEIGHT:<p> <!--INFO HERE --> </p></td>
             </tr>
         </table>
         <table class="mytable mytable-body">
             <tr>
-              <td width="60%" style="font-size: 5px;">CIVIL STATUS:<p> <?php echo $row['civilStatus']; ?> </p></td>
-              <td width="20%" style="font-size: 5px;">DATE OF BIRTH:<p> <?php echo date("M. j, Y", strtotime($row['dateOfBirth'])); ?> </p></td>
+              <td width="60%" style="font-size: 5px;">CIVIL STATUS:<p> <!--INFO HERE --> </p></td>
+              <td width="20%" style="font-size: 5px;">DATE OF BIRTH:<p> <!--INFO HERE --> </p></td>
               <td width="20%" style="font-size: 5px;">WEIGHT:<p> <!--INFO HERE --> </p></td>
             </tr>
         </table>
         <table class="mytable mytable-body">
             <tr>
-              <td width="60%" style="font-size: 5px;">PROFESSION/OCCUPATION/BUSINESS:<p> N/A </p></td>
+              <td width="60%" style="font-size: 5px;">PROFESSION/OCCUPATION/BUSINESS:<p> Authorized Representative </p></td>
               <td width="20%" style="text-align: center; font-size: 8.5px;">TAXABLE<br>AMOUNT</td>
               <td width="20%" style="text-align: center; font-size: 8.5px;"" >COMMUNITY<br>TAX DUE</td>
             </tr>
@@ -157,7 +157,7 @@
             <tr>
               <td width="60%">A. BASIC COMMUNITY TAX (₱10.00) Voluntary of Exempted (₱1.00)</td>
               <td width="20%" style="background-color: rgb(200, 200, 200);"></td>
-              <td width="20%" style="text-align: center;"> <p> ₱ 10.00 </p></td>
+              <td width="20%" style="text-align: center;"> <p> ₱ 500.00 </p></td>
             </tr>
         </table>
         <table class="mytable mytable-body">
@@ -170,38 +170,38 @@
         <table class="mytable mytable-body">
             <tr>
               <td width="60%" style="padding-left: 15px; font-size: 7px;" >1. GROSS RECEIPTS OR EARNINGS DERIVED FROM BUSINESS DURING THE PRECEDING YEAR. (₱1.00 for every ₱1,000.00)</td>
-              <td width="20%" style="text-align: center;"><p> ₱ 0.00 </p></td>
-              <td width="20%" style="text-align: center;"><p> ₱ 0.00 </p></td>
+              <td width="20%" style="text-align: center;"><p>₱ <?php echo sprintf("%.2f", $row['grossEarnings']/2500); ?> </p></td>
+              <td width="20%" style="text-align: center;"><p>₱ <?php echo sprintf("%.2f", $row['grossEarnings']/2500); ?> </p></td>
             </tr>
         </table>
         <table class="mytable mytable-body">
             <tr>
               <td width="60%" style="padding-left: 15px; font-size: 7px;">2. SALARIES OR GROSS RECEIPTS OR EARNINGS DERIVED FROM EXERCISE OF PROFESSION OR PURSUIT OF ANY OCCUPATION. (₱1.00 for every ₱1,000.00)</td>
-              <td width="20%" style="text-align: center;"><p> ₱ 0.00 </p></td>
-              <td width="20%" style="text-align: center;"><p> ₱ 0.00 </p></td>
+              <td width="20%" style="text-align: center;"><p> ₱ 0.00 <!-- SALARIES OR GROSS RECEIPT Taxable Amt.  --></p></td>
+              <td width="20%" style="text-align: center;"><p> ₱ 0.00 <!-- SALARIES OR GROSS RECEIPT Community Tax Due Amt.  --> </p></td>
             </tr>
         </table>
         <table class="mytable mytable-body">
             <tr>
               <td width="60%" style="padding-left: 15px; font-size: 7px;">3. INCOME FROM REAL PROPERTY  (₱1.00 for every ₱1,000.00)</td>
-              <td width="20%" style="text-align: center;"><p> ₱ 0.00 </p></td>
-              <td width="20%" style="text-align: center;"><p> ₱ 0.00 </p></td>
+              <td width="20%" style="text-align: center;"><p> ₱ <?php echo sprintf("%.2f", $row['assessedRealProperty']/2500); ?> </p></td>
+              <td width="20%" style="text-align: center;"><p> ₱ <?php echo sprintf("%.2f", $row['assessedRealProperty']/2500); ?> </p></td>
             </tr>
         </table>
         <table class="mytable mytable-body">
             <tr>
               <td width="15%" style="text-align: center;"><b>Right Thumb Print:</b></td>
               <td width="35%" >TAXPAYER'S SIGNATURE</td>
-              <td width="25%"><p>TOTAL: ₱ 10.00 </p></td>
-              <td width="25%"><p>INTEREST: 0.00% </p></td>
+              <td width="25%"><p>TOTAL: ₱ <?php echo sprintf("%.2f", $row['communityTax']); ?><!-- TOTAL AMT  --> </p></td>
+              <td width="25%">INTEREST: 0.00% </td>
             </tr>
         </table>
         <table class="mytable mytable-body">
             <tr>
               <td width="15%"><br><br></td>
               <td width="35%" style="text-align: center;"><br><br><br> __________________________________<br>MUNICIPAL/CITY TREASURER</td>
-              <td width="25%">TOTAL AMOUNT PAID (in words):<p>  </p><br><br></td>
-              <td width="25%"><p>₱ 0.00 </p><br><br></td>
+              <td width="25%">TOTAL AMOUNT PAID (in words):<p> <!--Wag na natin sali 'to, hassle pa yung algorithm ng amt translation' --> </p><br><br></td>
+              <td width="25%"><p>₱ 0.00 <!-- INTEREST AMT  --> </p><br><br></td>
             </tr>
         </table>
         <br>

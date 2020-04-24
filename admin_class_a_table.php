@@ -46,5 +46,6 @@
           var currow = $(this).closest('tr');
           queueNum = currow.find('td:eq(0)').text();
           window.location.href = 'http://localhost:808/cedula/cedula_printout_a.php?queueNum=' + queueNum;
+          // Remove the ":808" if cedula_printout doesn't display on your browser. Sa browser ko kailangan may ":808", namodify kasi settings ng XAMMP ko -H
      });
 </script>
