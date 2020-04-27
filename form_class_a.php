@@ -31,7 +31,7 @@
                     <ul>
                         <li><a href="home.php" class='btn' ><b>Home</b></a></li>
                         <li id="btn1"><a class="btn"><b>Help</b></a></li>
-                        <li><a href="" class="btn"><b>About</b></a></li>
+                        <!-- <li><a href="" class="btn"><b>About</b></a></li> -->
                         <!-- <li id="btn1"><a class="btn"><b>Help</b></a></li> -->
                         <!-- <li><a class="btn" href=""><b>Procedure</b></a></li> -->
                         <!-- I just set this as comment in order to include "Settings" option. I know this ("Procedure" option) is important.
