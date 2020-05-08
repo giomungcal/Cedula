@@ -1,6 +1,7 @@
 <thead>  
      <tr>  
           <td><b>ID</b></td>
+		  <td><b>Date Processed</b></td>
           <td><b>Time Processed</b></td>
           <td><b>Name of Corporation</b></td>
           <td><b>Corporate Address</b></td>
@@ -20,7 +21,8 @@
      echo '  
      <tr>
           <td>'.$row["queueNo"].'</td>
-          <td>'.$row["timeProcessed"].'</td>
+          <td>'.$row["dateProcessed"].'</td>
+		  <td>'.$row["timeProcessed"].'</td>
           <td>'.$row["corporation"].'</td>
           <td>'.$row["addressOfCorporation"].'</td>
           <td align="center"><button type="button" class="btn" style="padding: 0; border: none; background: none;"> 👁️ </button></td>
@@ -30,9 +32,11 @@
 ?>
 
 <script>  
-$(document).ready(function(){  
-     $('#class_c_data').DataTable();  
-});
+     $(document).ready(function() {
+          $('#class_c_data').DataTable(
+               { "order": [[ 1, "desc" ], [ 2, 'desc' ]] }
+          );
+     });
 
 $('.table tbody').on('click','.btn',function() {
           var currow = $(this).closest('tr');
